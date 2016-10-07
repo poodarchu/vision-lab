@@ -1,0 +1,411 @@
+body {
+	background 	: rgb(240,240,240);
+	font-family     : 'Open Sans',sans-serif;
+	font-weight     : 300;
+	margin		: 0;
+}
+
+b {
+	font-weight     : 400;
+}
+
+a {
+	text-decoration : none;
+	color           : rgb(0,0,255);
+	margin		: 1px 2px 1px 2px;
+}
+
+a.minorlink{
+        color   : black;
+	margin  : 0;
+}
+
+a:hover {
+	text-decoration : none;
+	color           : rgb(100,100,255);
+	zbackground	: rgb(240,240,255);
+}
+
+a:hover img{
+	border-color	: blue;
+}
+
+a.anchor {
+	position	: relative;
+	top		: -30px;
+}
+
+img {
+	behavior: url("pngbehavior.htc");
+	border : 0;
+}
+
+
+
+ul {
+	list-style-type : square;
+}
+
+#side {
+	position 	: fixed;
+	z-index		: 100;
+	width 		: 100%;
+}
+
+
+#page {
+	background 	: rgb(211,230,234);
+	border		: 1px solid gray;
+	position 	: relative;
+	line-height	: 125%;
+	left		: 0 !important;
+	left		: 16%;
+	margin		: auto;
+	padding   	: 1ex 2ex;
+	text-align	: justify;
+	top 	 	: 7ex !important;
+	top 	 	: 0;
+	width		: 700px;
+        max-width       : 50em;
+}
+
+
+.menu {
+	background		: url(dropshadow.png) !important;
+	background-position	: bottom center !important;
+	background		: transparent;
+	padding         	: 5px 0 40px 0;
+	margin			: auto;
+	text-align              : center;
+	position                : fixed;
+	z-index                 : 100;
+	width                   : 100%;
+}
+
+
+
+
+.menu a{
+	padding		: 0.25ex 1ex;
+	color		: black;
+}
+
+
+.menu a:hover{
+	background	: rgb(230,230,230);
+}
+
+.pagetitle {
+	font-size      	: x-large;
+	font-weight     : bold;
+	letter-spacing 	: 0.25ex;
+	line-height	: 150%;
+	text-align	: left;
+}
+
+h1{
+	background	: url("gray_gradient_64.png");
+	border        	: 1px solid black;
+	font-size      	: larger;
+	font-weight    	: bold;
+	letter-spacing 	: 0.75ex;
+	height		: 2.25ex;
+	margin-top	: 3ex !important;
+	margin-top	: 5ex;
+	margin-bottom	: 3ex;
+	padding		: 0.5ex;
+	padding-top	: 0.75ex;
+	padding-left	: 20px;
+	position	: relative;
+	left		: -50px;
+	width		: 70%;
+}
+
+
+h1.title{
+	margin		: 4em 20% 3em 20%;
+	text-align	: center;
+}
+
+h2{
+	font-size      	: 100%;
+	font-weight    	: bold;
+	letter-spacing 	: 0.5ex;
+	margin-left	: 0px;
+	margin-bottom	: 1.5ex;
+	margin-top	: 4ex;
+	text-align	: center;
+}
+
+h2.nointro{
+	margin-top	: 0;
+}
+
+h2:before{
+        content: "\2022\00a0";
+}
+
+h2:after{
+        content: "\00a0\2022";
+}
+
+h3{
+	letter-spacing 	: 0.1ex;
+	font-size      	: 100%;
+	font-weight    	: normal;
+	font-weight    	: bold;
+	color		: gray;
+	height		: 32px;
+	margin-top	: 2ex;
+	margin-bottom	: 0;
+	padding-bottom	: 0;
+	text-align	: left;
+}
+
+.news, .theme{
+	margin		: 0;
+	margin-left 	: 2ex;
+	margin-top 	: 0.5ex;
+	margin-bottom 	: 1ex;
+	padding		: 0;
+}
+
+.inlinetitle{
+	color		: gray;
+	font-weight    	: 400;	
+}
+
+.smalltitle{
+	margin		: 0;
+	padding		: 0;
+	font-weight    	: 400;
+}
+
+.address{
+	margin-top	: 0.5ex;
+}
+
+.note{
+	margin-top	: 1ex;
+	font-style      : italic;
+}
+
+
+table.linklist tr{
+	vertical-align	: baseline;
+}
+
+
+table.linklist th{
+	font-weight    	: normal;
+	font-style    	: italic;
+	text-align 	: left;
+	padding-bottom 	: 1ex;
+	width           : 18ex;
+}
+
+
+table.linklist td{
+	padding-bottom 	: 1.5ex;
+	padding-left	: 1ex;
+}
+
+
+table.finalpubli{
+	background	: rgb(210,210,225);
+	border		: 2px outset rgb(200,200,200);
+	width 		: 100%;
+}
+
+
+table.publi{
+	border		: 1px solid gray;
+}
+
+.publi, .otherpubli{
+	font-size	: 95%;
+}
+
+table.finalpubli tr{
+	vertical-align	: top;
+}
+
+table.finalpubli td{
+	padding		: 1ex 1.5ex;
+}
+
+table.publi td{
+	margin		: 0;
+	padding		: 0.5ex 1ex;
+}
+
+.finalpubli img{
+	background	: rgb(175,175,175);
+	border		: 2px inset rgb(200,200,200);
+	float		: right;
+	margin		: 0.5ex 0 1ex 2ex;
+}
+
+.finalpubli, .publi, .otherpubli {
+	margin-bottom	: 1ex;
+}
+
+.finalpubli .title, .publi .title, .otherpubli .title{
+	text-align	: left;
+	font-weight	: bold;
+}
+
+
+.finalpubli .where, .publi .where, .otherpubli .where{
+	font-style	: italic;
+	text-align	: left;
+}
+
+
+.finalpubli .year, .publi .year, .otherpubli .year{
+}
+
+
+.finalpubli ul.comment, .publi ul.comment {
+	list-style-type : square;
+	padding-left 	: 2ex;
+	margin-left	: 0;
+	margin-bottom	: 0;
+}
+
+
+.finalpubli ul.comment li, .publi ul.comment li  {
+	margin-bottom	: 0.75ex;
+}
+
+
+
+table.illustration{
+	zborder		: 0px solid white;
+	width 		: 100%;
+}
+
+table.illustration tr{
+	vertical-align	: top;
+}
+
+table.illustration td{
+	padding		: 1ex 0;
+}
+
+
+.illustration ul.comment{
+	list-style-type : square;
+	padding-left 	: 3ex;
+	margin-left	: 0;
+	margin-bottom	: 0;
+}
+
+.illustration .title{
+	text-align	: left;
+	font-weight	: bold;
+}
+
+
+.illustration img{
+	border		: 2px inset rgb(200,200,200);
+	float		: right;
+	margin		: 0.5ex 0 1ex 2ex;
+}
+
+.illustration img.icon{
+	border		: none;
+}
+
+form {
+	margin-left	: 10px;	
+}
+
+
+div.id{
+	margin-bottom	: 3ex;
+}
+
+.id .name{
+	font-size      	: larger;
+	font-weight     : bold;
+}
+
+
+.id .name .lastname{
+	font-variant	: small-caps;	
+}
+
+img.id{
+	border		: 3px solid black;
+	float		: right;
+	position 	: relative;
+	left		: 50px;
+	top		: 20px;
+	margin-bottom	: 50px;
+}
+
+.id td {
+	padding    : 1ex;
+	text-align : left;
+}
+
+
+#footnote {
+	font-size      	: smaller;
+	text-align	: center;
+	margin		: 12ex 0 2ex 0 !important;
+	margin		: 2ex;
+	padding		: 1ex;
+}
+
+
+#footnote hr{
+	width	: 300px;
+}
+
+
+
+
+.photogallery {
+	text-align	: center;
+}
+
+table.photogallery  {
+	padding-left : 0px;
+	text-align   : left;
+}
+
+.photogallery th {
+	text-align	: left;
+}
+
+
+.photogallery img {
+	background-color: rgb(255,255,255);
+	border		: 2px solid rgb(0,0,0);
+	margin		: 1ex;
+	margin-left	: 0ex;
+	margin-right	: 3ex;
+	padding		: 7px;
+}
+
+.panotitle{
+	font-style     : italic;
+	padding-bottom : 0.5ex;	
+}
+
+.teaser{
+	text-align	: center;
+}
+
+  
+#wallpaper text {
+    opacity: 0.05 !important;
+}
+
+#wallpaper text:hover {
+    fill   : white !important;
+    stroke : rgb(225,225,225) !important;
+    opacity: 1.0 !important;
+}

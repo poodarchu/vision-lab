@@ -1,0 +1,1346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0051)http://blog.csdn.net/phunxm/article/details/5082488 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" async="" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ga.js"></script><script id="allmobilize" charset="utf-8" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/allmobilize.min.js"></script><style type="text/css"></style>
+ <meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="http://blog.csdn.net/phunxm/article/details/5082488#">
+
+    <title>VC项目配置基础 - 曾梦想仗剑走天涯
+        - 博客频道 - CSDN.NET</title>
+    
+    <meta name="description" content="一．IDE基础配置1.字体VC6中“Tools→Options→Format→Font”配置字体；VC2005中“工具→选项→环境→字体和颜色”配置字体。编写代码一般采用等宽字体，等宽点阵（位图）字体，相对矢量字体而言具有兼容性好和显示清晰的优点。常用的编程等宽字体包括Fixedsys（VC6和notepad御用字体）、Consolas、YaHei Mono。VC6">
+    <script src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ad.js"></script>
+        <!--new top-->
+       
+        <link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css">
+        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/style.css">
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://blog.csdn.net/phunxm/rss/list">
+    <link rel="shortcut icon" href="http://csdnimg.cn/public/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/blue_green.css">
+ 
+
+
+<script src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/share.js"></script><script type="text/javascript" charset="utf-8" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/tracking.js"></script><script type="text/javascript" charset="utf-8" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/main.js"></script><link rel="stylesheet" type="text/css" href="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/style(1).css"><link type="text/css" rel="stylesheet" href="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/style(2).css"><script src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/logger.js"></script><link href="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/bdsstyle.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_style0_16.css?v=f4b44e79.css"></head>
+<body><iframe frameborder="0" style="display: none;"></iframe>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/html.js" type="text/javascript"></script><div class="csdn-toolbar csdn-toolbar-skin-black ">        <div class="container row center-block ">          <div class="col-md-3 pull-left logo clearfix"><a href="http://www.csdn.net/?ref=toolbar" title="CSDN首页" target="_blank" class="icon"></a><a title="频道首页" href="http://blog.csdn.net/?ref=toolbar_logo" target="_blank" class="img blog-icon"></a></div>          <div class="pull-right login-wrap unlogin">            <ul class="btns">              <li class="loginlink"><a href="https://passport.csdn.net/account/login?ref=toolbar" target="_top">登录&nbsp;</a>|<a target="_top" href="https://passport.csdn.net/account/register?ref=toolbar">&nbsp;注册</a></li>              <li class="search">                <div class="icon on-search-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <form action="http://so.csdn.net/search" method="get" target="_blank">                      <input type="hidden" value="toolbar" name="ref" accesskey="2">                      <div class="border">                        <input placeholder="搜索" type="text" value="" name="q" accesskey="2"><span class="icon-enter-sm"></span>                      </div>                    </form>                  </div>                </div>              </li>              <li class="favor">                <div class="icon on-favor-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div style="display:none;" class="favor-success"><span class="msg">收藏成功</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <div style="display:none;" class="favor-failed"><span class="icon-danger-lg"></span><span class="msg">收藏失败，请重新收藏</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <form role="form" class="form-horizontal favor-form">                      <div class="form-group">                        <div class="clearfix">                          <label for="input-title" class="col-sm-2 control-label">标题</label>                          <div class="col-sm-10">                            <input id="inputTitle" type="text" placeholder="" class="title form-control">                          </div>                        </div>                        <div class="alert alert-danger"><strong></strong>标题不能为空</div>                      </div>                      <div class="form-group">                        <label for="input-url" class="col-sm-2 control-label">网址</label>                        <div class="col-sm-10">                          <input id="input-url" type="text" placeholder="" class="url form-control">                        </div>                      </div>                      <div class="form-group">                        <label for="input-tag" class="col-sm-2 tag control-label">标签</label>                        <div class="col-sm-10">                          <input id="input-tag" type="text" class="form-control tag">                        </div>                      </div>                      <div class="form-group">                        <label for="input-description" class="description col-sm-2 control-label">摘要</label>                        <div class="col-sm-10">                          <textarea id="input-description" class="form-control description"></textarea>                        </div>                      </div>                      <div class="form-group">                        <div class="col-sm-offset-2 col-sm-10 ft">                          <div class="col-sm-4 pull-left">                            <div class="checkbox">                              <label>                                <input type="checkbox" name="share" checked="checked" class="share">公开                              </label>                            </div>                          </div>                          <div class="col-sm-8 pull-right favor-btns">                            <button type="button" class="cancel btn btn-default">取消</button>                            <button type="submit" class="submit btn btn-primary">收藏</button>                          </div>                        </div>                      </div>                    </form>                  </div>                </div>              </li>              <li class="notify">                <div style="display:none" class="number"></div>                <div style="display:none" class="icon-hasnotes-sm"></div>                <div id="header_notice_num"></div>                <div class="icon on-notify-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div id="note1" class="csdn_note">                      <div class="box"></div>                    <iframe src="about:block" frameborder="0" allowtransparency="true" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent"></iframe></div>                  </div>                </div>              </li>              <li class="ugc">                <div class="icon on-ugc-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <dl>                      <dt><a href="http://geek.csdn.net/news/expert?ref=toolbar" target="_blank" class="p-news clearfix"><em class="icon"></em><span>分享资讯</span></a></dt>                      <dt><a href="http://share.csdn.net/slides/new?ref=toolbar" target="_blank" class="p-doc clearfix"><em class="icon"></em><span>传PPT/文档</span></a></dt>                      <dt><a href="http://bbs.csdn.net/topics/new?ref=toolbar" target="_blank" class="p-ask clearfix"><em class="icon"></em><span>提问题</span></a></dt>                      <dt><a href="http://write.blog.csdn.net/postedit?ref=toolbar" target="_blank" class="p-blog clearfix"><em class="icon"></em><span>写博客</span></a></dt>                      <dt><a href="http://u.download.csdn.net/upload?ref=toolbar" target="_blank" class="p-src clearfix"><em class="icon"></em><span>传资源</span></a></dt>                      <dt><a href="https://code.csdn.net/projects/new?ref=toolbar" target="_blank" class="c-obj clearfix"><em class="icon"></em><span>创建项目</span></a></dt>                      <dt><a href="https://code.csdn.net/snippets/new?ref=toolbar" target="_blank" class="c-code clearfix"><em class="icon"></em><span>创建代码片</span></a></dt>                    </dl>                  </div>                </div>              </li>              <li class="profile">                <div class="icon on-profile-icon"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/100x100.jpg" class="curr-icon-img">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div class="bd">                      <dl class="clearfix">                        <dt class="pull-left img"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="avatar"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/100x100.jpg"></a></dt>                        <dd class="info"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="nickname"></a><a class="set-nick" href="https://passport.csdn.net/account/profile">设置昵称<span class="write-icon"></span></a><span class="dec"><a class="fill-dec" href="http://my.csdn.net/" target="_blank">编辑自我介绍，让更多人了解你<span class="write-icon"></span></a></span></dd>                      </dl>                    </div>                    <div class="ft clearfix"><a target="_blank" href="http://my.csdn.net/my/account/changepwd?ref=toolbar" class="pull-left"><span class="icon-cog"></span>帐号设置</a><a href="https://passport.csdn.net/account/logout?ref=toolbar" target="_top" class="pull-right "><span class="icon-signout"></span><span class="out">退出</span></a></div>                  </div>                </div>              </li>              <li class="apps">                <div class="icon on-apps-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>社区</h5>                      </dt>                      <dd> <a href="http://blog.csdn.net/?ref=toolbar" target="_blank">博客</a></dd>                      <dd> <a href="http://bbs.csdn.net/?ref=toolbar" target="_blank">论坛</a></dd>                      <dd> <a href="http://download.csdn.net/?ref=toolbar" target="_blank">下载</a></dd>                      <dd><a href="http://share.csdn.net/?ref=toolbar" target="_blank">Share</a></dd>                      <dd><a href="http://geek.csdn.net/?ref=toolbar" target="_blank">极客头条</a></dd>                    </dl>                  </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>服务</h5>                      </dt>                      <dd> <a href="https://code.csdn.net/?ref=toolbar" target="_blank">CODE</a></dd>                      <dd> <a href="http://hero.csdn.net/?ref=toolbar" target="_blank">英雄会</a></dd>                      <dd> <a href="http://huiyi.csdn.net/?ref=toolbar" target="_blank">活动</a></dd>                      <dd> <a href="http://www.csto.com/?ref=toolbar" target="_blank">CSTO</a></dd>                    </dl>                  </div>                  <div class="detail last">                    <dl>                      <dt>                        <h5>俱乐部</h5>                      </dt>                      <dd> <a href="http://cto.csdn.net/?ref=toolbar" target="_blank">CTO俱乐部</a></dd>                      <dd> <a href="http://student.csdn.net/?ref=toolbar" target="_blank">高校俱乐部</a></dd>                    </dl>                  </div>                </div>              </div>            </li>            </ul>          </div>        </div>    </div>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/phunxm">曾梦想仗剑走天涯</a></h2>
+            <h3></h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+                <li id="btnContents"><a href="http://blog.csdn.net/phunxm?viewmode=contents"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_mulu&#39;])">
+                    <img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/phunxm?viewmode=list"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_zhaiyao&#39;])">
+                    <img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/phunxm/rss/list"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_RSS&#39;])">
+                    <img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "phunxm";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/phunxm";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod="popu_3"> 
+
+<a href="http://bbs.csdn.net/topics/390812950?page=2#post-398116601" target="_blank">
+<font color="blue">博客专家福利
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://www.csdn.net/article/2014-10-13/2822071" target="_blank">
+<font color="red">专访徐宜生：坚决不做代码搬运工</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/40047403" target="_blank">
+<font color="blue">有奖试读&amp;征文:我们在互联网上奋斗的故事
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://weixin2014-sz.csdn.net/" target="_blank">
+<font color="red">微信开发者大会深圳站即将开幕
+</font></a>
+
+
+</div>                        </div>
+                        
+
+  
+<link href="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/comment1.css" type="text/css" rel="stylesheet">
+<link href="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/style1.css" type="text/css" rel="stylesheet">
+<script language="JavaScript" type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/jquery.cookie.js"></script>
+<script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/main(1).js"></script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET.htm">
+        VC项目配置基础
+        </a></span>
+    </h1>
+</div>
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="http://blog.csdn.net/phunxm/article/category/636646" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_fenlei&#39;]);">编程工具的使用</a> 
+        </span>
+    <span class="link_postdate">2009-12-26 19:19</span>
+    <span class="link_view" title="阅读次数">10440人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="http://blog.csdn.net/phunxm/article/details/5082488#comments" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_pinglun&#39;])">评论</a>(8)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shoucang&#39;]);collectArticle(&#39;VC项目配置基础&#39;,&#39;5082488&#39;);return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="http://blog.csdn.net/phunxm/article/details/5082488#report" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_jubao&#39;]);report(5082488,2);return false;" title="举报">举报</a></span>
+    
+</div>
+<div class="tag2box"><a href="http://www.csdn.net/tag/preprocessor" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">preprocessor</a><a href="http://www.csdn.net/tag/include" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">include</a><a href="http://www.csdn.net/tag/dll" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">dll</a><a href="http://www.csdn.net/tag/%e7%bc%96%e8%af%91%e5%99%a8" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">编译器</a><a href="http://www.csdn.net/tag/mfc" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">mfc</a></div>
+
+  
+    
+<div id="article_content" class="article_content">
+
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:18px; color:#cc0000">一．IDE基础配置</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">1.字体</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC6中“Tools→Options→Format→Font”配置字体；VC2005中“工具→选项→环境→字体和颜色”配置字体。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">编写代码一般采用<strong><a target="_blank" href="http://www.iplaysoft.com/top10-programming-fonts.html">等宽字体</a></strong>，等宽点阵（位图）字体，相对矢量字体而言具有兼容性好和显示清晰的优点。常用的编程等宽字体包括Fixedsys（VC6和notepad御用字体）、Consolas、YaHei
+ Mono。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC6默认可选字体只有Fixedsys和Terminal，可通过修改注册表来改字体，在HKEY_CURRENT_USER/Software/Microsoft/DevStudio/6.0/Format下面有几个子键，可以修改Source&nbsp; Window键的FontFace和FontSize来配置源代码窗口的显示字体。例如设置11号的Consolas（Monofur、Monaco）字体：FontFace=Consolas，FontSize=11。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">2.制表符（TAB）</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.25pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">程序块要采用缩进风格编写，IDE碰到左括号换行的情况一般会自动缩进（Auto Indent），缩进的空格数和制表符的宽度一般设为<strong>4个半角字符</strong>。由于不同的编辑器对TAB空格数的设置可能不一样，有的是4有的是8，一般取TabSize=4。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.25pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC6中“Tools→Options→Tabs”的“Insert spaces/Keep tabs”中选择“<strong>Insert spaces</strong>”；VC2005中“工具→选项→文本编辑器→所有语言→制表符”可配置制表符大小（Tab Size）/缩进大小（Indent Size）为4，对“插入空格/保留制表符”勾选“插入空格”则按下tab键填充四个空格。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.25pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">到底是“<span style="font-family:&#39;Microsoft YaHei&#39;; font-size:14px; text-indent:27px">保留制表符”还是”<span style="font-family:&#39;Microsoft YaHei&#39;; font-size:14px; text-indent:27px">插入空格“取决于所在公司的代码规范。可参阅读《<a target="_blank" href="http://bigc.at/tabs-vs-spaces.orz">缩进，TAB还是空格？</a>》。</span></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">3.行代码字符数</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">关于一行编写多少代码换行比较合适的问题，可以在VC中输入一行”//”即可得知，一般为75或80。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">4．外接插件和外部工具</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>外接插件</strong>能扩展Visual Studio的功能，例如VC6默认并无行号显示功能，可以使用VC6LineNumberAddin插件实现显示行号，“Tools -&gt; Customize→Add-ins and Macro Files”选择“Browse”进VC6LineNumberAddin.dll即可加载使用。我们在VC2005的“工具→外接程序管理器”中可以看到安装的“Visual
+ Assist X”插件，并可选择启用与否。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>外部工具</strong>主要是结合IDE使用，如使用<a target="_blank" href="http://astyle.sourceforge.net/"><span style="color:#0000ff">AStyle</span></a>格式化当前打开的代码文件，使用<a target="_blank" href="http://ftp.gnome.org/pub/gnome/binaries/win32/gedit/"><span style="color:#0000ff">gedit</span></a>打开当前代码文件。外部工具的配置很简单，VC6中通过“Tools→Customize→Tools”添加，VC2005中通过“工具→外部工具”添加。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">以下为AStyle的配置：</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>标题：</strong>AStyle</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>命令：</strong>C:/Program Files/Microsoft Visual Studio 8/Common7/Tools/AStyle.exe</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>参数：</strong>--style=ansi $(ItemFileName)$(ItemExt)</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>初始目录：</strong>$(ItemDir)</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">勾选“使用输出窗口”。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">这样，“工具菜单”中新增一个“AStyle”的子项，点击“AStyle”即可按ANSI风格格式化当前文件代码。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">5. IDE指定和打开多个项目</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">Q1：安装VS2005后，之前的VC6默认打开程序和图标都变更为VC2005的风格。如何恢复至VC6的默认风格呢？</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">A1：工具→文件夹选项→文件类型（Win7中是设置默认程序）</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">找到DSW文件，高级（可能先还原）→编辑，用于执行操作的应用程序由"C:/Program Files/Microsoft Visual Studio 8/Common7/IDE/devenv.exe" "%1"更改为"C:/Program Files/Microsoft Visual Studio/Common/MSDev98/Bin/MSDEV.EXE" "%1"，这样默认*.dsw文件就以VC6.0打开，而不是以VC8.0打开。同样更改*.dsp文件类型以用VC6打开，当然可以更改显示图标为VC6风格的。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">Q2：双击VC项目文件（*.sln/*.dsw），并没有打开一个新的IDE窗口，而是替代了已经打开的项目。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">A2：工具→文件夹选项→文件类型（Win7中是设置默认程序）</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">找到DSW/SLN文件，高级（可能先还原）→编辑，勾掉“使用DDE”。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:18px; color:#cc0000">二．预处理宏</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">1.通用宏</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC6.0中：</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">Project Setting→C/C++→Preprocessor definitions</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC2005中<span style="color:#1f497d">：</span><span style="color:rgb(31,73,125)"></span></span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">项目属性→配置属性→C/C++→预处理器定义</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">（1）平台识别宏</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>WIN32</strong>：指明是Window 32位系统平台。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">常见的平台识别宏如下：</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>_DOS_</strong>：MS-DOS 16位系统平台。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong><span style="color:black">WIN64</span></strong><span style="color:black">：</span>指明是Window 64位系统平台。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>_WIN32_WCE</strong>：Window Mobile 32位系统平台。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>_UNIX</strong>：UNIX系统平台。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>_POSIX_</strong>：POSIX（Portable Operating System Interface of Unix）系统平台。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>_LINUX_</strong>：LINUX系统平台。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>_APPLE_</strong>/<strong>_MAC_</strong>：苹果（Macintosh）系统平台。<strong></strong></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">（2）字符集识别宏</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>_MBCS/_UNICODE</strong>：指明该工程使用的字符集（多字节字符集/UNICODE）。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在VC6.0的“Project Setting→C/C++→Project Options”处将会有/D "_MBCS"或/D "_UNICODE"开关。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在VC2005的“项目属性→配置属性→常规→项目默认值→字符集”中选择“使用多字节字符集”或“使用 Unicode 字符集”；在“项目属性→配置属性→C/C++→使用UNICODE响应文件”中选择“是”或“否”。在“项目属性→配置属性→C/C++→命令行”处将会有/D "_MBCS"或/D "_UNICODE" /D "UNICODE"开关。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">当项目中的文件具有 UNICODE路径（例如中文路径）时，应在“项目属性→C/C++→常规”和“项目属性→链接器→常规”中开启“使用UNICODE响应文件”开关。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">（3）UI识别宏</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>_CONSOLE/_WINDOWS</strong>：指明应用程序的类型是控制台程序或窗口程序（CUI/GUI）。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">（4）debug/release版本识别宏</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>_DEBUG/NDEBUG</strong>：指明编译版本（Debug/Release）。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">2.项目类型特定宏</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC不同的项目类型，有一些特定的宏，以在编译器区分项目类型。<strong></strong></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">（1）Win32 Static Library项目</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC6.0中：</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">Project Setting→C/C++（Category：General）→Preprocessor definitions：_LIB</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">如果选择了MFC Support则_WINDOWS,_AFXDLL</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC2005中<span style="color:#1f497d">：</span><span style="color:rgb(31,73,125)"></span></span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">项目属性→常规→配置类型→静态库(.lib)</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">项目属性→C/C++→预处理器→预处理器定义：_LIB</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">（2）Win32 Dynamic-Link Library项目</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC6.0中：</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">Project Setting→C/C++→Preprocessor definitions：_WINDOWS,_USRDLL,DLL_<strong>EXPORTS</strong></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC2005中<span style="color:#1f497d">：</span><span style="color:rgb(31,73,125)"></span></span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">项目属性→常规→配置类型→动态库(.dll)</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">项目属性→C/C++→预处理器→预处理器定义：_WINDOWS;_USRDLL;DLL_<strong>EXPORTS</strong></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">（3）MFC DLL项目</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">&lt;1&gt;Regular DLL with MFC statically linked（带静态链接MFC的规则DLL）</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC6.0中：</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">Project Setting→C/C++→Preprocessor definitions：_WINDOWS,_WINDLL,_USRDLL</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC2005中<span style="color:#1f497d">：</span><span style="color:rgb(31,73,125)"></span></span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">项目属性→C/C++→预处理器→预处理器定义：_WINDOWS;_USRDLL</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">&lt;2&gt;Regular DLL using shared MFC DLL（使用共享MFC DLL的规则DLL）</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC6.0中：</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">Project Setting→C/C++→Preprocessor definitions：_WINDOWS,_WINDLL,<strong>_AFXDLL</strong>, _USRDLL</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC2005中<span style="color:#1f497d">：</span><span style="color:rgb(31,73,125)"></span></span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">项目属性→C/C++→预处理器→预处理器定义：_WINDOWS;_USRDLL</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">&lt;3&gt;MFC Extension DLL（using shared MFC DLL）（MFC扩展DLL）</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC6.0中：</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">Project Setting→C/C++→Preprocessor definitions：_WINDOWS,_WINDLL,<strong>_AFXDLL</strong>,_USRDLL</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC2005中<span style="color:#1f497d">：</span><span style="color:rgb(31,73,125)"></span></span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">项目属性→C/C++→预处理器→预处理器定义：_WINDOWS;<strong>_AFXEXT</strong></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在DLL项目中，<strong>_USRDLL</strong>宏表示生成Export Lib！</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">3.其他常用宏</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>__FILE__</strong>/<strong>__LINE__</strong>：</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">__FILE__为包含当前程序文件名的路径字符串，例如C:/Program Files/Microsoft Visual Studio/VC98/INCLUDE/stdio.h；__LINE__为当前程序代码行号，从1开始的整数。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>__STDC__</strong>/<strong>__cplusplus</strong>：</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">当编译标准C&nbsp;（ANSI C）程序时，编译器自动定义__STDC__&nbsp;；当编译标准C++&nbsp;程序时,编译器自动定义__cplusplus。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong><a target="_blank" href="http://baike.baidu.com/view/1276757.htm"><span style="color:rgb(0,0,255)">_MSC_VER</span></a></strong>：Microsoft Visual C++编译器的版本号。例如VC++6.0为1200，VC++8.0为1400，以此类推。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong><a target="_blank" href="http://blog.sina.com.cn/s/blog_48c24afb010002dp.html"><span style="color:rgb(0,0,255)">WIN32_LEAN_AND_MEAN</span></a></strong>告诉编译器不加载MFC（Not Using MFC）。<strong></strong></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt; vertical-align:top">
+<span style="font-family:Microsoft YaHei; font-size:14px">关于VC编译器预处理宏，参考：</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<span lang="EN-US"><a target="_blank" href="http://ruihanruizhi.blog.sohu.com/39648210.html"><span style="color:#0000ff">AFXDLL<span lang="EN-US">和</span> _AFXEXT</span></a></span>》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt; vertical-align:top">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<a target="_blank" href="http://msdn.microsoft.com/en-us/library/aa273918(VS.60).aspx"><span style="color:#0000ff">Predefined Macros</span></a>（VC6.0）》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt; vertical-align:top">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<a target="_blank" href="http://msdn.microsoft.com/en-us/library/b0084kay(VS.80).aspx"><span style="color:#0000ff">C/C++ Preprocessor Reference-Predefined Macros</span></a>（VC8.0）》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt; vertical-align:top">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<a target="_blank" href="http://stackoverflow.com/questions/662084/whats-the-difference-between-the-win32-and-win32-defines-in-c"><span style="color:#0000ff">What’s the difference between
+ the WIN32 and _WIN32 defines in C++</span></a>》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt; vertical-align:top">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:18px; color:#cc0000">三．工作目录和控制台程序运行参数</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:23.5pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC6.0中：</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">“Project Setting→Debug→Working directory”处填写exe程序的工作目录。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在“Project Setting→Debug→Program argument”处填写main运行参数。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:23.6pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC2005中<span style="color:#1f497d">：</span><span style="color:rgb(31,73,125)"></span></span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在“项目属性→配置属性→调试→工作目录”处填写exe程序的工作目录。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在“项目属性→配置属性→调试→命令参数”处填写main运行参数。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">默认的工作目录为ProjectDir，即*.dsp/*.vcproj所在目录。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">通过编译器启动（Ctrl + F5）应用程序时，可以将所依赖的lib和dll库文件所在目录设为工作目录。应用程序执行期间，文件操作的默认路径为工作目录。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">工作目录是指当前目录，GetCurrentDirectory()得到的路径；SetCurrentDirectory来改变。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">运行目录是指exe所在路径，可通过GetModuleFileName()得到。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><span style="color:rgb(112,48,160)"><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:18px; color:#cc0000">四．附加头文件包含</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:23.6pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC6.0中：</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC6.0默认include包含路径：Tools→Options→Directories→Include files。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">对于特定项目的头文件包含，在“Project Setting→C/C++（Category：Preprocessor）→Additional include directories”处添加附加头文件目录，相对目录参考*.dsp文件。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">目录路径不需添加双引号，路径分隔符为’/’或’/’，不必考虑反斜杠’/’的转义。多个路径之间以<strong>逗号</strong>分隔。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">相应的在“Project Setting→C/C++→Project Options”中将会出现“/I”的包含命令。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:23.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>VC2005中<span style="color:#1f497d">：</span></strong></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC2005默认include包含路径：工具→选项→项目和解决方案→VC++目录→包含文件。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">对于特定项目的头文件包含，在“项目属性→配置属性→C/C++→常规→附加包含目录”处添加附加包含目录，相对目录参考$ProjectPath（*.vcproj文件路径）。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.45pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">目录路径不需添加双引号，路径分隔符为’/’或’/’，不必考虑反斜杠’/’的转义。多个路径之间以<strong>分号</strong>分隔。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">相应的在“项目属性→配置属性→C/C++→命令行”中将会出现“<strong>/I</strong>”的包含命令。<span style="color:rgb(112,48,160)"></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:23.6pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">关于#include的两种包含方式</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:13.6pt; text-indent:21pt; margin:0cm 0cm 0pt; background:white">
+<span style="font-family:Microsoft YaHei; font-size:14px"><span style="color:blue">#include</span><span style="color:black">&nbsp;</span><span style="color:maroon">&lt;std*.h&gt;</span>为编译器指定的包含路径下的头文件：即在VC6.0中的“Tools→Options→Directories→Include files”（对应VC2005的“工具→选项→项目和解决方案→VC++目录→包含文件”）处指定的包含目录。默认情况下包括</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:13.6pt; text-indent:21pt; margin:0cm 0cm 0pt; background:white">
+<span style="font-family:Microsoft YaHei; font-size:14px">（1）$(VCInstallDir)include（/Microsoft Visual Studio/VC98/INCLUDE）</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:13.6pt; text-indent:21pt; margin:0cm 0cm 0pt; background:white">
+<span style="font-family:Microsoft YaHei; font-size:14px">（2）$(VCInstallDir)atlmfc/include（/Microsoft Visual Studio/VC98/ATL/INCLUDE、/Microsoft Visual Studio/VC98/MFC/INCLUDE）</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:13.6pt; text-indent:21pt; margin:0cm 0cm 0pt; background:white">
+<span style="font-family:Microsoft YaHei; font-size:14px">（3）$(VCInstallDir)PlatformSDK/include（VC2005）。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:13.6pt; text-indent:21pt; margin:0cm 0cm 0pt; background:white">
+<span style="font-family:Microsoft YaHei; font-size:14px">对于“Tools→Options→Directories→Include files”（“工具→选项→项目和解决方案→VC++目录→包含文件”）目录下的文件的包含，一般可使用尖括号包含。系统对尖括号的包含优先到编译器设置的包含路径下定位，再到附加包含目录下进行定位。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:13.6pt; text-indent:21pt; margin:0cm 0cm 0pt; background:white">
+<span style="font-family:Microsoft YaHei; font-size:14px"><span style="color:blue">#include</span><span style="color:maroon">"MyHeader.h"</span>为在“Tools→Options→Directories→Include files”（“工具→选项→项目和解决方案→VC++目录→包含文件”）处人工添加的包含路径下的头文件<strong>或者</strong>附加包含目录下的头文件。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:13.6pt; text-indent:21pt; margin:0cm 0cm 0pt; background:white">
+<span style="font-family:Microsoft YaHei; font-size:14px">对于编译器提供的标准库函数头文件（“Tools→Options→Directories→Include files”（“工具→选项→项目和解决方案→VC++目录→包含文件”）），一般使用尖括号进行包含声明，当然使用双引号包含也没有错。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:13.6pt; text-indent:21pt; margin:0cm 0cm 0pt; background:white">
+<span style="font-family:Microsoft YaHei; font-size:14px">对于在“Tools→Options→Directories→Include files”（“工具→选项→项目和解决方案→VC++目录→包含文件”）处人工添加的包含路径和附加包含目录下的头文件的包含可以使用尖括号进行包含，但一般使用双引号。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:13.6pt; text-indent:21pt; margin:0cm 0cm 0pt; background:white">
+<span style="font-family:Microsoft YaHei; font-size:14px">原则上，对于工程或文件可见的包含目录下的头文件包含，使用以上两种包含方式中的任一种都不会出错，主要是它们在搜索目录时的顺序不一样。习惯上使用尖括号包含标准库函数头文件，使用双引号包含用户自定义头文件。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:13.6pt; text-indent:21pt; margin:0cm 0cm 0pt; background:white">
+<span style="font-family:Microsoft YaHei; font-size:14px"><span style="text-decoration:underline">一般针对具体工程使用附加头文件包含即可，不必去动编译器的</span><span style="text-decoration:underline">“Tools→Options→Directories→Include files”</span><span style="text-decoration:underline">（对应</span><span style="text-decoration:underline">VC2005</span><span style="text-decoration:underline">的</span><span style="text-decoration:underline">“</span><span style="text-decoration:underline">工具</span><span style="text-decoration:underline">→</span><span style="text-decoration:underline">选项</span><span style="text-decoration:underline">→</span><span style="text-decoration:underline">项目和解决方案</span><span style="text-decoration:underline">→VC++</span><span style="text-decoration:underline">目录</span><span style="text-decoration:underline">→</span><span style="text-decoration:underline">包含文件</span><span style="text-decoration:underline">”</span><span style="text-decoration:underline">）。但是，对于像</span><span style="text-decoration:underline">DirectX</span><span style="text-decoration:underline">、</span><span style="text-decoration:underline">wxWidgets</span><span style="text-decoration:underline">等这样的</span><span style="text-decoration:underline">SDK</span><span style="text-decoration:underline">，一般宜对</span><span style="text-decoration:underline">include/library</span><span style="text-decoration:underline">路径作编译器级全局配置，同时指定相应</span><span style="text-decoration:underline">source</span><span style="text-decoration:underline">路径，以便做源码级调试（</span><span style="text-decoration:underline">F11</span><span style="text-decoration:underline">进入</span><span style="text-decoration:underline">SDK</span><span style="text-decoration:underline">内部代码）。</span>下面的链接库包含情同此理。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.25pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">External Dependencies里面显示的是你的工程要用到的头文件，不在你的工程里面，而且也不在VC的默认包含路径中。参考：《<span lang="EN-US"><a target="_blank" href="http://blog.csdn.net/yyyzlf/archive/2009/08/06/4419593.aspx"><span style="color:#0000ff">VC6.0<span lang="EN-US">的</span>External
+ Dependencies</span></a></span>》。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:18px; color:#cc0000">五．附加链接库包含</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:23.6pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC6.0中：</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC6.0默认lib包含路径：Tools→Options→Directories→Library files</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">对于特定项目的头文件包含，可以通过以下两步添加附加链接库：</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">1. 在“Project Setting→Link（Category：Input）→Additional library path”处添加附加库目录，相对目录参考*.dsp文件。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">目录路径不需添加双引号，路径分隔符为’/’或’/’，不必考虑反斜杠’/’的转义。多个路径之间以<strong>逗号</strong>分隔。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">相应的将会在“Project Setting→Link→Project Options”处同步“<strong>/libpath</strong>”库包含命令。<strong></strong></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">2. 在“Project Setting→Link（Category：General）→Object/Library Modules” 处添加库文件名<span style="color:rgb(0,0,119)">YourLib.lib</span><span style="color:rgb(0,0,119)">（</span>也可在文件中使用<span style="color:blue">#pragma</span><span style="color:black">comment(lib,</span><span style="color:rgb(0,0,119)">"YourLib.lib"</span><span style="color:black">)</span><span style="color:black">显式</span>导入所依赖的静态库），多个库之间以<strong>空格</strong>分隔。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">相应的将会在“Project Setting→Link→Project Options”处同步包含的库名称。<span style="color:rgb(112,48,160)"></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:23.5pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC2005中<span style="color:#1f497d">：</span><span style="color:rgb(31,73,125)"></span></span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.45pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC2005默认lib包含路径：工具→选项→项目和解决方案→VC++目录→库文件</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.45pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">对于特定项目的库文件包含，可以通过以下两种方式添加附加库目录：</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.55pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">1.</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.45pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">（1）在“项目属性→配置属性→链接器→常规→附加库目录”处输入附加库目录路径，相对目录参考$ProjectPath（*.vcproj文件路径）。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.45pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">目录路径不需添加双引号，路径分隔符为’/’或’/’，不必考虑反斜杠’/’的转义。多个路径之间以<strong>分号</strong>分隔。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.45pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">相应的将会在“项目属性→配置属性→链接器→命令行”处同步“/LIBPATH”库包含命令。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.45pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">（2）在“项目属性→配置属性→链接器→输入→附加依赖项”处添加库文件名<span style="color:rgb(0,0,119)">YourLib.lib</span><span style="color:rgb(0,0,119)">（</span>也可在文件中使用#pragma comment(lib, "YourLib.lib")<span style="color:black">显式</span>导入所依赖的静态库），多个库之间以<strong>空格</strong>分隔。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">相应的将会在“项目属性→配置属性→链接器→命令行”处同步包含的库名称。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.55pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">2.</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.45pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在“项目属性→配置属性→链接器→命令行”处添加库文件名<span style="color:rgb(0,0,119)">YourLib.lib</span><span style="color:rgb(0,0,119)">（</span>必要时添加相对目录，保证YourLib的可见性）。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:18px; color:#cc0000">六．生成文件目录设置</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:23.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>VC6.0中：</strong></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在“Project Setting→General→Output directories”的“Output files”处填写*.exe或*.lib/*.dll的生成目录，相应在“Project Setting→Link（或Library）→Output file name”处将会同步文件输出路径。相对目录参考*.dsp文件。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在“Project Setting→General→Output directories”的“Intermediate files”处填写中间文件生成目录。相对目录参考*.dsp文件。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:23.6pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC2005中<span style="color:#1f497d">：</span><span style="color:rgb(31,73,125)"></span></span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在“项目属性→常规→输出目录”处填写输出目录，在“项目属性→常规→中间目录”处填写中间目录，相对目录参考$ProjectPath（*.vcproj文件路径）。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在“项目属性→链接器（或管理员）→常规→输出文件”处填写输出文件路径。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">输出目录（OutDir）一般为$(SolutionDir)$(ConfigurationName)</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">输出文件（OutputFile）一般为$(OutDir)/$(ProjectName).exe（*.lib，*.dll）</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">1．环境变量宏说明</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">$(SolutionDir)为*.sln文件所在文件夹，尾带‘/’；</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">$(ProjectDir)为*.vcproj文件所在文件夹，尾带‘/’；</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">$(PlatformName)为平台名称，例如Win32，Windows Mobile 6 Professional SDK(ARMV4I)。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">$(ConfigurationName)为*.sln的*.vcproj文件所在文件夹下的debug、release文件夹，参考*.vcproj文件中的&lt;Configurations&gt;配置项。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">具体在“项目属性→配置属性→调试→命令”下拉点击“编辑”，展开“宏(<span style="text-decoration:underline">M</span>)&gt;&gt;”，可以看到很多项目内置宏。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">2．生成目录的配置</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>输出目录</strong>（OutDir）：$(ProjectDir)$(PlatformName)/$(ConfigurationName)</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">以上穿插$(PlatformName)主要是为了发布多平台版本考虑，对于普通的单平台开发，该路径可选。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">TargetDIr为OutDir后加‘/’。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">输出文件主要按项目区分如下：</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">（1）DLL项目：*.pdb，*.exp，*.lib</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">（2）EXE项目：*.pdb</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>中间目录</strong>（IntDir）：$(OutDir)/Intermediate</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">中间文件包括*.pch，*.obj，（<a target="_blank" href="http://blog.csdn.net/iwknow/archive/2009/10/19/4700084.aspx"><span style="color:#0000ff">*.sbr</span></a>），vc6(8)0.idb，vc6(8)0.pdb</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.65pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>输出文件</strong>：$(OutDir)/$(ProjectName).lib(dll、exe)</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">（1）DLL项目：*.ilk，*.dll</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">（2）EXE项目：*.ilk，*.exe</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">关于*.pch，参考《<span lang="EN-US"><a target="_blank" href="http://vcer.net/1047209431368.html"><span lang="EN-US"><span style="color:#0000ff">预编译头文件</span></span></a></span>》；注意*.ilk和*.pdb文件只有在Debug版本时才会生成，关于*.ilk和*.pdb，参考《<span lang="EN-US"><a target="_blank" href="http://blog.csdn.net/phunxm/archive/2010/01/17/5203931.aspx"><span style="color:#0000ff">VC<span lang="EN-US">项目配置基础</span></span></a></span>》。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">一般一个大的工程（*.dsw，*.sln），同时含有LIB、DLL和EXE项目，习惯将LIB输出到项目输出目录或将这些链接时用到的LIB放到专门的目录；EXE和其运行依赖的DLL都输出到BIN目录，这样便于项目的组织和最终成果的发布。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">3．清理Debug\Release目录的脚本 - clean.bat</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">@ echo --------------------------------------------</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">@ echo 清理Debug目录和Release目录。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">@ echo --------------------------------------------</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">@ echo</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">pause</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">echo 清理开始</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">FOR /R . %%d IN (.) DO rd /s /q "%%d\Debug" 2&gt;nul</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">FOR /R . %%d IN (.) DO rd /s /q "%%d\Release" 2&gt;nul</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">del /q/s *.user *.opt *.plg *.ncb</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">echo 清理结束</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">echo. &amp; pause</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:18px; color:#cc0000">七．关于相对目录</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">相对目录是相对某个文件而言的，例如在VC项目属性配置附加包含目录、附加库目录则是相对*.dsp、*.vcproj文件而言的；在某个*.c、*.cpp文件中使用#include包含命令，是相对这个*.c、*.cpp文件而言的。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">当前目录是可见的，一般直接引用文件名（夹），对于子文件夹可以添加”./”。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">..：父目录</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">../include：父目录下的include目录</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">../..：祖父目录</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">../../include：祖父目录下的include目录</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在VC2005中，“<strong>属性窗口</strong>”可查看当前文档的“<strong>文件信息</strong>”，其中可查看文件相对*.vcproj的<strong>相对路径</strong>。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:18px; color:#cc0000">八．依赖项目联编</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">一个解决方案(dsw、sln)可以创建很多辅助子项目(dsp、vcproj)，如何设置使在编译主项目的时，先编译所依赖的辅助项目呢？</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">一般会配置辅助子项目的OutDir和主项目相同，这样生成的lib或dll对于主项目exe直接可见。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:24.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>VC6.0中：</strong><span style="color:rgb(112,48,160)"></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">选择菜单“Project→<strong>Dependencies</strong>”可以选择需要联编的项目。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:24.1pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><strong>VC2005中<span style="color:#1f497d">：</span></strong></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">在解决方案资源管理器中右击项目名称，选择“引用”或“<strong>项目依赖项</strong>”菜单可添加（选择）引用依赖项目；选择“项目生成顺序”可查看建立项目依赖后的项目生成顺序。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">建立依赖关系后，主项目编译（F7，Build）时，若发现辅助依赖子项目有改动，则会先编译子项目。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:18px; color:#cc0000">九．附加DLL调试</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:23.6pt; margin:0cm 0cm 0pt">
+<strong><span style="font-family:Microsoft YaHei; font-size:14px">VC6.0中：</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">如果你需要调试的DLL是动态装入（LoadLibrary）的，则需要在“Project Setting →Debug（Category：Additional DLLs）”处添加这个DLL文件。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:20.6pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">Place a check in the first column to load the module’s symbols at the start of a debug session.</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:18px; color:#cc0000">十．导出makefile</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC6.0中选择菜单“Project→Export Makefile”即可导出Makefile文件*.mak。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC6以后不再支持makefile输出了。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">参考：《<span lang="EN-US"><a target="_blank" href="http://blog.sina.com.cn/s/blog_4b650d650100dd16.html"><span style="color:rgb(0,0,255)">VC<span lang="EN-US">的</span>MAKE<span lang="EN-US"><span lang="EN-US">文件<span lang="EN-US">的<span lang="EN-US">语法</span></span></span></span></span></a></span>》，《<span lang="EN-US"><a target="_blank" href="http://zhaoxiaoyunok.blog.163.com/blog/static/1159036512009325101733508/"><span style="color:rgb(0,0,255)">vs6
+ IDE<span lang="EN-US">导出的</span>makefile<span lang="EN-US"><span lang="EN-US">使<span lang="EN-US">用<span lang="EN-US">方<span lang="EN-US">法</span></span></span></span></span></span></a></span>》，《<span lang="EN-US"><a target="_blank" href="http://hi.baidu.com/shihuap/blog/item/df57a863126e22650c33facb.html"><span style="color:rgb(0,0,255)"><span lang="EN-US">教你在</span>VS2005<span lang="EN-US">下<span lang="EN-US">写</span></span>MakeFile</span></a></span>》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:18px; color:#cc0000">十一．代码的编辑与阅读导航</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">Visual Studio本身就带有充分的代码组织、编辑、分析以及阅读能力的支持。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC6.0的“Project Settings→C/C++→<strong>Generate Browse info</strong>”和“Project Settings→Browse info→Build browse info file”可生成向导文件，FileView和ClassView需要这些信息导航。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC6.0和VC2005中的“Edit→<strong>Find in Files</strong>”支持指定项目、工程或文件内的关键字搜索。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC6.0的“Tools→<strong>Source Browser</strong>”（Alt+F12），提供对“Definitions and References”、“File Outline”、“Base Classes and Members”、“Derived Classes and Members”、“Call Graph”、“Callers Graph”等导航功能支持。VC2005侧边栏“<strong>类视图</strong>”中支持显示“基类型”（Base
+ Types）、“派生类型”<span style="text-indent:28px">（Derived Types）</span>、“继承成员”等功能，右键快捷菜单中的“<strong>调用浏览器</strong>”支持函数调用关系图和被调用关系图的查看。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">编辑时，VC6右键快捷菜单支持“<strong>List Members</strong>”、“<strong>Parameter Info</strong>”、“<strong>Type Info</strong>”、“<strong>Complete Word</strong>”。对应VC2005文本编辑器工具栏中的“<strong>显示对象成员列表</strong>”、“<strong>显示参数信息</strong>”、“<strong>显示快速信息</strong>”、“<strong>显示文字自动完成</strong>”。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">VC2005右键快捷菜单中支持“<strong>查找所有引用</strong>”，配合代码定义窗口，可很方便地浏览代码。VC2005标准工具栏中的“<strong>向后定位</strong>/<strong>向前定位</strong>”支持定位功能。此外，在阅读代码时，我们可以使用书签（Bookmark）来设置锚点，这样就可以实现基于书签的自定义索引导航。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:18pt; text-indent:22.6pt; margin:0cm 0cm 0pt; word-break:break-all">
+<span style="font-family:Microsoft YaHei; font-size:14px"><span style="color:black; letter-spacing:0.4pt">下面介绍常用的编程辅助插件软件及源代码层次结构分析工具软件。</span><span style="color:black; letter-spacing:0.4pt"></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:18pt; text-indent:22.6pt; margin:0cm 0cm 0pt; word-break:break-all">
+<span style="font-family:Microsoft YaHei; font-size:14px"><span style="color:black; letter-spacing:0.4pt">1.<a target="_blank" href="http://download.csdn.net/detail/piggyxp/6361615"><span style="color:rgb(0,0,255)">Visual Assist X</span></a></span><span style="color:black; letter-spacing:0.4pt">是一款非常好的</span><span style="color:black; letter-spacing:0.4pt">Microsoft
+ Visual Studio</span><span style="color:black; letter-spacing:0.4pt">辅助插件，支持</span><span style="color:black; letter-spacing:0.4pt">C/C</span><span style="color:black; letter-spacing:0.4pt">＋＋，</span><span style="color:black; letter-spacing:0.4pt">C</span><span style="color:black; letter-spacing:0.4pt">＃，</span><span style="color:black; letter-spacing:0.4pt">ASP</span><span style="color:black; letter-spacing:0.4pt">，</span><span style="color:black; letter-spacing:0.4pt">Visual
+ Basic</span><span style="color:black; letter-spacing:0.4pt">，</span><span style="color:black; letter-spacing:0.4pt">Java</span><span style="color:black; letter-spacing:0.4pt">和</span><span style="color:black; letter-spacing:0.4pt">HTML</span><span style="color:black; letter-spacing:0.4pt">等语言，能自动识别各种关键字、系统函数、成员变量、自动给出输入提示、自动更正大小写错误、自动标示错误等，有助于提高开发过程的自动化和开发效率。例如</span><span style="color:black; letter-spacing:0.4pt">VA
+ Outline</span><span style="color:black; letter-spacing:0.4pt">中右键</span><span style="color:black; letter-spacing:0.4pt">→Refactor→Rename</span><span style="color:black; letter-spacing:0.4pt">能够快速更新变量命名。</span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; line-height:18pt; text-indent:22.6pt; margin:0cm 0cm 0pt; word-break:break-all">
+<span style="font-family:Microsoft YaHei; font-size:14px">Visual Assist X Options-&gt;Advanced-&gt;Fonts and Colors：（1）<span style="letter-spacing:0.4pt; line-height:18pt; text-indent:22.6pt">Apply coloring to：全部勾选；（2）</span><span style="letter-spacing:0.4pt; line-height:18pt; text-indent:22.6pt">Text
+ editor font attribute：全部勾选；</span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:&#39;Microsoft YaHei&#39;; font-size:14px">2．Windows下的<a target="_blank" href="http://www.sourceinsight.com/"><span style="color:rgb(0,0,255)">Source Insight</span></a><span style="color:black">是一个面向项目开发的程序编辑器和代码导航浏览器，</span>它还能显示reference
+ trees，class inheritancediagrams和call trees。相应的Linux下阅读源代码的利器<a target="_blank" href="http://sourcenav.berlios.de/"><span style="color:#0000ff">Source Navigator</span></a>能很好地解决文件定位和跳转问题。</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><span style="color:black">3</span><span style="color:black">．</span><span style="color:black"><a target="_blank" href="http://www-01.ibm.com/software/awdtools/developer/rose/"><span style="color:#0000ff">Rational
+ Rose</span></a></span><span style="color:black">是利用</span><span style="color:black">UML</span><span style="color:black">（统一建模语言）进行分析和设计面向对象软件系统的强大的可视化工具，可以进行项目需求分析、结构规划和生成框架代码，还可以支持从现有系统逆向转出工程代码，生成</span><span style="color:black">Rose</span><span style="color:black">模型的功能。</span><span style="color:black"></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px"><span style="color:black">逆向工程（</span><span style="color:black">Reverse Engineer</span><span style="color:black">）就是从现有系统的代码来生成模型的功能。通过</span><span style="color:black">Rational Rose</span><span style="color:black">分析已有的代码，可了解代码结构和数据结构，生成类层次关系图、数据模型图和组件图。</span><span style="color:black"></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><span style="font-family:Microsoft YaHei; font-size:14px">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:18px; color:#cc0000">十二. VC常用快捷键</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+</p>
+<blockquote style="margin:0 0 0 40px; border:none; padding:0px">
+<p><span style="font-size:14px"><strong><span style="color:rgb(255,102,102)">Alt+F7</span></strong>：Project Settings</span></p>
+<p><span style="font-size:14px">&nbsp;</span></p>
+<p><span style="font-size:14px">Ctrl+J/K：寻找上一个/下一个预编译条件</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+J/K：寻找上一个/下一个预编译条件并将这一块选定</span></p>
+<p><span style="font-size:14px">&nbsp;</span></p>
+<p><span style="font-size:14px"><strong><span style="color:#006600">Ctrl+Tab</span></strong>：当前打开文档和上一次打开文档切换，可配合shift</span></p>
+<p><span style="font-size:14px"><strong><span style="color:#006600">Alt+O</span></strong>：头文件与cpp文件的交互显示</span></p>
+<p><span style="font-size:14px">&nbsp;</span></p>
+<p><span style="font-size:14px"><span style="font-weight:bold"><span style="color:#3366ff">Ctrl+M/<span style="text-indent:28px"><span style="color:#3366ff">Ctrl+M</span></span></span></span>：Expand/Collapse code segment</span></p>
+<p><span style="font-size:14px"><strong>→或Num+</strong> / <strong>←或Num-</strong>：Expand/Collapse tree nodes</span></p>
+<p><span style="font-size:14px"><br>
+</span></p>
+<p><span style="font-size:14px"><strong><span style="color:#3366ff">Ctrl+D</span></strong>：Focus on Find Combo</span></p>
+<p><span style="font-size:14px"><strong><span style="color:#3366ff">Ctrl+Shift+C</span></strong>：Focus on&nbsp;<span style="color:#cc0000"><strong>C</strong></span>lass View</span></p>
+<p><span style="font-size:14px"><strong><span style="color:#3366ff">Ctrl+K, Ctrl+V</span></strong>：Go to Class View Search Combo</span></p>
+<p><span style="font-size:14px"><strong><span style="color:#3366ff">Ctrl+\, D</span></strong>：Focus on Code&nbsp;<span style="color:#cc0000"><strong>D</strong></span>efinition Window</span></p>
+<p><span style="font-size:14px"><strong><span style="color:#3366ff">Ctrl+\, E</span></strong>：Focus on&nbsp;<span style="color:#cc0000"><strong>E</strong></span>rrorList</span></p>
+<p><span style="font-size:14px"><span style="font-size:14px; text-indent:28px"><strong><span style="color:rgb(51,102,255)">Ctrl+Alt+O</span></strong></span><span style="font-size:14px; text-indent:28px"><strong>：</strong>Focus on&nbsp;<span style="color:#cc0000"><strong>O</strong></span>utput</span><br>
+</span></p>
+<p><span style="font-size:14px"><span style="font-size:14px; text-indent:28px"><br>
+</span></span></p>
+<p><span style="font-size:14px"><strong><span style="color:#6600cc"><em><u>F12</u></em></span></strong><span style="text-indent:28px">：Go to Definition</span></span></p>
+<p><span style="font-size:14px"><strong><span style="color:#6600cc"><u>Ctrl+<em>F12</em></u></span></strong><span style="text-indent:28px">：Go to (function) Declaration</span></span></p>
+<p><span style="font-size:14px"><strong><span style="color:#6600cc">Alt+<em>F12</em></span></strong>：Find input Symbol</span></p>
+<p><span style="font-size:14px"><strong>Shift+<span style="color:rgb(102,0,204); font-size:14px"><strong>Alt+<em>F12</em></strong></span></strong>：Quick Find selected Symbol</span></p>
+<p><span style="font-size:14px"><strong>Shift+<em>F12</em></strong>：Find All References</span></p>
+<p><br>
+</p>
+<p><span style="font-size:14px"><strong><span style="color:#6600cc"><u>Ctrl+<em>-</em></u></span></strong>：Navigate Backward</span></p>
+<p><span style="font-size:14px"><strong><span style="color:#6600cc"><u>Shift+<span style="color:rgb(102,0,204); font-size:14px"><strong>Ctrl+</strong></span><em>-</em></u></span></strong>：Navigate Forward</span></p>
+<p><br>
+</p>
+<p><span style="font-size:14px"><strong>Alt+←</strong>：Backward</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+1：Browse Next</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+2：Browse Previous</span></p>
+<p><span style="font-size:14px">&nbsp;</span></p>
+<p><span style="font-size:14px">Ctrl+Z/Alt+Backspace：Undo</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+Z/Ctrl+Y：Redo</span></p>
+<p><span style="font-size:14px">&nbsp;</span></p>
+<p><span style="font-size:14px">Ctrl+H：替换</span></p>
+<p><span style="font-size:14px">Alt+F3/Ctrl+F：当前文档查找</span></p>
+<p><span style="font-size:14px"><strong>F3</strong>：Find Next</span></p>
+<p><span style="font-size:14px"><strong>Shift+F3</strong>：Find Previous</span></p>
+<p><span style="font-size:14px">Ctrl+F3：Find Next Selected</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+F3：Find Previous Selected</span></p>
+<p><span style="font-size:14px">&nbsp;</span></p>
+<p><span style="font-size:14px"><strong><span style="color:#6600cc">Ctrl+]</span></strong>：括号匹配</span></p>
+<p><span style="font-size:14px"><strong><span style="color:#6600cc">Ctrl+Shift+]</span></strong>：括号匹配块选</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+F8：配合鼠标和方向键实现竖直块选</span></p>
+<p><span style="font-size:14px">&nbsp;</span></p>
+<p><span style="font-size:14px">Ctrl+B/Alt+F9：编辑断点</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+F9：去掉所有断点</span></p>
+<p><span style="font-size:14px">&nbsp;</span></p>
+<p><span style="font-size:14px">Ctrl+↑：向上滚屏</span></p>
+<p><span style="font-size:14px">Ctrl+↓：向下滚屏</span></p>
+<p><span style="font-size:14px">Ctrl+←：移到前一个单词</span></p>
+<p><span style="font-size:14px">Ctrl+→：移到后一个单词</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+←：选定当前位置到前一个单词</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+→：选定当前位置到后一个单词</span></p>
+<p><span style="font-size:14px">&nbsp;</span></p>
+<p><span style="font-size:14px">Ctrl+Home：文档头</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+Home：选定从当前位置到文档头</span></p>
+<p><span style="font-size:14px">Ctrl+End：文档尾</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+End：选定从当前位置到文档尾</span></p>
+<p><span style="font-size:14px">Alt+F8：自动格式重排</span></p>
+<p><span style="font-size:14px">Ctrl+F4：关闭当前文档</span></p>
+<p><span style="font-size:14px">&nbsp;</span></p>
+<p><span style="font-size:14px">Ctrl+Backspace：删除当前单词的前半截（以光标为分割）</span></p>
+<p><span style="font-size:14px">Ctrl+Del：删除当前单词的后半截（以光标为分割）</span></p>
+<p><span style="font-size:14px">Ctrl+L：剪切当前行</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+L：删除当前行</span></p>
+<p><span style="font-size:14px">&nbsp;</span></p>
+<p><span style="font-size:14px">F2：上一个书签</span></p>
+<p><span style="font-size:14px">Shift+F2：上一个书签</span></p>
+<p><span style="font-size:14px">Alt+F2：编辑书签</span></p>
+<p><span style="font-size:14px">Ctrl＋F2：添加/删除一个书签</span></p>
+<p><span style="font-size:14px">Ctrl+Shift+F2：清除所有书签</span></p>
+<p><span style="font-size:14px">&nbsp;</span></p>
+<p><span style="font-size:14px"><span style="color:#339999"><strong>Ctrl+Alt+A</strong></span>：Snapshot Focused Window</span></p>
+<p><span style="font-size:14px"><strong><span style="color:#993399">Shift+Alt+Enter</span></strong>：Full screen switch</span></p>
+</blockquote>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><br>
+</p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><span style="font-size:18px"><span style="color:rgb(204,0,0); font-family:&#39;Microsoft YaHei&#39;"><strong>十三</strong></span><span style="color:rgb(204,0,0); font-family:&#39;Microsoft YaHei&#39;"><strong>.
+ VA</strong></span><span style="color:rgb(204,0,0); font-family:&#39;Microsoft YaHei&#39;"><strong>常用快捷键</strong></span></span></p>
+<blockquote style="margin:0 0 0 40px; border:none; padding:0px">
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><span style="font-family:Microsoft YaHei; font-size:14px"><span style="color:rgb(153,51,153)"><strong>Alt+O</strong></span><span style="text-indent:28px">：Open Corresponding File（h/cpp，aspx/cs/vb）</span></span></p>
+<p style="text-indent:28px"><span style="font-family:Microsoft YaHei; font-size:14px"></span></p>
+<p><span style="font-family:Microsoft YaHei; font-size:14px"><span style="color:#993399"><strong>Shift+Alt+O</strong></span>：Open File in Solution（VA View|[Files in Solution]）</span></p>
+<p><span style="font-family:Microsoft YaHei; font-size:14px"><span style="color:#6600cc"><strong>Shift+Alt+S</strong></span>：Find Symbol in solution（VA View|[Symbols in Solution]）</span></p>
+<p><span style="font-family:Microsoft YaHei; font-size:14px"><span style="color:#6600cc"><strong>Shift+Alt+F</strong></span>：Find References in solution（Find All references）</span></p>
+<p><span style="font-family:Microsoft YaHei; font-size:14px"><span style="color:#993399"><strong>Alt+G/Alt+G</strong></span>：Go to Implementation/Declaration, same as&nbsp;<span style="color:#ff6666">F12/Ctrl+F12</span> in VC</span></p>
+<p><span style="font-family:Microsoft YaHei; font-size:14px"><span style="color:#993399"><strong>Shift+Alt+R</strong></span>：Refactor|Rename</span></p>
+<p><span style="font-family:Microsoft YaHei; font-size:14px"><span style="text-indent:28px"><span style="color:rgb(153,51,153); font-family:&#39;Microsoft YaHei&#39;; font-size:14px"><strong>Alt+M</strong></span>：List Methods in Current File</span></span></p>
+<p><span style="font-family:Microsoft YaHei; font-size:14px">Ctrl+Shift+V：Paste selector from clipboard</span></p>
+</blockquote>
+<p style="text-indent:28px"><span style="font-family:Microsoft YaHei; font-size:14px"></span></p>
+<p><br>
+</p>
+<p class="MsoNormal" align="left" style="text-align:left; margin:0cm 0cm 0pt"><strong><span style="font-family:Microsoft YaHei; font-size:14px">参考：</span></strong></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<span lang="EN-US"><a target="_blank" href="http://huaweny.bokee.com/3797242.html"><span style="color:#0000ff">VC<span lang="EN-US">的环境设置</span></span></a></span>》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<span lang="EN-US"><a target="_blank" href="http://blog.csdn.net/ssdx/archive/2008/07/14/2650486.aspx"><span style="color:#0000ff">VC IDE<span lang="EN-US">使用技巧</span></span></a></span>》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<span lang="EN-US"><a target="_blank" href="http://blog.csdn.net/piero_hover/archive/2007/09/13/1783940.aspx"><span style="color:#0000ff">VC<span lang="EN-US">的工程文件说明</span></span></a></span>》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<span lang="EN-US"><a target="_blank" href="http://blog.csdn.net/primer_programer/archive/2007/12/26/1967968.aspx"><span style="color:#0000ff">VC6.0<span lang="EN-US">工程设置介绍</span></span></a></span>》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<span class="MsoHyperlink"><span lang="EN-US"><a target="_blank" href="http://blog.chinaunix.net/u/11498/showart_78177.html"><span style="color:#0000ff">Visual C++ 6.0<span lang="EN-US">环境配置</span></span></a></span></span>》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<span class="MsoHyperlink"><span lang="EN-US"><a target="_blank" href="http://blog.csdn.net/rsjrj/archive/2009/03/11/3982240.aspx"><span style="color:#0000ff"><span lang="EN-US">你可能还不熟悉的</span>VC6.0
+ IDE</span></a></span></span>》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<span lang="EN-US"><a target="_blank" href="http://blog.csdn.net/rogeryi/archive/2007/01/13/1481923.aspx"><span style="color:#0000ff">VC 2005<span lang="EN-US">解决方案的目录结构设置和管理</span></span></a></span>》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<span style="color:black"><a target="_blank" href="http://msdn.microsoft.com/en-us/library/wbzbtw81(VS.80).aspx"><span style="color:#0000ff">Managing Solutions, Projects, and Files</span></a></span>》</span></p>
+<p class="MsoNormal" align="left" style="text-align:left; text-indent:21pt; margin:0cm 0cm 0pt">
+<span style="font-family:Microsoft YaHei; font-size:14px">《<span style="color:black"><a target="_blank" href="http://msdn.microsoft.com/en-us/library/3awe4781(VS.80).aspx"><span style="color:#0000ff">File Types Created for Visual C++ Projects</span></a></span>》</span></p>
+
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+<div class="bdsharebuttonbox bdshare-button-style0-16" style="float: right;" data-bd-bind="1413426444076">
+<a href="http://blog.csdn.net/phunxm/article/details/5082488#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="http://blog.csdn.net/phunxm/article/details/5082488#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" style="background-position:0 -52px !important"></a>
+<a href="http://blog.csdn.net/phunxm/article/details/5082488#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博" style="background-position:0 -104px !important"></a>
+<a href="http://blog.csdn.net/phunxm/article/details/5082488#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博" style="background-position:0 -260px !important"></a>
+<a href="http://blog.csdn.net/phunxm/article/details/5082488#" class="bds_renren" data-cmd="renren" title="分享到人人网" style="background-position:0 -208px !important"></a>
+<a href="http://blog.csdn.net/phunxm/article/details/5082488#" class="bds_weixin" data-cmd="weixin" title="分享到微信" style="background-position:0 -1612px !important"></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+<!--192.168.100.33-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shangyipian&#39;]);location.href=&#39;/phunxm/article/details/5082453&#39;;">上一篇</span><a href="http://blog.csdn.net/phunxm/article/details/5082453" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shangyipian&#39;])">继承本质论</a></li>
+            <li class="next_article"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_xiayipian&#39;]);location.href=&#39;/phunxm/article/details/5082546&#39;;">下一篇</span><a href="http://blog.csdn.net/phunxm/article/details/5082546" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_xiayipian&#39;])">Visual C++ 2005使用入门</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/bds_s_v2.js"></script>
+
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+
+</div>
+      <dl class="blog-associat-tag">
+        <dt>主题推荐</dt>
+        <dd>
+                <a href="http://www.csdn.net/tag/operating%20system" target="_blank" class="blog-tage-red">operating system</a> 
+                <a href="http://www.csdn.net/tag/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7" target="_blank" class="blog-tage-red">可视化工具</a> 
+                <a href="http://www.csdn.net/tag/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F" target="_blank" class="blog-tage-red">应用程序</a> 
+                <a href="http://www.csdn.net/tag/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91" target="_blank" class="blog-tage-red">文本编辑</a> 
+                <a href="http://www.csdn.net/tag/windows%20mobile" target="_blank" class="blog-tage-red">windows mobile</a> 
+        </dd>
+    </dl> 
+
+
+<dl class="blog-ass-articl tracking-ad" data-mod="popu_36" id="res-relatived"> 
+     <dt><span>猜你在找</span></dt>    
+<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/fxfeixue/article/details/7589426" title="对 User breakpoint called from code at XXX 问题分析汇总" strategy="CFRecommendAlgorithm" target="_blank">对 User breakpoint called from code at XXX 问题分析汇总</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/jiahehao/article/details/1869891" title="user  breakpoint  called  from  code  at" strategy="CFRecommendAlgorithm" target="_blank">user  breakpoint  called  from  code  at</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/robinjwong/article/details/4291361" title="【Java.Concurrency】Java线程状态图" strategy="CFRecommendAlgorithm" target="_blank">【Java.Concurrency】Java线程状态图</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/michael1112/article/details/3070821" title="Visual Assist使用详细说明" strategy="CFRecommendAlgorithm" target="_blank">Visual Assist使用详细说明</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/shuihan20e/article/details/16991473" title="QMutexLocker" strategy="CFRecommendAlgorithm" target="_blank">QMutexLocker</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/guxch/article/details/6742193" title="OPC向UNIX的演进（OPC evolution toward UNIX）" strategy="CFRecommendAlgorithm" target="_blank">OPC向UNIX的演进（OPC evolution toward UNIX）</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/wrx_2009/article/details/4244250" title="在VC++中生成静态库及利用lib" strategy="CFRecommendAlgorithm" target="_blank">在VC++中生成静态库及利用lib</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/wutaozhao/article/details/5617966" title="&#39;_beginthread&#39; : undeclared identifier" strategy="CFRecommendAlgorithm" target="_blank">'_beginthread' : undeclared identifier</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/ouyangshima/article/details/9219393" title="[MFC]MFC下的DLL编程——规则DLL" strategy="CFRecommendAlgorithm" target="_blank">[MFC]MFC下的DLL编程——规则DLL</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/phunxm/article/details/5081159" title="数组与指针" strategy="CFRecommendAlgorithm" target="_blank">数组与指针</a></dd></dl>
+
+<script type="text/javascript">
+    var searchtitletags = 'VC项目配置基础' + ',' + 'operating system,可视化工具,应用程序,文本编辑,windows mobile';
+    searchService({
+        index: 'blog',
+        query: searchtitletags,
+        from: 10,
+        size: 10,
+        appendTo: '#res-relatived',
+        url: 'recommend',
+        his: 2,
+        client: "blog_cf_enhance",
+        tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+    });
+
+ </script>   
+
+
+    <div id="ad_cen">
+   
+          <script type="text/javascript">
+              new Ad(4, 'ad_cen');
+          </script>
+    <iframe id="ad_frm_0" frameborder="0" scrolling="no" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ad(1).htm" style="border-width: 0px; overflow: hidden; width: 984px; height: 90px;"></iframe></div>
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list"><dl class="comment_item comment_topic" id="comment_item_4328075"><dt class="comment_head" floor="8">8楼 <span class="user"><a class="username" href="http://blog.csdn.net/wenluderen" target="_blank">wenluderen</a> <span class="ptime">2014-09-26 19:15发表</span>  <a href="http://blog.csdn.net/phunxm/article/details/5082488#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4328075" username="wenluderen"> <a href="http://blog.csdn.net/phunxm/article/details/5082488#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/phunxm/article/details/5082488#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/wenluderen" target="_blank"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/3_wenluderen.jpg" width="40" height="40"></a></dd><dd class="comment_body">非常感谢  。。。。 <br><br>看的出博主的耐心和真意。</dd></dl><dl class="comment_item comment_topic" id="comment_item_4248297"><dt class="comment_head" floor="7">7楼 <span class="user"><a class="username" href="http://blog.csdn.net/Dragon___Knight" target="_blank">Dragon___Knight</a> <span class="ptime">2014-09-04 13:28发表</span>  <a href="http://blog.csdn.net/phunxm/article/details/5082488#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4248297" username="Dragon___Knight"> <a href="http://blog.csdn.net/phunxm/article/details/5082488#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/phunxm/article/details/5082488#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/Dragon___Knight" target="_blank"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/3_dragon___knight.jpg" width="40" height="40"></a></dd><dd class="comment_body">mark</dd></dl><dl class="comment_item comment_topic" id="comment_item_2564554"><dt class="comment_head" floor="6">6楼 <span class="user"><a class="username" href="http://blog.csdn.net/adu285041555" target="_blank">adu285041555</a> <span class="ptime">2013-03-23 20:49发表</span>  <a href="http://blog.csdn.net/phunxm/article/details/5082488#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="2564554" username="adu285041555"> <a href="http://blog.csdn.net/phunxm/article/details/5082488#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/phunxm/article/details/5082488#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/adu285041555" target="_blank"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/3_adu285041555.jpg" width="40" height="40"></a></dd><dd class="comment_body">作者花了不少心思呵~~谢谢！</dd></dl><dl class="comment_item comment_topic" id="comment_item_2482224"><dt class="comment_head" floor="5">5楼 <span class="user"><a class="username" href="http://blog.csdn.net/hy_jones" target="_blank">Little_H</a> <span class="ptime">2012-12-26 11:05发表</span>  <a href="http://blog.csdn.net/phunxm/article/details/5082488#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="2482224" username="hy_jones"> <a href="http://blog.csdn.net/phunxm/article/details/5082488#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/phunxm/article/details/5082488#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/hy_jones" target="_blank"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/3_hy_jones.jpg" width="40" height="40"></a></dd><dd class="comment_body">非常不错，整理的很全面</dd></dl><dl class="comment_item comment_topic" id="comment_item_2027067"><dt class="comment_head" floor="4">4楼 <span class="user"><a class="username" href="http://blog.csdn.net/pds2008" target="_blank">pds2008</a> <span class="ptime">2011-11-21 21:51发表</span>  <a href="http://blog.csdn.net/phunxm/article/details/5082488#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="2027067" username="pds2008"> <a href="http://blog.csdn.net/phunxm/article/details/5082488#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/phunxm/article/details/5082488#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/pds2008" target="_blank"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/3_pds2008.jpg" width="40" height="40"></a></dd><dd class="comment_body">怎么转啊？</dd></dl><dl class="comment_item comment_topic" id="comment_item_1800044"><dt class="comment_head" floor="3">3楼 <span class="user"><a class="username" href="http://blog.csdn.net/ArthurFangmc" target="_blank">大齐</a> <span class="ptime">2011-06-17 10:19发表</span>  <a href="http://blog.csdn.net/phunxm/article/details/5082488#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="1800044" username="ArthurFangmc"> <a href="http://blog.csdn.net/phunxm/article/details/5082488#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/phunxm/article/details/5082488#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/ArthurFangmc" target="_blank"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/3_arthurfangmc.jpg" width="40" height="40"></a></dd><dd class="comment_body">非常好，我转载了哦[e10][e03][e01]</dd></dl><dl class="comment_item comment_topic" id="comment_item_1477795"><dt class="comment_head" floor="2">2楼 <span class="user"><a class="username" href="http://blog.csdn.net/jwcoffee" target="_blank">jwcoffee</a> <span class="ptime">2010-08-20 16:26发表</span>  <a href="http://blog.csdn.net/phunxm/article/details/5082488#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="1477795" username="jwcoffee"> <a href="http://blog.csdn.net/phunxm/article/details/5082488#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/phunxm/article/details/5082488#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/jwcoffee" target="_blank"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/3_jwcoffee.jpg" width="40" height="40"></a></dd><dd class="comment_body">[e01]觉得写得很好，摘到自己的博文里了，随时学习。谢谢！！</dd></dl><dl class="comment_item comment_topic" id="comment_item_1442066"><dt class="comment_head" floor="1">1楼 <span class="user"><a class="username" href="http://blog.csdn.net/g5dsk" target="_blank">HoNooD</a> <span class="ptime">2010-07-08 02:36发表</span>  <a href="http://blog.csdn.net/phunxm/article/details/5082488#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="1442066" username="g5dsk"> <a href="http://blog.csdn.net/phunxm/article/details/5082488#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/phunxm/article/details/5082488#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/g5dsk" target="_blank"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/3_g5dsk.jpg" width="40" height="40"></a></dd><dd class="comment_body">这篇文章整理得很用心，转载了。</dd></dl><div class="clear"></div></div>
+    <div id="comment_bar" style="display: none;">
+    </div>
+    <div id="comment_form"><div class="guest_link">您还没有登录,请<a href="javascript:void(0);" onclick="javascript:csdn.showLogin(function (dat) {js_logined(dat.data.userName);});">[登录]</a>或<a href="http://passport.csdn.net/account/register?from=http%3A%2F%2Fblog.csdn.net%2Fphunxm%2Farticle%2Fdetails%2F5082488">[注册]</a></div></div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '5082488';
+    var commentscount = 8;
+    var islock = false
+</script>
+<script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/comment.js"></script>
+    <div id="ad_bot">
+    <iframe id="ad_frm_1" frameborder="0" scrolling="no" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ad(2).htm" style="border-width: 0px; overflow: hidden; width: 984px; height: 0px;"></iframe></div>
+    <script type="text/javascript">
+    new Ad(5, 'ad_bot');
+    </script>
+<div id="report_dialog">
+</div>
+
+<div id="d-top" style="bottom:60px;">
+      
+
+       <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop" style="" title="返回顶部" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_huidaodingbu&#39;])">         
+         <img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);
+        
+
+        if($("#comment_content").length>0)
+        {
+            $("#quick-reply").show();
+
+            $("#quick-reply").click(function(){
+                setEditorFocus();
+            });
+        }       
+     
+        var d_top = $('#d-top-a');
+        document.onscroll = function ()
+        {
+            var scrTop = (document.body.scrollTop || document.documentElement.scrollTop);
+            if (scrTop > 500)
+            {
+                d_top.show();
+            } else
+            {
+                d_top.hide();
+            }
+        }
+        $('#d-top-a').click(function ()
+        {
+            scrollTo(0, 0);
+            this.blur();
+            return false;
+        });
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+<div class="tag_list">
+    <h5>
+        <a href="http://www.csdn.net/tag/" target="_blank">核心技术类目</a></h5>
+    <div class="classify">
+<a title="全部主题" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,336);">全部主题</a>
+<a title="Hadoop" href="http://g.csdn.net/5272865" target="_blank" onclick="LogClickCount(this,336);">Hadoop</a>
+<a title="AWS" href="http://g.csdn.net/5272866" target="_blank" onclick="LogClickCount(this,336);">AWS</a>
+<a title="移动游戏" href="http://g.csdn.net/5272870" target="_blank" onclick="LogClickCount(this,336);">移动游戏</a>
+<a title="Java" href="http://g.csdn.net/5272871" target="_blank" onclick="LogClickCount(this,336);">Java</a>
+<a title="Android" href="http://g.csdn.net/5272872" target="_blank" onclick="LogClickCount(this,336);">Android</a>
+<a title="iOS" href="http://g.csdn.net/5272873" target="_blank" onclick="LogClickCount(this,336);">iOS</a>
+<a title="Swift" href="http://g.csdn.net/5272868" target="_blank" onclick="LogClickCount(this,336);">Swift</a>
+<a title="智能硬件" href="http://g.csdn.net/5272869" target="_blank" onclick="LogClickCount(this,336);">智能硬件</a>
+<a title="Docker" href="http://g.csdn.net/5272867" target="_blank" onclick="LogClickCount(this,336);">Docker</a>
+<a title="OpenStack" href="http://g.csdn.net/5272925" target="_blank" onclick="LogClickCount(this,336);">OpenStack</a>
+<a title="VPN" href="http://www.csdn.net/tag/vpn" target="_blank" onclick="LogClickCount(this,336);">VPN</a>
+<a title="Spark" href="http://g.csdn.net/5272924" target="_blank" onclick="LogClickCount(this,336);">Spark</a>
+<a title="ERP" href="http://www.csdn.net/tag/erp" target="_blank" onclick="LogClickCount(this,336);">ERP</a>
+<a title="IE10" href="http://www.csdn.net/tag/ie10" target="_blank" onclick="LogClickCount(this,336);">IE10</a>
+<a title="Eclipse" href="http://www.csdn.net/tag/eclipse" target="_blank" onclick="LogClickCount(this,336);">Eclipse</a>
+<a title="CRM" href="http://www.csdn.net/tag/crm" target="_blank" onclick="LogClickCount(this,336);">CRM</a>
+<a title="JavaScript" href="http://www.csdn.net/tag/javascript" target="_blank" onclick="LogClickCount(this,336);">JavaScript</a>
+<a title="数据库" href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" onclick="LogClickCount(this,336);">数据库</a>
+<a title="Ubuntu" href="http://www.csdn.net/tag/ubuntu" target="_blank" onclick="LogClickCount(this,336);">Ubuntu</a>
+<a title="NFC" href="http://www.csdn.net/tag/nfc" target="_blank" onclick="LogClickCount(this,336);">NFC</a>
+<a title="WAP" href="http://www.csdn.net/tag/wap" target="_blank" onclick="LogClickCount(this,336);">WAP</a>
+<a title="jQuery" href="http://www.csdn.net/tag/jquery" target="_blank" onclick="LogClickCount(this,336);">jQuery</a>
+<a title="BI" href="http://www.csdn.net/tag/bi" target="_blank" onclick="LogClickCount(this,336);">BI</a>
+<a title="HTML5" href="http://www.csdn.net/tag/html5" target="_blank" onclick="LogClickCount(this,336);">HTML5</a>
+<a title="Spring" href="http://www.csdn.net/tag/spring" target="_blank" onclick="LogClickCount(this,336);">Spring</a>
+<a title="Apache" href="http://www.csdn.net/tag/apache" target="_blank" onclick="LogClickCount(this,336);">Apache</a>
+<a title=".NET" href="http://www.csdn.net/tag/.net" target="_blank" onclick="LogClickCount(this,336);">.NET</a>
+<a title="API" href="http://www.csdn.net/tag/api" target="_blank" onclick="LogClickCount(this,336);">API</a>
+<a title="HTML" href="http://www.csdn.net/tag/html" target="_blank" onclick="LogClickCount(this,336);">HTML</a>
+<a title="SDK" href="http://www.csdn.net/tag/sdk" target="_blank" onclick="LogClickCount(this,336);">SDK</a>
+<a title="IIS" href="http://www.csdn.net/tag/iis" target="_blank" onclick="LogClickCount(this,336);">IIS</a>
+<a title="Fedora" href="http://www.csdn.net/tag/fedora" target="_blank" onclick="LogClickCount(this,336);">Fedora</a>
+<a title="XML" href="http://www.csdn.net/tag/xml" target="_blank" onclick="LogClickCount(this,336);">XML</a>
+<a title="LBS" href="http://www.csdn.net/tag/lbs" target="_blank" onclick="LogClickCount(this,336);">LBS</a>
+<a title="Unity" href="http://www.csdn.net/tag/unity" target="_blank" onclick="LogClickCount(this,336);">Unity</a>
+<a title="Splashtop" href="http://www.csdn.net/tag/splashtop" target="_blank" onclick="LogClickCount(this,336);">Splashtop</a>
+<a title="UML" href="http://www.csdn.net/tag/uml" target="_blank" onclick="LogClickCount(this,336);">UML</a>
+<a title="components" href="http://www.csdn.net/tag/components" target="_blank" onclick="LogClickCount(this,336);">components</a>
+<a title="Windows Mobile" href="http://www.csdn.net/tag/windowsmobile" target="_blank" onclick="LogClickCount(this,336);">Windows Mobile</a>
+<a title="Rails" href="http://www.csdn.net/tag/rails" target="_blank" onclick="LogClickCount(this,336);">Rails</a>
+<a title="QEMU" href="http://www.csdn.net/tag/qemu" target="_blank" onclick="LogClickCount(this,336);">QEMU</a>
+<a title="KDE" href="http://www.csdn.net/tag/kde" target="_blank" onclick="LogClickCount(this,336);">KDE</a>
+<a title="Cassandra" href="http://www.csdn.net/tag/cassandra" target="_blank" onclick="LogClickCount(this,336);">Cassandra</a>
+<a title="CloudStack" href="http://www.csdn.net/tag/cloudstack" target="_blank" onclick="LogClickCount(this,336);">CloudStack</a>
+<a title="FTC" href="http://www.csdn.net/tag/ftc" target="_blank" onclick="LogClickCount(this,336);">FTC</a>
+<a title="coremail" href="http://www.csdn.net/tag/coremail" target="_blank" onclick="LogClickCount(this,336);">coremail</a>
+<a title="OPhone " href="http://www.csdn.net/tag/ophone" target="_blank" onclick="LogClickCount(this,336);">OPhone </a>
+<a title="CouchBase" href="http://www.csdn.net/tag/couchbase" target="_blank" onclick="LogClickCount(this,336);">CouchBase</a>
+<a title="云计算" href="http://www.csdn.net/tag/%E4%BA%91%E8%AE%A1%E7%AE%97" target="_blank" onclick="LogClickCount(this,336);">云计算</a>
+<a title="iOS6" href="http://www.csdn.net/tag/iOS6" target="_blank" onclick="LogClickCount(this,336);">iOS6</a>
+<a title="Rackspace " href="http://www.csdn.net/tag/rackspace" target="_blank" onclick="LogClickCount(this,336);">Rackspace </a>
+<a title="Web App" href="http://www.csdn.net/tag/webapp" target="_blank" onclick="LogClickCount(this,336);">Web App</a>
+<a title="SpringSide" href="http://www.csdn.net/tag/springside" target="_blank" onclick="LogClickCount(this,336);">SpringSide</a>
+<a title="Maemo" href="http://www.csdn.net/tag/maemo" target="_blank" onclick="LogClickCount(this,336);">Maemo</a>
+<a title="Compuware" href="http://www.csdn.net/tag/compuware" target="_blank" onclick="LogClickCount(this,336);">Compuware</a>
+<a title="大数据" href="http://www.csdn.net/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE" target="_blank" onclick="LogClickCount(this,336);">大数据</a>
+<a title="aptech" href="http://www.csdn.net/tag/aptech" target="_blank" onclick="LogClickCount(this,336);">aptech</a>
+<a title="Perl" href="http://www.csdn.net/tag/perl" target="_blank" onclick="LogClickCount(this,336);">Perl</a>
+<a title="Tornado" href="http://www.csdn.net/tag/tornado" target="_blank" onclick="LogClickCount(this,336);">Tornado</a>
+<a title="Ruby" href="http://www.csdn.net/tag/ruby" target="_blank" onclick="LogClickCount(this,336);">Ruby</a>
+<a title="Hibernate" href="http://www.csdn.net/hibernate" target="_blank" onclick="LogClickCount(this,336);">Hibernate</a>
+<a title="ThinkPHP" href="http://www.csdn.net/tag/thinkphp" target="_blank" onclick="LogClickCount(this,336);">ThinkPHP</a>
+<a title="HBase" href="http://www.csdn.net/tag/hbase" target="_blank" onclick="LogClickCount(this,336);">HBase</a>
+<a title="Pure" href="http://www.csdn.net/tag/pure" target="_blank" onclick="LogClickCount(this,336);">Pure</a>
+<a title="Solr" href="http://www.csdn.net/tag/solr" target="_blank" onclick="LogClickCount(this,336);">Solr</a>
+<a title="Angular" href="http://www.csdn.net/tag/angular" target="_blank" onclick="LogClickCount(this,336);">Angular</a>
+<a title="Cloud Foundry" href="http://www.csdn.net/tag/cloudfoundry" target="_blank" onclick="LogClickCount(this,336);">Cloud Foundry</a>
+<a title="Redis" href="http://www.csdn.net/tag/redis" target="_blank" onclick="LogClickCount(this,336);">Redis</a>
+<a title="Scala" href="http://www.csdn.net/tag/scala" target="_blank" onclick="LogClickCount(this,336);">Scala</a>
+<a title="Django" href="http://www.csdn.net/tag/django" target="_blank" onclick="LogClickCount(this,336);">Django</a>
+<a title="Bootstrap" href="http://www.csdn.net/tag/bootstrap" target="_blank" onclick="LogClickCount(this,336);">Bootstrap</a>
+    </div>
+</div>
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+            <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/phunxm" target="_blank">
+    <img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/1_phunxm.jpg" title="访问我的空间" style="max-width:90%">
+    </a>
+    <br>
+    <span><a href="http://my.csdn.net/phunxm" class="user_name" target="_blank">phunxm</a></span>
+</div>
+<div class="interact">
+<a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_guanzhu&#39;])"></a>
+
+ <a href="javascript:void(0);" class="letter" title="[发私信]" onclick="window.open(&#39;http://msg.csdn.net/letters/model?receiver=phunxm&#39;,&#39;_blank&#39;,&#39;height=350,width=700&#39;);_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_sixin&#39;])"></a>  
+</div>
+<div id="blog_medal">
+<div id="bms_box"><a href="http://medal.blog.csdn.net/allmedal.aspx" target="_blank"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/holdon_s2.gif" onmouseover="m_over_m(this,0)" onmouseout="m_out_m()" alt=""></a></div></div>
+<ul id="blog_rank">
+    <li>访问：<span>1309333次</span></li>
+    <li>积分：<span>3764分</span></li>
+    <li>排名：<span>第2620名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>97篇</span></li>
+    <li>转载：<span>24篇</span></li>
+    <li>译文：<span>3篇</span></li>
+    <li>评论：<span>112条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字"></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog">
+        <input type="hidden" name="q" id="inputQ">
+        <input type="hidden" name="t" value="blog">
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/906537" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">嵌入式开发</a><span>(15)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/1434257" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">VxWorks</a><span>(9)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/1434258" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">Linux</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/636817" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">网络通信/流媒体</a><span>(31)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/636653" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">VC/MFC/Windows</a><span>(21)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/635878" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">C/C++基础</a><span>(20)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/691229" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">多线程/分布式/并行/云</a><span>(9)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/636646" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">编程工具的使用</a><span>(7)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/656958" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">数据结构、算法/设计模式</a><span>(4)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/706584" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">计算机及网络安全</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/636645" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">C#.NET</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/1544261" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">数据库</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/1771019" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">Android</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/1771021" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">MacTalk</a><span>(3)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/phunxm/article/category/1771023" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">Objective-C</a><span>(0)</span>
+            </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list"><li><a href="http://blog.csdn.net/phunxm/article/month/2014/08">2014年08月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2014/06">2014年06月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2013/12">2013年12月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2013/11">2013年11月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2013/09">2013年09月</a><span>(1)</span></li><span class="hidelist" style="display:none;"><li><a href="http://blog.csdn.net/phunxm/article/month/2013/08">2013年08月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2013/07">2013年07月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2013/06">2013年06月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2013/05">2013年05月</a><span>(12)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2013/04">2013年04月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2011/11">2011年11月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2011/10">2011年10月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2011/01">2011年01月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2010/12">2010年12月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2010/11">2010年11月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2010/10">2010年10月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2010/08">2010年08月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2010/07">2010年07月</a><span>(9)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2010/06">2010年06月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2010/05">2010年05月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2010/04">2010年04月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2010/03">2010年03月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2010/02">2010年02月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2010/01">2010年01月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/phunxm/article/month/2009/12">2009年12月</a><span>(50)</span></li></span><div id="archive_list_button" class="list_closed">展开</div></div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5508762" title="VC操作INI文件">VC操作INI文件</a><span>(1051736)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5836034" title="TCP通信流程解析">TCP通信流程解析</a><span>(15213)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5617326" title="C++操作符重载">C++操作符重载</a><span>(10575)</span>
+</li>
+<li>
+<a href="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET.htm" title="VC项目配置基础">VC项目配置基础</a><span>(10438)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5972904" title="使用Lua脚本为wireshark编写自定义通信协议解析器插件">使用Lua脚本为wireshark编写自定义通信协议解析器插件</a><span>(9189)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5086080" title="应用层通信协议开发浅析">应用层通信协议开发浅析</a><span>(6120)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5085869" title="WinSock编程基础">WinSock编程基础</a><span>(5379)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5735676" title="RTP Payload Format for Transport of MPEG-4 Elementary Streams over http">RTP Payload Format for Transport of MPEG-4 Elementary Streams over http</a><span>(4663)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5083119" title="MFC GDI绘图基础">MFC GDI绘图基础</a><span>(4555)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/6085860" title="Code::Blocks项目配置基础">Code::Blocks项目配置基础</a><span>(4487)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5836034" title="TCP通信流程解析">TCP通信流程解析</a><span>(10)</span>
+</li>
+<li>
+<a href="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET.htm" title="VC项目配置基础">VC项目配置基础</a><span>(8)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5086080" title="应用层通信协议开发浅析">应用层通信协议开发浅析</a><span>(8)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5085869" title="WinSock编程基础">WinSock编程基础</a><span>(7)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5083119" title="MFC GDI绘图基础">MFC GDI绘图基础</a><span>(5)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/6140858" title="《A Simple IOCP Server/Client Class》整改">《A Simple IOCP Server/Client Class》整改</a><span>(4)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5087102" title="MsXml创建和解析XML示例">MsXml创建和解析XML示例</a><span>(4)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5071772" title="C/C++基本数据类型">C/C++基本数据类型</a><span>(4)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/5764884" title="Win32多线程编程(1) — 基础概念篇">Win32多线程编程(1) — 基础概念篇</a><span>(4)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/phunxm/article/details/9498829" title="VLAN原理详解">VLAN原理详解</a><span>(3)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend"><iframe id="ad_frm_2" frameborder="0" scrolling="no" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ad.htm" style="border-width: 0px; overflow: hidden; width: 194px; height: 200px;"></iframe></ul>
+</div>
+<script type="text/javascript">
+ new Ad(12, 'ad_commend');
+</script><div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="http://blog.csdn.net/phunxm/article/details/11713823#comments">Source Insight使用配置</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/hzhsan" class="user_name">hzhsan</a>:
+很好，谢谢。
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/phunxm/article/details/9498829#comments">VLAN原理详解</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/phunxm" class="user_name">phunxm</a>:
+@striver1205:一个交换机（支持VLAN）内部可任意划分；两个交换机（都支持VLAN）间通...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/phunxm/article/details/9498829#comments">VLAN原理详解</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/yinzhifeng666" class="user_name">Mr峰</a>:
+厉害，精辟，非常详细
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/phunxm/article/details/5087102#comments">MsXml创建和解析XML示例</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/class0809" class="user_name">class0809</a>:
+35行应该改为：	pProInstruction = pDoc-&gt;createProcessingI...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/phunxm/article/details/5082488#comments">VC项目配置基础</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/wenluderen" class="user_name">wenluderen</a>:
+非常感谢  。。。。 看的出博主的耐心和真意。
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/phunxm/article/details/5082488#comments">VLAN原理详解</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/striver1205" class="user_name">striver1205</a>:
+你好，很好的文章，正在拜读！呵呵！有个问题哈：7.2.2 中如果是同一个子网内划分不同的vlan，他...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/phunxm/article/details/5082488#comments">VC项目配置基础</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/Dragon___Knight" class="user_name">Dragon___Knight</a>:
+mark
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/phunxm/article/details/5085944#comments">WinSock完成端口I/O模型</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/jiangdada_csdn" class="user_name">大大的一亩三分地</a>:
+int  iTemp = 0;
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/phunxm/article/details/5082618#comments">从char/wchar_t到TCHAR</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/aidame" class="user_name">aidame</a>:
+解释得太好了，这样的文章太少了！
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/phunxm/article/details/38590561#comments">Mac OS X上使用Wireshark抓包</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/phunxm" class="user_name">phunxm</a>:
+@zhangpeng479:记得下载安装Command Line Tools for Xcode
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/cnick.js"></script>
+<script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/showblogmedal.ashx"></script>
+<script type="text/javascript">
+    document.write('<script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/publib_footer.js?' + Math.floor(new Date() / 120000).toString(36) + '="></' + 'script>');
+</script><script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/publib_footer.js"></script><link rel="stylesheet" type="text/css" href="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/pub_footer_2012.css"><div id="pub_footerall" class="pub_footerall"><dl><dt></dt> <dd><a href="http://www.csdn.net/company/about.html" target="_blank">公司简介</a>|<a href="http://www.csdn.net/company/recruit.html" target="_blank">招贤纳士</a>|<a href="http://www.csdn.net/company/marketing.html" target="_blank">广告服务</a>|<a href="http://www.csdn.net/company/account.html" target="_blank">银行汇款帐号</a>|<a href="http://www.csdn.net/company/contact.html" target="_blank">联系方式</a>|<a href="http://www.csdn.net/company/statement.html" target="_blank">版权声明</a>|<a href="http://www.csdn.net/company/layer.html" target="_blank">法律顾问</a>|<a href="mailto:webmaster@csdn.net">问题报告</a>|<a target="_blank" href="http://www.csdn.net/friendlink.html">合作伙伴</a>|<a href="http://bbs.csdn.net/forums/Service" target="_blank">论坛反馈</a></dd><dd><a href="http://wpa.qq.com/msgrd?v=3&uin=2355263776&site=qq&menu=yes" target="_blank" class="qq">网站客服</a> <a href="http://wpa.qq.com/msgrd?v=3&uin=2251809102&site=qq&menu=yes" target="_blank" class="qq">杂志客服</a> <a href="http://e.weibo.com/csdnsupport/profile" target="_blank" class="weibo">微博客服</a> <a href="mailto:webmaster@csdn.net" class="email" title="联系邮箱">webmaster@csdn.net</a> <span class="phone" title="服务热线">400-600-2320</span></dd><dd>京&nbsp;ICP&nbsp;证&nbsp;070598&nbsp;号</dd><dd>北京创新乐知信息技术有限公司 版权所有</dd><dd>江苏乐知网络技术有限公司 提供商务支持</dd><dd>Copyright © 1999-2014, CSDN.NET, All Rights Reserved&nbsp;<a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/gongshang_logos.gif" alt="GongshangLogo" title=""></a></dd></dl></div><div id="note1" class="csdn_note" style="display:none; position:absolute; z-index:9999; width:440px">  <span class="notice_top_arrow"><span class="inner"></span></span>  <div class="box"></div></div><div class="csdn_notice_tip" style="display: none; position: absolute; z-index: 9990; width: 170px;">  <iframe src="about:blank" frameborder="0" scrolling="no" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent"></iframe>  <div class="tip_text">您有<strong>0</strong>条新通知</div>  <a href="javascript:void 0" class="close2"></a></div><script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/notify.js"></script>
+    <script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/pv.aspx" border="0" width="0" height="0">
+<script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/counter.js"></script><script type="text/javascript" charset="UTF-8" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/msg.popup.js"></script>
+<script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ad-blog.js"></script><script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ad-js1020.js"></script>
+<script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ad-ms1023_2.js"></script>
+<script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ad-ms1026_3.js"></script>
+<script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ad-ms1029_4.js"></script>
+
+<script type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/count.js"></script><iframe src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/logs.htm" frameborder="0" width="0" height="0"></iframe>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</script>
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" type="text/javascript" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/toolbar.js"></script>
+     <!--new top-->
+
+
+<div id="tag-suggest-pop" style="display: block;">
+  <div class="relative">
+    <div class="close"></div>
+    <div class="content"><div><span>更多相关资源：</span><a href="http://www.csdn.net/tag/vc" title="关于 vc 的主题" target="_blank">vc</a></div></div>
+  </div>
+</div><iframe src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/ibm-softlayer-free-server-zhiding-banner-960-90-30k.htm" style="width: 1px; height: 1px; position: absolute; visibility: hidden;"></iframe><iframe src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/hp-fy14-q4-cloud-daohangtiaoxia-banner-peisong-960-90-30k.htm" style="width: 1px; height: 1px; position: absolute; visibility: hidden;"></iframe><link href="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/message_pop.css" rel="stylesheet" type="text/css"><div id="_popup_msg_container" style="display: block;">
+
+<div wistate="max" id="im_popupWindow_miniMsg" class="im_popupWindow" style="display: block; height: 250px;">
+	<h6 class="wi_draggable"><span>
+</span><a onclick="_message_tips_pop(&#39;down&#39;);return false;"><img alt="close" class="founctionpic3" src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/pic_close.gif"></a></h6>
+    <div id="im_popupWindow_miniMsgContent" class="wi_content">
+		<div class="kuai">
+			<div style="width:280px;"><a href="http://huiyi.csdn.net/activity/product/goods_list?project_id=1443" target="_blank"><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/280-188-2.jpg" alt="" border="0" style="border:0;" title=""></a></div>
+		</div>
+	</div>
+<div class="content_qq"><span onclick="window.open(&#39;&#39;)" target="_blank"><font color="red">
+</font></span>
+ </div>
+ 
+ 
+</div>
+</div><img src="./VC项目配置基础 - 曾梦想仗剑走天涯 - 博客频道 - CSDN.NET_files/count_new.php" style="display: none;"></body></html>

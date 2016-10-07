@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0045)http://people.csail.mit.edu/sparis/bf_course/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>A Gentle Introduction to Bilateral Filtering and its Applications</title>
+<meta name="keywords" content="image processing,computational
+photography,bilateral filter,siggraph,cvpr,tone
+mapping,demosaicking,smoothing,edge preserving,course,class,tutorial">
+<link rel="stylesheet" type="text/css" media="screen" href="./A Gentle Introduction to Bilateral Filtering and its Applications_files/index2.css">
+</head>
+
+<body>
+  <div id="side">
+    <div class="menu">
+      <a href="http://people.csail.mit.edu/sparis/bf_course/#intro">Intro</a> •
+      <a href="http://people.csail.mit.edu/sparis/bf_course/#material">Material</a> •
+      <a href="http://people.csail.mit.edu/sparis/bf_course/#links">Links</a>
+    </div>
+  </div>
+
+  <div><a id="intro" class="anchor"></a></div>
+  <div id="page">    
+    <div class="pagetitle">
+      A Gentle Introduction<br>
+      to Bilateral Filtering<br>
+      and its Applications
+    </div>
+
+    <p class="intro" style="font-size:larger;">
+      <a href="http://people.csail.mit.edu/sparis/">Sylvain Paris</a>,
+      <a href="http://www-sop.inria.fr/odyssee/team/Pierre.Kornprobst/index.en.html">Pierre Kornprobst</a>,
+      <a href="http://www.cs.northwestern.edu/~jet/">Jack Tumblin</a>, and
+      <a href="http://people.csail.mit.edu/fredo/">Frédo Durand</a>
+      <br>
+      A class at <a href="http://www.siggraph.org/s2008/">ACM SIGGRAPH 2008</a><br>
+      A tutorial at <a href="http://vision.eecs.ucf.edu/">IEEE CVPR 2008</a><br>
+      A course at <a href="http://www.siggraph.org/s2007/">ACM SIGGRAPH 2007</a>
+    </p>
+    <p>
+      Friday morning (8:30am - 12:15pm), August 15th 2008<br>
+      <a href="http://www.siggraph.org/s2008/attendees/program/item/?type=class&amp;id=64">Announcement on the SIGGRAPH'08 website</a>      
+    </p>
+    <p>
+      Saturday, June 28th 2008<br>
+      <a href="http://vision.eecs.ucf.edu/tutorials.htm#Anchor-Gentle-1234">Announcement on the CVPR'08 website</a>      
+    </p>
+    <p>
+      Past: Monday morning (8:30am - 12:15pm), August 6th 2007<br>
+      <a href="http://www.siggraph.org/s2007/attendees/courses/13.html">Announcement on the SIGGRAPH'07 website</a>      
+    </p>
+    
+    <p>
+      <span class="smalltitle">Summary</span>
+      The bilateral filter is ubiquitous in computational photography
+      applications. It is increasingly common in computer graphics
+      research papers but no single reference summarizes its
+      properties and applications. This course provides a graphical,
+      strongly intuitive introduction to bilateral filtering, and a
+      practical guide for image editing, tone-maps, video processing
+      and more.
+    </p>
+
+    <p>
+      <span class="smalltitle">Prerequisites</span>      
+      We welcome all motivated beginners. Don't worry if integrals or
+      Gaussian functions are unfamiliar: we only assume that attendees
+      know some digital image basics (pixels, gray levels, noise) and
+      have some modest programming experience. If you can compute a
+      weighted average, then you are ready to take this course.
+    </p>
+
+    <p>
+      <span class="smalltitle">Intended Audience </span>      
+      This course is meant to introduce a graphics person to bilateral
+      filtering. We typically target someone who wants to get into
+      image editing, computational photography, and other related
+      fields. We cover issues that appeal to anyone interested in
+      image manipulations: researchers, developers, software designers
+      and more.
+    </p>
+            
+    <a id="material" class="anchor"></a>
+    <h1>Course Material</h1>
+
+    
+    <a id="coursenotes" class="anchor"></a>
+    <h2 class="nointro">• Course Notes •</h2>
+    
+    <table class="linklist">
+      <tbody><tr>
+        <th><a href="http://people.csail.mit.edu/sparis/#fntcgv">Survey<br></a></th>
+        <td>
+          We have published a survey that extends our original course notes.
+        </td>
+      </tr>
+    </tbody></table>
+    
+    <table class="linklist">
+      <tbody><tr>
+        <th><a href="http://people.csail.mit.edu/sparis/bf_course/course_notes.pdf">Course notes<br>(pdf, 49MB)</a></th>
+        <td>
+          Includes a survey, an introduction to edge-preserving
+          filters, and reprints of related SIGGRAPH articles.
+        </td>
+      </tr>
+    </tbody></table>
+    
+    <a id="slides" class="anchor"></a>
+    <h2 class="nointro">• Slides •</h2>
+
+    <p>Note: Prefer the PPT version if possible, the PDF export is not
+    always faithful to the original.</p>
+    
+    <table class="linklist">
+      <tbody><tr>
+        <th>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/01_introduction.ppt">ppt (3.9MB)</a> <br>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/01_introduction.pdf">pdf (0.8MB)</a> <br>        
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides08/01_introduction.pdf">2008 (pdf, 4.4MB)</a>
+        </th>
+        <td>
+          Introduction
+        </td>        
+      </tr>
+      <tr>
+        <th>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/02_gaussian_blur.ppt">ppt (1.0MB)</a> <br>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/02_gaussian_blur.pdf">pdf (0.4MB)</a> <br>        
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides08/02_gaussian_blur.pdf">2008 (pdf, 1.1MB)</a>       
+        </th>
+        <td>
+          Naïve Image Smoothing: Gaussian Blur
+        </td>        
+      </tr>
+      <tr>
+        <th>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/03_definition_bf.ppt">ppt (15MB)</a> <br>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/03_definition_bf.pdf">pdf (2.1MB)</a> <br>        
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides08/03_definition_bf.pdf">2008 (pdf, 7.9MB)</a>
+        </th>
+        <td>
+          "Fixing the Gaussian Blur": the Bilateral Filter
+        </td>        
+      </tr>
+      <tr>
+        <th>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/04_applications_simple_bf.ppt">ppt (10MB)</a> <br>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/04_applications_simple_bf.pdf">pdf (29MB)</a> <br>        
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides08/04_applications_simple_bf.pdf">2008 (pdf, 17MB)</a>
+        </th>
+        <td>
+          Applications
+        </td>        
+      </tr>
+      <tr>
+        <th>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/05_interpretation.ppt">ppt (6.0MB)</a> <br>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/05_interpretation.pdf">pdf (11MB)</a> <br>        
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides08/05_interpretation.pdf">2008 (pdf, 4.9MB)</a>
+        </th>
+        <td>
+          How Does the Bilater Filter Relates with Other Methods?
+        </td>        
+      </tr>
+      <tr>
+        <th>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/06_implementation.ppt">ppt (2.1MB)</a> <br>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/06_implementation.pdf">pdf (1.1MB)</a> <br>        
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides08/06_implementation.pdf">2008 (pdf, 3.5MB)</a>
+        </th>
+        <td>
+          Efficient Implementations of the Bilateral Filter
+        </td>        
+      </tr>
+      <tr>
+        <th>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/07_variants.ppt">ppt (11MB)</a> <br>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/07_variants.pdf">pdf (1.0MB)</a> <br>        
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides08/07_variants.pdf">2008 (pdf, 1.6MB)</a>
+        </th>
+        <td>
+          Novel Variants of the Bilateral Filter
+        </td>        
+      </tr>
+      <tr>
+        <th>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/08_applications_advanced.ppt">ppt (7.3MB)</a> <br>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/08_applications_advanced.pdf">pdf (4.3MB)</a> <br>        
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides08/08_applications_advanced.pdf">2008 (pdf, 6.3MB)</a>
+        </th>
+        <td>
+          Applications: Advanced Uses of Bilateral Filters
+        </td>        
+      </tr>
+      <tr>
+        <th>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/09_limitations.ppt">ppt (8.3MB)</a> <br>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/09_limitations.pdf">pdf (9.7MB)</a> <br>        
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides08/09_limitations.pdf">2008 (pdf, 7.4MB)</a>
+        </th>
+        <td>
+          Limitation?
+        </td>        
+      </tr>
+      <tr>
+        <th>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/10_conclusion.ppt">ppt (1.0MB)</a> <br>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/10_conclusion.pdf">pdf (0.6MB)</a> <br>        
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides08/10_conclusion.pdf">2008 (pdf, 1.1MB)</a>
+        </th>
+        <td>
+          Conclusions
+        </td>        
+      </tr>
+      <tr>
+        <th>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/slides_PPT.zip">ppt (82MB)</a> <br>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides/slides_PDF.zip">pdf (25MB)</a> <br>
+          <a href="http://people.csail.mit.edu/sparis/bf_course/slides08/slides_PDF.zip">2008 (pdf, 51MB)</a>        
+        </th>
+        <td>
+          All slides in a big zip file
+        </td>        
+      </tr>
+    </tbody></table>
+    
+    <a id="code" class="anchor"></a>
+    <h2 class="nointro">• Code •</h2>
+
+    <table class="linklist">
+      <tbody><tr>
+        <th>Fast bilateral filter</th>
+        <td>
+          Sylvain Paris provides <a href="http://people.csail.mit.edu/sparis/bf/#code">C++ code</a> and Jiawen Chen <a href="http://people.csail.mit.edu/jiawen/#code">Matlab code</a>.
+        </td>
+      </tr>
+      <tr>
+        <th><a href="http://cimg.sourceforge.net/">CImg</a></th>
+        <td>
+          This C++ library by <a href="http://www.greyc.ensicaen.fr/~dtschump/">David Tschumperlé</a> provides the basic tools needed to implement image filters.
+        </td>
+      </tr>
+    </tbody></table>
+
+    
+    <a id="links" class="anchor"></a>
+    <h1>Links</h1>
+    
+    <h2>• Related Courses •</h2>
+    
+    <table class="linklist">
+      <tbody><tr>
+        <th>Computational photography</th>
+        <td>
+          <a href="http://www.siggraph.org/s2008/attendees/program/item/?type=class&amp;id=47">SIGGRAPH'08 announcement</a>,
+          <a href="http://www.siggraph.org/s2007/attendees/courses/1.html">SIGGRAPH'07 announcement</a>,
+        <a href="http://www.merl.com/people/raskar/photo/">course webpage</a>.
+        </td>
+      </tr>
+      <tr>
+        <th>Level set and PDE methods for computer graphics</th>
+        <td>
+          <a href="http://www.siggraph.org/s2004/conference/courses/27.php?pageID=conference">SIGGRAPH'04 announcement</a>,
+        <a href="http://portal.acm.org/citation.cfm?id=1103928&amp;dl=acm&amp;coll=&amp;CFID=15151515&amp;CFTOKEN=6184618">course notes</a>.
+        </td>
+      </tr>
+    </tbody></table>
+
+    
+    <h2>• Other Resources •</h2>
+    
+    <table class="linklist">
+      <tbody><tr>
+        <th><a href="http://people.csail.mit.edu/sparis/bf/">Fast bilateral filtering</a></th>
+        <td>
+          This webpage describes the work of Sylvain Paris and Frédo Durand. It includes their papers, code, and references.
+        </td>
+      </tr>
+      <tr>
+        <th><a href="http://www-sop.inria.fr/books/imath/">Mathematical Problems in Image Processing </a></th>
+        <td>
+          This book by Pierre Kornprobst and Gilles Aubert reviews and explains the mathematical ground supporting image processing using partial differential equations and related techniques, including the bilateral filter.
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+
+    <div id="footnote">
+      <hr>
+      Last update: Aug. 27th, 2007
+      <br>
+      <a href="http://validator.w3.org/check/referer">Check XHTML</a> |
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">Check CSS</a>
+    </div>
+ 
+
+
+
+</body></html>

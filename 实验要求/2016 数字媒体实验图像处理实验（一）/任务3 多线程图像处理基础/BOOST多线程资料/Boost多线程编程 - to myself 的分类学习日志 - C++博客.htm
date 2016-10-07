@@ -1,0 +1,1046 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0062)http://www.cppblog.com/toMyself/archive/2010/09/22/127347.html -->
+<html><head id="Head"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Boost多线程编程 - to myself 的分类学习日志 - C++博客
+</title><meta id="metaKeywords" name="keywords" content="Boost多线程编程"><link type="text/css" rel="stylesheet" href="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/common.css"><link id="MainCss" type="text/css" rel="stylesheet" href="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/style.css"><link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cppblog.com/toMyself/rss.aspx"></head>
+<body>
+    <form name="Form1" method="post" action="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/Boost多线程编程 - to myself 的分类学习日志 - C++博客.htm" id="Form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="
+__VIEWSTATE" value="">
+</div>
+
+<script type="text/javascript" async="" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/WebResource.axd" type="text/javascript"></script>
+
+<script language="JavaScript">
+									function ctlent(evt,id)
+											{
+												if(evt.ctrlKey && evt.keyCode == 13)
+												{	
+													try
+													{
+														TempSave(id);
+													}
+													catch(ex)
+													{
+													}
+													finally
+													{
+													    __doPostBack('AjaxHolder$PostComment$btnSubmit','')
+													}
+												}
+		
+												}</script>
+												<script language="JavaScript">function SetReplyAuhor(author){document.getElementById('AjaxHolder_PostComment_tbComment').value+="@"+author+"\n";document.getElementById('AjaxHolder_PostComment_tbComment').focus();return false}</script>
+<script src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/ScriptResource(1).axd" type="text/javascript"></script>
+        
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tbody><tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tbody><tr>
+		<td nowrap="">
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cppblog.com/toMyself/">to myself 的分类学习日志</a></h1>
+			做自己想做的事
+		</td>
+	</tr>
+</tbody></table>
+</div>
+<div id="sub">
+<div class="BlogStats">posts - 220, comments - 3, trackbacks - 0, articles - 0</div></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu" style="display: inline;">
+				
+					
+<h3>导航</h3>
+<ul>
+	<li>
+		<a id="MyLinks1_HomeLink" href="http://www.cppblog.com/">C++博客</a>
+	</li><li>
+		<a id="MyLinks1_MyHomeLink" href="http://www.cppblog.com/toMyself/">首页</a>
+	</li><li>
+		<a id="MyLinks1_NewPostLink" href="http://www.cppblog.com/toMyself/admin/EditPosts.aspx?opt=1">新随笔</a>
+	</li><li>
+		<a id="MyLinks1_ContactLink" accesskey="9" href="http://www.cppblog.com/toMyself/contact.aspx?id=1">联系</a>
+	</li><li>
+		<a id="MyLinks1_XMLLink" href="http://www.cppblog.com/toMyself/Rss.aspx"><img src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml.gif" alt="RSS 2.0 Feed" style="border-width:0px;"></a><a id="MyLinks1_Syndication" href="http://www.cppblog.com/toMyself/Rss.aspx">聚合</a>
+	</li><li>
+		<a id="MyLinks1_Admin" href="http://www.cppblog.com/toMyself/admin/EditPosts.aspx">管理</a></li>
+</ul>
+
+					
+					<table id="Calendar1_entryCal" class="Cal" cellspacing="0" cellpadding="0" title="日历" border="0" style="border-width:1px;border-style:solid;border-collapse:collapse;">
+	<tbody><tr><td colspan="7" style="background-color:Silver;"><table class="CalTitle" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+		<tbody><tr><td class="CalNextPrev" style="width:15%;"><a href="javascript:__doPostBack('Calendar1$entryCal','V3865')" style="color:Black" title="转到上一个月">&lt;</a></td><td align="center" style="width:70%;">2010年9月</td><td class="CalNextPrev" align="right" style="width:15%;"><a href="javascript:__doPostBack('Calendar1$entryCal','V3926')" style="color:Black" title="转到下一个月">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center" style="width:14%;">29</td><td class="CalOtherMonthDay" align="center" style="width:14%;">30</td><td class="CalOtherMonthDay" align="center" style="width:14%;">31</td><td align="center" style="width:14%;"><a href="http://www.cppblog.com/toMyself/archive/2010/09/01.html"><u>1</u></a></td><td align="center" style="width:14%;">2</td><td align="center" style="width:14%;">3</td><td class="CalWeekendDay" align="center" style="width:14%;">4</td></tr><tr><td class="CalWeekendDay" align="center" style="width:14%;">5</td><td align="center" style="width:14%;">6</td><td align="center" style="width:14%;">7</td><td align="center" style="width:14%;">8</td><td align="center" style="width:14%;">9</td><td align="center" style="width:14%;">10</td><td class="CalWeekendDay" align="center" style="width:14%;"><a href="http://www.cppblog.com/toMyself/archive/2010/09/11.html"><u>11</u></a></td></tr><tr><td class="CalWeekendDay" align="center" style="width:14%;">12</td><td align="center" style="width:14%;"><a href="http://www.cppblog.com/toMyself/archive/2010/09/13.html"><u>13</u></a></td><td align="center" style="width:14%;">14</td><td align="center" style="width:14%;">15</td><td align="center" style="width:14%;"><a href="http://www.cppblog.com/toMyself/archive/2010/09/16.html"><u>16</u></a></td><td align="center" style="width:14%;"><a href="http://www.cppblog.com/toMyself/archive/2010/09/17.html"><u>17</u></a></td><td class="CalWeekendDay" align="center" style="width:14%;"><a href="http://www.cppblog.com/toMyself/archive/2010/09/18.html"><u>18</u></a></td></tr><tr><td class="CalWeekendDay" align="center" style="width:14%;">19</td><td align="center" style="width:14%;">20</td><td align="center" style="width:14%;">21</td><td align="center" style="width:14%;"><a href="http://www.cppblog.com/toMyself/archive/2010/09/22.html"><u>22</u></a></td><td align="center" style="width:14%;">23</td><td align="center" style="width:14%;">24</td><td class="CalWeekendDay" align="center" style="width:14%;">25</td></tr><tr><td class="CalWeekendDay" align="center" style="width:14%;"><a href="http://www.cppblog.com/toMyself/archive/2010/09/26.html"><u>26</u></a></td><td align="center" style="width:14%;">27</td><td align="center" style="width:14%;">28</td><td align="center" style="width:14%;">29</td><td align="center" style="width:14%;"><a href="http://www.cppblog.com/toMyself/archive/2010/09/30.html"><u>30</u></a></td><td class="CalOtherMonthDay" align="center" style="width:14%;">1</td><td class="CalOtherMonthDay" align="center" style="width:14%;">2</td></tr><tr><td class="CalOtherMonthDay" align="center" style="width:14%;">3</td><td class="CalOtherMonthDay" align="center" style="width:14%;">4</td><td class="CalOtherMonthDay" align="center" style="width:14%;">5</td><td class="CalOtherMonthDay" align="center" style="width:14%;">6</td><td class="CalOtherMonthDay" align="center" style="width:14%;">7</td><td class="CalOtherMonthDay" align="center" style="width:14%;">8</td><td class="CalOtherMonthDay" align="center" style="width:14%;">9</td></tr>
+</tbody></table>
+
+					
+<h3>常用链接</h3>
+<ul>
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl01_lnkLinkItem" href="http://www.cppblog.com/toMyself/MyPosts.html">我的随笔</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl02_lnkLinkItem" href="http://www.cppblog.com/toMyself/MyComments.html">我的评论</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl03_lnkLinkItem" href="http://www.cppblog.com/toMyself/OtherPosts.html">我参与的随笔</a></li>
+	</ul>
+<h3>留言簿<span style="font-size:11px;font-weight:normal;">(4)</span></h3>
+<ul>
+	<li>
+		<a id="SingleColumn1__e9b9d0_lnkMessages" href="http://www.cppblog.com/toMyself/Contact.aspx?id=1">给我留言</a>
+	</li><li>
+		<a id="SingleColumn1__e9b9d0_lnkPublicMsgView" href="http://www.cppblog.com/toMyself/default.aspx?opt=msg">查看公开留言</a>
+	</li><li>
+		<a id="SingleColumn1__e9b9d0_lnkPrivateMsgView" href="http://www.cppblog.com/toMyself/admin/MyMessages.aspx">查看私人留言</a>
+	</li>
+</ul>
+
+		<h3>随笔分类</h3>
+		
+				<ul>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link" href="http://www.cppblog.com/toMyself/category/17084.html">Algorithm and Data Structures(10)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink" title="Subscribe to Algorithm and Data Structures(10)" href="http://www.cppblog.com/toMyself/category/17084.html/rss"><img title="Subscribe to Algorithm and Data Structures(10)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link" href="http://www.cppblog.com/toMyself/category/15064.html">c programming(6)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink" title="Subscribe to c programming(6)" href="http://www.cppblog.com/toMyself/category/15064.html/rss"><img title="Subscribe to c programming(6)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link" href="http://www.cppblog.com/toMyself/category/9727.html">c++ network library(15)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink" title="Subscribe to c++ network library(15)" href="http://www.cppblog.com/toMyself/category/9727.html/rss"><img title="Subscribe to c++ network library(15)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link" href="http://www.cppblog.com/toMyself/category/9700.html">c++ programming(12)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink" title="Subscribe to c++ programming(12)" href="http://www.cppblog.com/toMyself/category/9700.html/rss"><img title="Subscribe to c++ programming(12)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link" href="http://www.cppblog.com/toMyself/category/9704.html">design pattern</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink" title="Subscribe to design pattern" href="http://www.cppblog.com/toMyself/category/9704.html/rss"><img title="Subscribe to design pattern" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link" href="http://www.cppblog.com/toMyself/category/15063.html">embedded development(2)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink" title="Subscribe to embedded development(2)" href="http://www.cppblog.com/toMyself/category/15063.html/rss"><img title="Subscribe to embedded development(2)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link" href="http://www.cppblog.com/toMyself/category/9706.html">english learning(2)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink" title="Subscribe to english learning(2)" href="http://www.cppblog.com/toMyself/category/9706.html/rss"><img title="Subscribe to english learning(2)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link" href="http://www.cppblog.com/toMyself/category/14789.html">essay(16)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink" title="Subscribe to essay(16)" href="http://www.cppblog.com/toMyself/category/14789.html/rss"><img title="Subscribe to essay(16)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link" href="http://www.cppblog.com/toMyself/category/9707.html">financial securities(10)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink" title="Subscribe to financial securities(10)" href="http://www.cppblog.com/toMyself/category/9707.html/rss"><img title="Subscribe to financial securities(10)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link" href="http://www.cppblog.com/toMyself/category/9703.html">game development(13)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink" title="Subscribe to game development(13)" href="http://www.cppblog.com/toMyself/category/9703.html/rss"><img title="Subscribe to game development(13)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link" href="http://www.cppblog.com/toMyself/category/17261.html">gui(2)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink" title="Subscribe to gui(2)" href="http://www.cppblog.com/toMyself/category/17261.html/rss"><img title="Subscribe to gui(2)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link" href="http://www.cppblog.com/toMyself/category/9733.html">hardware(3)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink" title="Subscribe to hardware(3)" href="http://www.cppblog.com/toMyself/category/9733.html/rss"><img title="Subscribe to hardware(3)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link" href="http://www.cppblog.com/toMyself/category/15466.html">java(4)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_RssLink" title="Subscribe to java(4)" href="http://www.cppblog.com/toMyself/category/15466.html/rss"><img title="Subscribe to java(4)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link" href="http://www.cppblog.com/toMyself/category/9708.html">life(23)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_RssLink" title="Subscribe to life(23)" href="http://www.cppblog.com/toMyself/category/9708.html/rss"><img title="Subscribe to life(23)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_Link" href="http://www.cppblog.com/toMyself/category/14824.html">linux(17)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_RssLink" title="Subscribe to linux(17)" href="http://www.cppblog.com/toMyself/category/14824.html/rss"><img title="Subscribe to linux(17)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_Link" href="http://www.cppblog.com/toMyself/category/9702.html">linux programming(2)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_RssLink" title="Subscribe to linux programming(2)" href="http://www.cppblog.com/toMyself/category/9702.html/rss"><img title="Subscribe to linux programming(2)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_Link" href="http://www.cppblog.com/toMyself/category/11800.html">loki(2)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_RssLink" title="Subscribe to loki(2)" href="http://www.cppblog.com/toMyself/category/11800.html/rss"><img title="Subscribe to loki(2)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_Link" href="http://www.cppblog.com/toMyself/category/9705.html">lua(1)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_RssLink" title="Subscribe to lua(1)" href="http://www.cppblog.com/toMyself/category/9705.html/rss"><img title="Subscribe to lua(1)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_Link" href="http://www.cppblog.com/toMyself/category/17479.html">management(4)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_RssLink" title="Subscribe to management(4)" href="http://www.cppblog.com/toMyself/category/17479.html/rss"><img title="Subscribe to management(4)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_Link" href="http://www.cppblog.com/toMyself/category/9710.html">mysql(9)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_RssLink" title="Subscribe to mysql(9)" href="http://www.cppblog.com/toMyself/category/9710.html/rss"><img title="Subscribe to mysql(9)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl21_Link" href="http://www.cppblog.com/toMyself/category/9701.html">network programming(15)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl21_RssLink" title="Subscribe to network programming(15)" href="http://www.cppblog.com/toMyself/category/9701.html/rss"><img title="Subscribe to network programming(15)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl22_Link" href="http://www.cppblog.com/toMyself/category/9711.html">ogre(2)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl22_RssLink" title="Subscribe to ogre(2)" href="http://www.cppblog.com/toMyself/category/9711.html/rss"><img title="Subscribe to ogre(2)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl23_Link" href="http://www.cppblog.com/toMyself/category/14398.html">perl(5)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl23_RssLink" title="Subscribe to perl(5)" href="http://www.cppblog.com/toMyself/category/14398.html/rss"><img title="Subscribe to perl(5)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl24_Link" href="http://www.cppblog.com/toMyself/category/9734.html">plans(7)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl24_RssLink" title="Subscribe to plans(7)" href="http://www.cppblog.com/toMyself/category/9734.html/rss"><img title="Subscribe to plans(7)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl25_Link" href="http://www.cppblog.com/toMyself/category/15541.html">python(3)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl25_RssLink" title="Subscribe to python(3)" href="http://www.cppblog.com/toMyself/category/15541.html/rss"><img title="Subscribe to python(3)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl26_Link" href="http://www.cppblog.com/toMyself/category/17364.html">search engine(1)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl26_RssLink" title="Subscribe to search engine(1)" href="http://www.cppblog.com/toMyself/category/17364.html/rss"><img title="Subscribe to search engine(1)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl27_Link" href="http://www.cppblog.com/toMyself/category/20623.html">Security and protection(7)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl27_RssLink" title="Subscribe to Security and protection(7)" href="http://www.cppblog.com/toMyself/category/20623.html/rss"><img title="Subscribe to Security and protection(7)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl28_Link" href="http://www.cppblog.com/toMyself/category/14601.html">software engineering(1)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl28_RssLink" title="Subscribe to software engineering(1)" href="http://www.cppblog.com/toMyself/category/14601.html/rss"><img title="Subscribe to software engineering(1)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl29_Link" href="http://www.cppblog.com/toMyself/category/15752.html">third(2)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl29_RssLink" title="Subscribe to third(2)" href="http://www.cppblog.com/toMyself/category/15752.html/rss"><img title="Subscribe to third(2)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl30_Link" href="http://www.cppblog.com/toMyself/category/9709.html">tools(18)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl30_RssLink" title="Subscribe to tools(18)" href="http://www.cppblog.com/toMyself/category/9709.html/rss"><img title="Subscribe to tools(18)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl31_Link" href="http://www.cppblog.com/toMyself/category/20682.html">Web Development</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl31_RssLink" title="Subscribe to Web Development" href="http://www.cppblog.com/toMyself/category/20682.html/rss"><img title="Subscribe to Web Development" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl32_Link" href="http://www.cppblog.com/toMyself/category/14406.html">windows programming(5)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl32_RssLink" title="Subscribe to windows programming(5)" href="http://www.cppblog.com/toMyself/category/14406.html/rss"><img title="Subscribe to windows programming(5)" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml_small.gif" style="border-width:0px;"></a></li>
+			
+				</ul>
+			
+	
+		<h3>随笔档案</h3>
+		
+				<ul>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link" href="http://www.cppblog.com/toMyself/archive/2014/03.html">2014年3月 (1)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link" href="http://www.cppblog.com/toMyself/archive/2014/01.html">2014年1月 (1)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link" href="http://www.cppblog.com/toMyself/archive/2013/11.html">2013年11月 (1)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link" href="http://www.cppblog.com/toMyself/archive/2013/10.html">2013年10月 (2)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link" href="http://www.cppblog.com/toMyself/archive/2013/09.html">2013年9月 (3)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link" href="http://www.cppblog.com/toMyself/archive/2013/08.html">2013年8月 (6)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link" href="http://www.cppblog.com/toMyself/archive/2013/07.html">2013年7月 (6)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link" href="http://www.cppblog.com/toMyself/archive/2013/06.html">2013年6月 (2)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link" href="http://www.cppblog.com/toMyself/archive/2012/05.html">2012年5月 (1)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link" href="http://www.cppblog.com/toMyself/archive/2011/11.html">2011年11月 (1)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link" href="http://www.cppblog.com/toMyself/archive/2011/09.html">2011年9月 (1)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link" href="http://www.cppblog.com/toMyself/archive/2011/08.html">2011年8月 (7)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link" href="http://www.cppblog.com/toMyself/archive/2011/07.html">2011年7月 (14)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link" href="http://www.cppblog.com/toMyself/archive/2011/06.html">2011年6月 (1)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl15_Link" href="http://www.cppblog.com/toMyself/archive/2011/05.html">2011年5月 (2)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl16_Link" href="http://www.cppblog.com/toMyself/archive/2011/04.html">2011年4月 (7)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl17_Link" href="http://www.cppblog.com/toMyself/archive/2011/03.html">2011年3月 (2)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl18_Link" href="http://www.cppblog.com/toMyself/archive/2011/02.html">2011年2月 (1)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl19_Link" href="http://www.cppblog.com/toMyself/archive/2011/01.html">2011年1月 (11)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl20_Link" href="http://www.cppblog.com/toMyself/archive/2010/12.html">2010年12月 (9)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl21_Link" href="http://www.cppblog.com/toMyself/archive/2010/11.html">2010年11月 (5)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl22_Link" href="http://www.cppblog.com/toMyself/archive/2010/10.html">2010年10月 (11)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl23_Link" href="http://www.cppblog.com/toMyself/archive/2010/09.html">2010年9月 (20)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl24_Link" href="http://www.cppblog.com/toMyself/archive/2010/08.html">2010年8月 (49)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl25_Link" href="http://www.cppblog.com/toMyself/archive/2010/07.html">2010年7月 (3)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl26_Link" href="http://www.cppblog.com/toMyself/archive/2010/06.html">2010年6月 (3)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl27_Link" href="http://www.cppblog.com/toMyself/archive/2010/05.html">2010年5月 (6)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl28_Link" href="http://www.cppblog.com/toMyself/archive/2010/04.html">2010年4月 (1)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl29_Link" href="http://www.cppblog.com/toMyself/archive/2009/09.html">2009年9月 (11)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl30_Link" href="http://www.cppblog.com/toMyself/archive/2009/03.html">2009年3月 (32)</a></li>
+			
+				</ul>
+			
+	
+		<h3>Internet Industry News</h3>
+		
+				<ul>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link" href="http://www.programmer.com.cn/">《程序员》官网</a></li>
+			<li style="margin-top:2px;">中国最具影响力、最权威IT专业技术期刊：《程序员》杂志</li>
+				<li><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link" href="http://www.csdn.net/">CSDN.NET</a></li>
+			<li style="margin-top:2px;">全球最大中文IT社区，为IT专业技术人员提供最全面的信息传播和服务平台</li>
+				<li><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_Link" href="http://www.ifanr.com/">爱范儿</a></li>
+			<li style="margin-top:2px;">爱范儿（ifanr）全景关注移动互联网、集中报道创业团队，最潮的智能手持及最酷的互联网应用，对业界生态、智能产品及移动应用有着深刻的理解，致力于“独立，前瞻，深入”的原创报道和分析评论，将大量第一手新酷理念和信息传达到读者。</li>
+				<li><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_Link" href="http://blog.jobbole.com/">博客 - 伯乐在线</a></li>
+			<li style="margin-top:2px;">专注于分享职业相关的博客文章、业界资讯和职业相关的优秀工具和资源。</li>
+				<li><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl05_Link" href="http://www.cnblogs.com/news">博客园 - 新闻区</a></li>
+			<li style="margin-top:2px;">面向软件开发者的高品质IT技术社区。</li>
+				<li><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl06_Link" href="http://coolshell.cn/">酷壳 – CoolShell.cn</a></li>
+			<li style="margin-top:2px;">分享技术见闻，知识，趋势的网站。</li>
+				<li><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl07_Link" href="http://www.aqee.net/">外刊IT评论网</a></li>
+			<li style="margin-top:2px;">以翻译外国IT方面的评论、访谈为主，没有确定的对象，偏重于软件方面，通过那些独特的海外IT视野，关注IT世界，关切IT民生，锐评IT世事。</li>
+				<li><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl08_Link" href="http://www.williamlong.info/">月光博客</a></li>
+			<li style="margin-top:2px;">关注互联网和搜索引擎的IT科技博客</li>
+				</ul>
+			
+	
+		<h3>Internet Technology</h3>
+		
+				<ul>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link" href="http://www.cplusplus.com/" target="_blank">cplusplus.com</a></li>
+			<li style="margin-top:2px;">The C++ Resources Network</li>
+				<li><a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl02_Link" href="http://linux.die.net/">Linux Documentation</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl03_Link" href="http://kernel.org/doc/man-pages/">Linux man-pages </a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl04_Link" href="http://stackoverflow.com/">Stack Overflow</a></li>
+			<li style="margin-top:2px;">a programming Q &amp; A site that’s free.</li>
+				<li><a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl05_Link" href="http://msdn.microsoft.com/en-us/library/bb982198(v=VS.90).aspx">Standard C++ Library TR1 Extensions Reference</a></li>
+			
+				</ul>
+			
+	
+		<h3>Open Source</h3>
+		
+				<ul>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl01_Link" href="http://code.google.com/">Google Code</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl02_Link" href="http://sourceforge.net/">sourceforge.net</a></li>
+			<li style="margin-top:2px;">Find, Create, and Publish Open Source software for free</li>
+				</ul>
+			
+	
+
+<script language="JavaScript">
+function SearchGoogle(key,evt,site)
+		{
+			if(evt.keyCode==13 || evt.keyCode==0 || evt.type =='click')
+			{
+				key.focus();
+				var keystr = encodeURIComponent(key.value);
+				url = "http://www.google.com/search?q=";
+				url = url+keystr;
+				url += "&ie=UTF-8&oe=GB2312&hl=zh-CN&domains="+site+"&sitesearch="+site;
+				window.location=url;
+				return false;
+			}
+		}
+</script>
+<h3>搜索</h3>
+<ul>
+	<li>
+		</li><li><input style="WIDTH: 130px" type="text" name="q" id="q" onkeydown="return SearchGoogle(document.getElementById(&#39;q&#39;),event,&#39;www.cppblog.com/toMyself&#39;)">&nbsp;<input onclick="SearchGoogle(document.getElementById(&#39;q&#39;),event,&#39;www.cppblog.com/toMyself&#39;)" type="button" value="搜索" name="sa">
+	</li>
+</ul>
+
+<h3>最新评论
+	<a id="SingleColumn1__331c11b_RSSHyperlink1" href="http://www.cppblog.com/toMyself/CommentsRSS.aspx"><img src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/xml.gif" style="border-width:0px;"></a></h3>
+<div class="RecentComment">
+	
+			<ul>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__331c11b_CommentList_ctl01_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2012/09/19/128139.html#191253">1.&nbsp;re: Perl定时记录进程性能信息</a>
+			</li>
+			<li style="word-break:break-all">
+				挺好，不过有个建议，放在文本里面看不到趋势，还是将结果采集到Excel中吧。这样甚至可以画出图形来，估计会是一个不错的小工具。
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--落日以后</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__331c11b_CommentList_ctl02_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2011/06/17/135268.html#148846">2.&nbsp;re: protobuf的使用</a>
+			</li>
+			<li style="word-break:break-all">
+				评论内容较长,点击标题查看
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--lishirong</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__331c11b_CommentList_ctl03_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2011/04/29/135268.html#145331">3.&nbsp;re: protobuf的使用[未登录]</a>
+			</li>
+			<li style="word-break:break-all">
+				评论内容较长,点击标题查看
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--me</li>
+		
+			</ul>
+		
+</div>
+
+<h3>阅读排行榜</h3>
+<div class="RecentComment">
+	
+			<ul style="word-break:break-all">
+		
+			<li>
+				<a id="SingleColumn1__2d250bd_TopList_ctl01_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2010/08/13/123353.aspx">1.&nbsp;函数inet_addr和inet_ntoa(9459)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__2d250bd_TopList_ctl02_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2010/12/02/135268.aspx">2.&nbsp;protobuf的使用(8549)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__2d250bd_TopList_ctl03_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2010/09/22/127347.aspx">3.&nbsp;Boost多线程编程(7662)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__2d250bd_TopList_ctl04_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2010/11/30/135094.aspx">4.&nbsp;python与C或者C++的混合编程(6382)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__2d250bd_TopList_ctl05_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2010/12/30/137730.aspx">5.&nbsp;linux下安装feiq的方法(6308)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+
+<h3>评论排行榜</h3>
+<div class="RecentComment">
+	
+			<ul style="word-break:break-all">
+		
+			<li>
+				<a id="SingleColumn1__377cc37_TopList_ctl01_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2010/12/02/135268.aspx">1.&nbsp;protobuf的使用(2)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__377cc37_TopList_ctl02_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2010/09/30/128139.aspx">2.&nbsp;Perl定时记录进程性能信息(1)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__377cc37_TopList_ctl03_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2010/09/30/128137.aspx">3.&nbsp;网游服务器架构(0)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__377cc37_TopList_ctl04_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2010/09/30/128136.aspx">4.&nbsp;linux signal(0)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__377cc37_TopList_ctl05_Hyperlink1" href="http://www.cppblog.com/toMyself/archive/2010/09/30/128125.aspx">5.&nbsp;网络数据格式(0)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+
+				
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+					
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="viewpost1_TitleUrl" class="singleposttitle" href="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/Boost多线程编程 - to myself 的分类学习日志 - C++博客.htm">Boost多线程编程</a>
+			</h2>
+ 			Posted on 2010-09-22 17:15 <a href="http://www.cppblog.com/toMyself/">kongkongzi</a> 阅读(7662) <a href="http://www.cppblog.com/toMyself/archive/2010/09/22/127347.html#Post">评论(0)</a> &nbsp;<a href="http://www.cppblog.com/toMyself/admin/EditPosts.aspx?postid=127347">编辑</a>&nbsp;<a href="http://www.cppblog.com/toMyself/AddToFavorite.aspx?id=127347">收藏</a> <a href="http://www.cppblog.com/toMyself/services/trackbacks/127347.aspx">引用</a>  所属分类: <a href="http://www.cppblog.com/toMyself/category/9727.html">c++ network library</a> 
+			<img src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/127347.html" width="1" height="1">
+			
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cppblog.com/toMyself/archive/2010/09/22/127347.html"
+dc:identifier="http://www.cppblog.com/toMyself/archive/2010/09/22/127347.html"
+dc:title="Boost多线程编程"
+trackback:ping="http://www.cppblog.com/toMyself/services/trackbacks/127347.aspx" />
+</rdf:RDF>
+-->
+
+		</div>
+		<div class="postbody">&nbsp;
+<div>
+<p align="left"><span>Boost</span><span>多线程编程</span></p>
+</div>
+<p align="left"><strong><span><br></span></strong></p>
+<div>
+<p align="left"><span>背景</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>今天互联网应用服务程序普遍使用多线程来提高与多客户链接时的效率；为了达到最大的吞吐量，事务服务器在单独的线程上运行服务程序；</span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>GUI</span><span>应用程序将那些费时，复杂的处理以线程的形式单独运行，以此来保证用户界面能够及时响应用户的操作。这样使用多线程的例子还有很多。 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>跨平台 </span></p>
+<p align="left">&nbsp;</p>
+<p align="left"><span>创建线程</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>头文件</span><span> &lt;boost/thread/thread.hpp&gt;</span></p>
+<p align="left"><span>namespace boost {</span></p>
+<p align="left"><span>&nbsp;class thread;</span></p>
+<p align="left"><span>&nbsp;class thread_group;</span></p>
+<p align="left"><span>} </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thread()</span><span>：构造一个表示当前执行线程的线程对象 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>explicit thread(const boost::function0&lt;void&gt;&amp; threadfunc)</span></p>
+<p align="left"><span>注：</span><span>boost::function0&lt;void&gt;</span><span>可以简单看为：一个无返回</span><span>(</span><span>返回</span><span>void)</span><span>，无参数的函数。这里的函数也可以是类重载</span><span>operator()</span><span>构成的函数。 </span></p>
+<p align="left">&nbsp;</p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>第一种方式：最简单方法</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/thread.hpp&gt; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;iostream&gt; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void hello() </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{ </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>"Hello world, I''m a thread!" </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;&lt; std::endl; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int main(int argc, char* argv[]) </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{ </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread thrd(&amp;hello); </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thrd.join(); </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return 0; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>第二种方式：复杂类型对象作为参数来创建线程</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/thread.hpp&gt; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/mutex.hpp&gt; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;iostream&gt; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex io_mutex; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>struct count </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{ </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>count(int id)&nbsp;: id(id) { } </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void operator()() </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{ </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for (int i = 0; i &lt; 10; ++i) </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{ </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex::scoped_lock </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>lock(io_mutex); </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; id &lt;&lt; ": " </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;&lt; i &lt;&lt; std::endl; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int id; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int main(int argc, char* argv[]) </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{ </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread thrd1(count(1)); </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread thrd2(count(2)); </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thrd1.join(); </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thrd2.join(); </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return 0; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>第三种方式：在类内部创建线程</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>（</span><span>1</span><span>）类内部静态方法启动线程 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/thread.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;iostream&gt; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>class HelloWorld </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>public:</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>static void hello()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>"Hello world, I''m a thread!"</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>static void start()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;boost::thread thrd( hello );</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;thrd.join();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int main(int argc, char* argv[])</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>HelloWorld::start();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return 0;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>在这里</span><span>start()</span><span>和</span><span>hello()</span><span>方法都必须是</span><span>static</span><span>方法。 </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>（</span><span>2</span><span>）如果要求</span><span>start()</span><span>和</span><span>hello()</span><span>方法不能是静态方法则采用下面的方法创建线程： </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/thread.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/bind.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;iostream&gt; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>class HelloWorld </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>public:</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void hello()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>"Hello world, I''m a thread!"</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>&lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void start()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;boost::function0&lt; void&gt; f =&nbsp;boost::bind(&amp;HelloWorld::hello,this);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;boost::thread thrd( f );</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;thrd.join();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int main(int argc, char* argv[])</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>HelloWorld hello;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>hello.start();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return 0;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>（</span><span>3</span><span>）在</span><span>Singleton</span><span>模式内部创建线程： </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/thread.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/bind.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;iostream&gt; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>class HelloWorld </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>public:</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void hello()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>"Hello world, I''m a thread!"</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>&lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>static void start()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;boost::thread thrd( boost::bind&nbsp;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(&amp;HelloWorld::hello,&amp;HelloWorld::getInstance() ) )&nbsp;;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;thrd.join();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>static HelloWorld&amp; getInstance()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;if (&nbsp;!instance )</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>instance = new HelloWorld;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;return *instance;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>private: </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>HelloWorld(){}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>static HelloWorld* instance;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>HelloWorld* HelloWorld::instance = 0; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int main(int argc, char* argv[])</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>HelloWorld::start();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return 0;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>第四种方法：用类内部函数在类外部创建线程</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/thread.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/bind.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;string&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;iostream&gt; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>class HelloWorld </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>public:</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void hello(const std::string&amp; str)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt;str&lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int main(int argc, char* argv[])</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{ </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>HelloWorld obj;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread thrd( boost::bind(&amp;HelloWorld::hello,&amp;obj,"Hello </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>world, I''m a thread!" ) )&nbsp;;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thrd.join();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return 0;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+<p align="left"><span>如果线程需要绑定的函数有参数则需要使用</span><span>boost::bind</span><span>。比如想使用</span><span> boost::thread</span><span>创建一个线程来执行函数：</span><span>void f(int i)</span><span>，</span></p>
+<p align="left"><span>如果这样写：</span><span>boost::thread thrd(f)</span><span>是不对的，因为</span><span>thread</span><span>构造函数声明接受的是一个没有参数且返回类型为</span><span>void</span><span>的型别，而且</span></p>
+<p align="left"><span>不提供参数</span><span>i</span><span>的值</span><span>f</span><span>也无法运行，这时就可以写：</span><span>boost::thread thrd(boost::bind(f,1))</span><span>。涉及到有参函数的绑定问题基本上都</span></p>
+<p align="left"><span>是</span><span>boost::thread</span><span>、</span><span>boost::function</span><span>、</span><span>boost::bind</span><span>结合起来使用。</span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>互斥体</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>一个互斥体一次只允许一个线程访问共享区。当一个线程想要访问共享区时，首先要做的就是锁住（</span><span>lock</span><span>）互斥体。 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Boost</span><span>线程库支持两大类互斥体，包括简单互斥体（</span><span>simple mutex)</span><span>和递归互斥体（</span><span>recursive mutex)</span><span>。</span></p>
+<p align="left"><span>有了递归互斥体，单个线程就可以对互斥体多次上锁，当然也必须解锁同样次数来保证其他线程可以对这个互斥体上锁。 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Boost</span><span>线程库提供的互斥体类型： </span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex,</span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::try_mutex, </span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::timed_mutex, </span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::recursive_mutex, </span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::recursive_try_mutex, </span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::recursive_timed_mutex,</span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::shared_mutex </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>mutex</span><span>类采用</span><span>Scope Lock</span><span>模式实现互斥体的上锁和解锁。即构造函数对互斥体加锁，析构函数对互斥体解锁。 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>对应现有的几个</span><span>mutex</span><span>导入了</span><span>scoped_lock,scoped_try_lock,scoped_timed_lock. </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>scoped</span><span>系列的特色就是析构时解锁，默认构造时加锁，这就很好的确定在某个作用域下某线程独占某段代码。 </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>mutex+scoped_lock</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/thread.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/mutex.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/bind.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;iostream&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex<span>&nbsp;&nbsp; </span>io_mutex;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void count(int id)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for (int i = 0; i &lt; 10; ++i)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex::scoped_lock<span>&nbsp;&nbsp;&nbsp; </span>lock(io_mutex);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; id &lt;&lt; ": " &lt;&lt; i &lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int main(int argc, char* argv[])</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread thrd1(boost::bind(&amp;count, 1));</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread thrd2(boost::bind(&amp;count, 2));</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thrd1.join();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thrd2.join();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return 0;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>try_mutex+scoped_try_lock</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void loop(void)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>bool running = true;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>while (running)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>static boost::try_mutex iomutex;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::try_mutex::scoped_try_lock<span>&nbsp;&nbsp;&nbsp; </span>lock(iomutex);//</span><span>锁定</span><span>mutex </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (lock.owns_lock())</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; "Get lock." &lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>else</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// To do</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; "Not get lock." &lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread::yield(); //</span><span>释放控制权</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>continue;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} //lock</span><span>析构</span><span>,iomutex</span><span>解锁</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>timed_mutex+scoped_timed_mutex</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void loop(void)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>bool running = true;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>while (running)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>typedef boost::timed_mutex MUTEX;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>typedef MUTEX::scoped_timed_lock LOCK;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>static MUTEX iomutex;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::xtime xt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::xtime_get(&amp;xt,boost::TIME_UTC);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>xt.sec += 1; //</span><span>超时时间秒</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>LOCK lock(iomutex, xt); //</span><span>锁定</span><span>mutex </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (lock.owns_lock())</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; "Get lock." &lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>else</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; "Not get lock." &lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread::yield(); //</span><span>释放控制权</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//::sleep(10000); //</span><span>长时间</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} //lock</span><span>析构</span><span>,iomutex</span><span>解锁</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//::sleep(250);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>shared_mutex</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>应用</span><span>boost::thread</span><span>的</span><span>shared_mutex</span><span>实现</span><span>singled_write/multi_read</span><span>的简单例子 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;iostream&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/thread.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/shared_mutex.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>using namespace std;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>using namespace boost;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::shared_mutex shr_mutex;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/// </span><span>这个是辅助类，能够保证</span><span>log_info</span><span>被完整的输出</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>class safe_log {</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>public:</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>static void log(const std::string&amp; log_info) {</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex::scoped_lock lock(log_mutex);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>cout &lt;&lt; log_info &lt;&lt; endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>private:</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>static boost::mutex log_mutex;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex safe_log::log_mutex;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void write_process() {</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>shr_mutex.lock();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>safe_log::log("begin of write_process");</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>safe_log::log("end of write_process");</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>shr_mutex.unlock();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void read_process() {</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>shr_mutex.lock_shared();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>safe_log::log("begin of read_process");</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>safe_log::log("end of read_process");</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>shr_mutex.unlock_shared();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int main() {</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>thread_group threads;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>for (int i = 0; i &lt; 10; ++ i) {</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>threads.create_thread(&amp;write_process);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>threads.create_thread(&amp;read_process);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>threads.join_all();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp; </span>&nbsp;::system("PAUSE");</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp; </span>return 0;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>条件变量</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>有的时候仅仅依靠锁住共享资源来使用它是不够的。有时候共享资源只有某些状态的时候才能够使用。</span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>比方说，某个线程如果要从堆栈中读取数据，那么如果栈中没有数据就必须等待数据被压栈。这种情</span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>况下的同步使用互斥体是不够的。另一种同步的方式－－条件变量，就可以使用在这种情况下。 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::condition<span>&nbsp;&nbsp; </span></span></p>
+<p align="left"><span>typedef condition_variable_any condition;</span></p>
+<p align="left"><span>void wait(unique_lock&lt;mutex&gt;&amp; m);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::condition_variable</span></p>
+<p align="left"><span>template&lt;typename lock_type&gt; </span></p>
+<p align="left"><span>void wait(lock_type&amp; m);</span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/thread.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/mutex.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/condition.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;iostream&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>const int BUF_SIZE = 10;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>const int ITERS = 100;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex io_mutex; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>class buffer</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>public:</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>typedef boost::mutex::scoped_lock&nbsp;scoped_lock;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>buffer()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>: p(0), c(0), full(0)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void put(int m)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>scoped_lock lock(mutex);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (full == BUF_SIZE)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex::scoped_lock&nbsp;lock(io_mutex);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; "Buffer is full. Waiting..." &lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>while (full == BUF_SIZE)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>cond.wait(lock);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>buf[p] = m;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>p = (p+1) % BUF_SIZE;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>++full;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>cond.notify_one();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int get()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>scoped_lock lk(mutex);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (full == 0)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex::scoped_lock&nbsp;lock(io_mutex);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; "Buffer is empty. Waiting..." &lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>while (full == 0)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>cond.wait(lk);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int i = buf[c];</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>c = (c+1) % BUF_SIZE;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>--full;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>cond.notify_one();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return i;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>private:</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex mutex;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::condition cond;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>unsigned int p, c, full;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int buf[BUF_SIZE];</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}; </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>buffer buf;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void writer()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for (int n = 0; n &lt; ITERS; ++n)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex::scoped_lock&nbsp;lock(io_mutex);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; "sending: " &lt;&lt; n &lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>buf.put(n);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void reader()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for (int x = 0; x &lt; ITERS; ++x)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int n = buf.get();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex::scoped_lock&nbsp;lock(io_mutex);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; "received: " &lt;&lt; n &lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int main(int argc, char* argv[])</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread thrd1(&amp;reader);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread thrd2(&amp;writer);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thrd1.join();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thrd2.join();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return 0;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>线程局部存储</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>函数的不可重入。 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Boost</span><span>线程库提供了智能指针</span><span>boost::thread_specific_ptr</span><span>来访问本地存储线程（</span><span>thread local storage</span><span>）。 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/thread.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/mutex.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/tss.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;iostream&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex io_mutex;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread_specific_ptr&lt;int&gt; ptr;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>struct count</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>count(int id)&nbsp;: id(id) { }</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void operator()()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (ptr.get() == 0)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ptr.reset(new int(0));</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for (int i = 0; i &lt; 10; ++i)</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(*ptr)++; // </span><span>往自己的线程上加</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::mutex::scoped_lock&nbsp;lock(io_mutex);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; id &lt;&lt; ": " &lt;&lt; *ptr &lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int id;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>};</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int main(int argc, char* argv[])</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread thrd1(count(1));</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread thrd2(count(2));</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thrd1.join();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thrd2.join();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return 0;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>仅运行一次的例程</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>如何使得初始化工作（比如说构造函数）也是线程安全的。 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>“</span><span>一次实现</span><span>”</span><span>（</span><span>once routine</span><span>）。</span><span>“</span><span>一次实现</span><span>”</span><span>在一个应用程序只能执行一次。 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Boost</span><span>线程库提供了</span><span>boost::call_once</span><span>来支持</span><span>“</span><span>一次实现</span><span>”</span><span>，并且定义了一个标志</span><span>boost::once_flag</span><span>及一个初始化这个标志的宏</span><span> BOOST_ONCE_INIT</span><span>。 </span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/thread.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;boost/thread/once.hpp&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#include &lt;iostream&gt;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int i = 0;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::once_flag flag = BOOST_ONCE_INIT;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void init()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>++i;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>void thread()</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::call_once(&amp;init, flag);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int main(int argc, char* argv[])</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread thrd1(&amp;thread);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boost::thread thrd2(&amp;thread);</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thrd1.join();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>thrd2.join();</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>std::cout &lt;&lt; i &lt;&lt; std::endl;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return 0;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span></p>
+</div>
+<p align="left">&nbsp;</p>
+<div>
+<p align="left"><span>Boost</span><span>线程库的未来</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Boost</span><span>线程库正在计划加入一些新特性。其中包括</span><span>boost::read_write_mutex</span><span>，它可以让多个线程同时从共享区中读取数据，</span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>但是一次只可能有一个线程向共享区写入数据；</span><span>boost::thread_barrier</span><span>，它使得一组线程处于等待状态，知道所有得线程</span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>都都进入了屏障区；</span><span>boost::thread_pool,</span><span>他允许执行一些小的</span><span>routine</span><span>而不必每一都要创建或是销毁一个线程。</span><span>&nbsp;</span></p>
+<p align="left"><span>•<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Boost</span><span>线程库已经作为标准中的类库技术报告中的附件提交给</span><span>C++</span><span>标准委员会，它的出现也为下一版</span><span>C++</span><span>标准吹响了第一声号角。</span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>委员会成员对</span><span> Boost</span><span>线程库的初稿给予了很高的评价</span><span>,</span><span>当然他们还会考虑其他的多线程库。他们对在</span><span>C++</span><span>标准中加入对多线程的</span></p>
+<p align="left"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span>支持非常感兴趣。从这一点上也可以看出，多线程在</span><span>C++</span><span>中的前途一片光明。</span></p>
+</div>
+<p>&nbsp;</p>
+</div>
+	</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('AjaxHolder$scriptmanager1', document.getElementById('Form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tAjaxHolder$UpdatePanel1'], [], [], 90);
+//]]>
+</script>
+
+<div id="AjaxHolder_UpdatePanel1">
+	    
+    
+</div>
+
+				
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br>
+	
+	<a id="Footer1_Hyperlink3" name="Hyperlink1" href="http://www.cppblog.com/" style="font-family:Verdana;font-size:12px;">C++博客</a>
+	<br>
+	Copyright © kongkongzi
+</p>
+		</td>
+	</tr>
+</tbody></table>
+
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+	<script type="text/javascript" src="./Boost多线程编程 - to myself 的分类学习日志 - C++博客_files/ShowHidden.js"></script>   
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-476124-5']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+
+</body></html>

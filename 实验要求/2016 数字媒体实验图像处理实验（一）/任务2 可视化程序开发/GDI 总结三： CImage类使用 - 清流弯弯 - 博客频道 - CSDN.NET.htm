@@ -1,0 +1,1366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0056)http://blog.csdn.net/shuilan0066/article/details/7080244 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" async="" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ga.js"></script><script id="allmobilize" charset="utf-8" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/allmobilize.min.js"></script><style type="text/css"></style>
+ <meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="http://blog.csdn.net/shuilan0066/article/details/7080244#">
+
+    <title>GDI 总结三： CImage类使用 - 清流弯弯
+        - 博客频道 - CSDN.NET</title>
+    
+    <meta name="description" content="前言         CImage类是基于GDI+的，但是这里为什么要讲归于GDI？         主要是基于这样的考虑： 在GDI+环境中，我们可以直接使用GDI+ ，没多少必要再使用CImage类                                                       但是，如果再GDI环境中，我们要想使用GDI+，有点麻烦，还得加入头文件，加">
+    <script src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ad.js"></script>
+        <!--new top-->
+       
+        <link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css">
+        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/style.css">
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://blog.csdn.net/shuilan0066/rss/list">
+    <link rel="shortcut icon" href="http://csdnimg.cn/public/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/default.css">
+ 
+
+
+<script src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/share.js"></script><link href="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/bdsstyle.css" rel="stylesheet" type="text/css"><script type="text/javascript" charset="utf-8" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/tracking.js"></script><script type="text/javascript" charset="utf-8" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/main.js"></script><link rel="stylesheet" type="text/css" href="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/style(1).css"><link type="text/css" rel="stylesheet" href="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/style(2).css"><script src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/logger.js"></script><link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_style0_16.css?v=89a7173d.css"></head>
+<body><iframe frameborder="0" style="display: none;"></iframe>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/html.js" type="text/javascript"></script><div class="csdn-toolbar csdn-toolbar-skin-black ">        <div class="container row center-block ">          <div class="col-md-3 pull-left logo clearfix"><a href="http://www.csdn.net/?ref=toolbar" title="CSDN首页" target="_blank" class="icon"></a><a title="频道首页" href="http://blog.csdn.net/?ref=toolbar_logo" target="_blank" class="img blog-icon"></a></div>          <div class="pull-right login-wrap unlogin">            <ul class="btns">              <li class="loginlink"><a href="https://passport.csdn.net/account/login?ref=toolbar" target="_top">登录&nbsp;</a>|<a target="_top" href="https://passport.csdn.net/account/register?ref=toolbar">&nbsp;注册</a></li>              <li class="search">                <div class="icon on-search-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <form action="http://so.csdn.net/search" method="get" target="_blank">                      <input type="hidden" value="toolbar" name="ref" accesskey="2">                      <div class="border">                        <input placeholder="搜索" type="text" value="" name="q" accesskey="2"><span class="icon-enter-sm"></span>                      </div>                    </form>                  </div>                </div>              </li>              <li class="favor">                <div class="icon on-favor-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div style="display:none;" class="favor-success"><span class="msg">收藏成功</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <div style="display:none;" class="favor-failed"><span class="icon-danger-lg"></span><span class="msg">收藏失败，请重新收藏</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <form role="form" class="form-horizontal favor-form">                      <div class="form-group">                        <div class="clearfix">                          <label for="input-title" class="col-sm-2 control-label">标题</label>                          <div class="col-sm-10">                            <input id="inputTitle" type="text" placeholder="" class="title form-control">                          </div>                        </div>                        <div class="alert alert-danger"><strong></strong>标题不能为空</div>                      </div>                      <div class="form-group">                        <label for="input-url" class="col-sm-2 control-label">网址</label>                        <div class="col-sm-10">                          <input id="input-url" type="text" placeholder="" class="url form-control">                        </div>                      </div>                      <div class="form-group">                        <label for="input-tag" class="col-sm-2 tag control-label">标签</label>                        <div class="col-sm-10">                          <input id="input-tag" type="text" class="form-control tag">                        </div>                      </div>                      <div class="form-group">                        <label for="input-description" class="description col-sm-2 control-label">摘要</label>                        <div class="col-sm-10">                          <textarea id="input-description" class="form-control description"></textarea>                        </div>                      </div>                      <div class="form-group">                        <div class="col-sm-offset-2 col-sm-10 ft">                          <div class="col-sm-4 pull-left">                            <div class="checkbox">                              <label>                                <input type="checkbox" name="share" checked="checked" class="share">公开                              </label>                            </div>                          </div>                          <div class="col-sm-8 pull-right favor-btns">                            <button type="button" class="cancel btn btn-default">取消</button>                            <button type="submit" class="submit btn btn-primary">收藏</button>                          </div>                        </div>                      </div>                    </form>                  </div>                </div>              </li>              <li class="notify">                <div style="display:none" class="number"></div>                <div style="display:none" class="icon-hasnotes-sm"></div>                <div id="header_notice_num"></div>                <div class="icon on-notify-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div id="note1" class="csdn_note">                      <div class="box"></div>                    <iframe src="about:block" frameborder="0" allowtransparency="true" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent"></iframe></div>                  </div>                </div>              </li>              <li class="ugc">                <div class="icon on-ugc-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <dl>                      <dt><a href="http://geek.csdn.net/news/expert?ref=toolbar" target="_blank" class="p-news clearfix"><em class="icon"></em><span>分享资讯</span></a></dt>                      <dt><a href="http://share.csdn.net/slides/new?ref=toolbar" target="_blank" class="p-doc clearfix"><em class="icon"></em><span>传PPT/文档</span></a></dt>                      <dt><a href="http://bbs.csdn.net/topics/new?ref=toolbar" target="_blank" class="p-ask clearfix"><em class="icon"></em><span>提问题</span></a></dt>                      <dt><a href="http://write.blog.csdn.net/postedit?ref=toolbar" target="_blank" class="p-blog clearfix"><em class="icon"></em><span>写博客</span></a></dt>                      <dt><a href="http://u.download.csdn.net/upload?ref=toolbar" target="_blank" class="p-src clearfix"><em class="icon"></em><span>传资源</span></a></dt>                      <dt><a href="https://code.csdn.net/projects/new?ref=toolbar" target="_blank" class="c-obj clearfix"><em class="icon"></em><span>创建项目</span></a></dt>                      <dt><a href="https://code.csdn.net/snippets/new?ref=toolbar" target="_blank" class="c-code clearfix"><em class="icon"></em><span>创建代码片</span></a></dt>                    </dl>                  </div>                </div>              </li>              <li class="profile">                <div class="icon on-profile-icon"><img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/100x100.jpg" class="curr-icon-img">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div class="bd">                      <dl class="clearfix">                        <dt class="pull-left img"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="avatar"><img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/100x100.jpg"></a></dt>                        <dd class="info"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="nickname"></a><a class="set-nick" href="https://passport.csdn.net/account/profile">设置昵称<span class="write-icon"></span></a><span class="dec"><a class="fill-dec" href="http://my.csdn.net/" target="_blank">编辑自我介绍，让更多人了解你<span class="write-icon"></span></a></span></dd>                      </dl>                    </div>                    <div class="ft clearfix"><a target="_blank" href="http://my.csdn.net/my/account/changepwd?ref=toolbar" class="pull-left"><span class="icon-cog"></span>帐号设置</a><a href="https://passport.csdn.net/account/logout?ref=toolbar" target="_top" class="pull-right "><span class="icon-signout"></span><span class="out">退出</span></a></div>                  </div>                </div>              </li>              <li class="apps">                <div class="icon on-apps-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>社区</h5>                      </dt>                      <dd> <a href="http://blog.csdn.net/?ref=toolbar" target="_blank">博客</a></dd>                      <dd> <a href="http://bbs.csdn.net/?ref=toolbar" target="_blank">论坛</a></dd>                      <dd> <a href="http://download.csdn.net/?ref=toolbar" target="_blank">下载</a></dd>                      <dd><a href="http://share.csdn.net/?ref=toolbar" target="_blank">Share</a></dd>                      <dd><a href="http://geek.csdn.net/?ref=toolbar" target="_blank">极客头条</a></dd>                    </dl>                  </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>服务</h5>                      </dt>                      <dd> <a href="https://code.csdn.net/?ref=toolbar" target="_blank">CODE</a></dd>                      <dd> <a href="http://hero.csdn.net/?ref=toolbar" target="_blank">英雄会</a></dd>                      <dd> <a href="http://huiyi.csdn.net/?ref=toolbar" target="_blank">活动</a></dd>                      <dd> <a href="http://www.csto.com/?ref=toolbar" target="_blank">CSTO</a></dd>                    </dl>                  </div>                  <div class="detail last">                    <dl>                      <dt>                        <h5>俱乐部</h5>                      </dt>                      <dd> <a href="http://cto.csdn.net/?ref=toolbar" target="_blank">CTO俱乐部</a></dd>                      <dd> <a href="http://student.csdn.net/?ref=toolbar" target="_blank">高校俱乐部</a></dd>                    </dl>                  </div>                </div>              </div>            </li>            </ul>          </div>        </div>    </div>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/shuilan0066">清流弯弯</a></h2>
+            <h3></h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+                <li id="btnContents"><a href="http://blog.csdn.net/shuilan0066?viewmode=contents"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_mulu&#39;])">
+                    <img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/shuilan0066?viewmode=list"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_zhaiyao&#39;])">
+                    <img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/shuilan0066/rss/list"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_RSS&#39;])">
+                    <img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "shuilan0066";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/shuilan0066";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod="popu_3"> 
+
+<a href="http://bbs.csdn.net/topics/390812950?page=2#post-398116601" target="_blank">
+<font color="blue">博客专家福利
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://www.csdn.net/article/2014-10-13/2822071" target="_blank">
+<font color="red">专访徐宜生：坚决不做代码搬运工</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/40047403" target="_blank">
+<font color="blue">有奖试读&amp;征文:我们在互联网上奋斗的故事
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://weixin2014-sz.csdn.net/" target="_blank">
+<font color="red">微信开发者大会深圳站即将开幕
+</font></a>
+
+
+</div>                        </div>
+                        
+
+  
+<link href="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/comment1.css" type="text/css" rel="stylesheet">
+<link href="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/style1.css" type="text/css" rel="stylesheet">
+<script language="JavaScript" type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/jquery.cookie.js"></script>
+<script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/main(1).js"></script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET.htm">
+        GDI 总结三： CImage类使用
+        </a></span>
+    </h1>
+</div>
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="http://blog.csdn.net/shuilan0066/article/category/614362" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_fenlei&#39;]);">图形图像处理</a> 
+        </span>
+    <span class="link_postdate">2011-12-21 09:16</span>
+    <span class="link_view" title="阅读次数">9444人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#comments" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_pinglun&#39;])">评论</a>(4)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shoucang&#39;]);collectArticle(&#39;GDI 总结三： CImage类使用&#39;,&#39;7080244&#39;);return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#report" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_jubao&#39;]);report(7080244,2);return false;" title="举报">举报</a></span>
+    
+</div>
+<div class="tag2box"><a href="http://www.csdn.net/tag/image" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">image</a><a href="http://www.csdn.net/tag/null" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">null</a><a href="http://www.csdn.net/tag/extension" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">extension</a><a href="http://www.csdn.net/tag/byte" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">byte</a><a href="http://www.csdn.net/tag/file" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">file</a><a href="http://www.csdn.net/tag/path" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">path</a></div>
+
+  
+    
+<div id="article_content" class="article_content">
+
+<p>&nbsp;</p>
+<p><strong>前言</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>CImage类是基于GDI+的，但是这里为什么要讲归于GDI？</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 主要是基于这样的考虑： 在GDI+环境中，我们可以直接使用GDI+ ，没多少必要再使用CImage类</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 但是，如果再GDI环境中，我们要想使用GDI+，有点麻烦，还得加入头文件，加入启动GDI+的代码和关闭GDI+的代码，显得太罗嗦了，GDI&nbsp;&nbsp;的CBitmap 处理功能又有局限，只能处理BMP格式的图片。 怎么办？这时，我们便可使用CImage类，因为这个类本身封装了GDI+得使用环境，所以无需我们手动设置，简化了我们的操作。&nbsp; 同时，又可以利用GDI+中强大的图片处理功能，及可以简便的与CBitmap对象进行转换
+ ，大大方便了在GDI环境下，进行各种图片处理工作 。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 其实，将其称作 GDI/ GDI+ 混合编程，这样才更确切些。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p>&nbsp;&nbsp; &nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>为什么引入CImage类？</strong></p>
+<p><strong></strong>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; CBitmap 类只能处理BMP格式的图片，非常受限。</p>
+<p>&nbsp;&nbsp;&nbsp; 而CImage可以处理JPGE GIF BMP PNG多种格式图片，扩展了图片处理功能 且能与CBitmap 进行转换( 因为所载入的位图句柄都是HBITMAP,所以可相互转换)，因此引入CImage类进行图像处理</p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp; CImage</strong> provides enhanced bitmap support, including the ability to load and save images in JPEG, GIF, BMP, and Portable Network Graphics (PNG) formats</p>
+<p>&nbsp;</p>
+<p><strong>CImage类介绍</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp; </strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CImage是MFC和ATL共享的新类，它能从外部磁盘中调入一个JPEG、GIF、BMP和PNG格式的图像文件加以显示，而且这些文件格式可以相互转换。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; CImage是VC.NET中定义的一种MFC/ATL共享类，也是ATL的一种工具类，它提供增强型的（DDB和DIB）位图支持，可以装入、显示、转换和保存多种格式的图像文件，包括BMP、GIF、JPG、PNG、TIF等。CImage是一个独立的类，没有基类。（CImage类是基于GDI+的，从VC.NET起引进，VC 6.0中没有。）</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ATL（Active Template Library，活动模板库）是一套基于模板的 C++ 类，用以简化小而快的 COM 对象的编写。</p>
+<p>为了在MFC程序中使用CImage类，必须包含ATL的图像头文件atlimage.h：（在VS08 SP1中不用包含）</p>
+<p><span style="color:#ffff33; background-color:#333333">&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;atlimage.h&gt;</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>1&nbsp; 加载位图文件</strong></p>
+<p><strong></strong>&nbsp;</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 1353px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_1" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_1" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=1&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span>&nbsp;&nbsp;&nbsp;</span><span class="comment">//&nbsp;CImage可加载的图片文件有JPG,BMP,TIF.PNG等格式&nbsp;&nbsp;而CBitmap只能加载BMP图片文件</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">if</span><span>(!PathFileExists(imgFilePath))&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;NULL;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>CImage&nbsp;nImage;&nbsp;&nbsp;</span></li><li class=""><span>nImage.Load(imgFilePath);&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">return</span><span>&nbsp;nImage.Detach();&nbsp;&nbsp;</span><span class="comment">//返回HBITMAP&nbsp;&nbsp;&nbsp;&nbsp;可用CBitmap&nbsp;处理&nbsp;也可用CImage处理&nbsp;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><pre class="cpp" name="code" style="display: none;">    // CImage可加载的图片文件有JPG,BMP,TIF.PNG等格式  而CBitmap只能加载BMP图片文件
+	if(!PathFileExists(imgFilePath)) 
+		return NULL;
+
+	CImage nImage;
+	nImage.Load(imgFilePath);
+	return nImage.Detach();  //返回HBITMAP    可用CBitmap 处理 也可用CImage处理 </pre>
+<p><br>
+<strong>2 与CBitmap转换</strong></p>
+<p><strong></strong>&nbsp;</p>
+<strong></strong><div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 1626px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_2" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_2" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=2&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span>CImage&nbsp;nImage;&nbsp;&nbsp;</span></span></li><li class=""><span>nImage.Load(imgFilePath);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="datatypes">HBITMAP</span><span>&nbsp;hBitmap=nImage.Detach();&nbsp;</span><span class="comment">//&nbsp;获得位图句柄&nbsp;用以转换</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="comment">//&nbsp;转换方式一：</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>CBitmap&nbsp;bmp;&nbsp;&nbsp;</span></li><li class="alt"><span>bmp.DeleteObject();&nbsp;&nbsp;</span></li><li class=""><span>bmp.Attach(hBitmap);&nbsp;<span class="comment">//&nbsp;&nbsp;转换为CBitmap对象</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="comment">//&nbsp;转换方式二：</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>CBitmap&nbsp;*pBitmap=CBitmap::FromHandle(nImage.m_hBitmap);&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">	CImage nImage;
+	nImage.Load(imgFilePath);
+
+	HBITMAP hBitmap=nImage.Detach(); // 获得位图句柄 用以转换
+
+
+	// 转换方式一：
+	CBitmap bmp;
+	bmp.DeleteObject();
+	bmp.Attach(hBitmap); //  转换为CBitmap对象
+
+
+	// 转换方式二：
+	 
+	CBitmap *pBitmap=CBitmap::FromHandle(nImage.m_hBitmap);
+
+</pre>
+<p><br>
+3 获得CImage对象的cdc</p>
+<p>&nbsp;</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 2043px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_3" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_3" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=3&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span>CDC&nbsp;*pDC=CDC::FromHandle(nImage.GetDC());&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="comment">//&nbsp;Use&nbsp;pDC&nbsp;here</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>nImage.ReleaseDC();&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">	CDC *pDC=CDC::FromHandle(nImage.GetDC());
+
+	// Use pDC here
+
+	nImage.ReleaseDC();</pre>
+<p><br>
+&nbsp;</p>
+<p><strong>4 显示位图 </strong></p>
+<p>&nbsp;&nbsp; 思路： 将CImage对象 绘制在对应的DC中</p>
+<p>&nbsp;&nbsp; 所使用的函数 BitBlt&nbsp;&nbsp; StretchBlt&nbsp; Draw等</p>
+<p>&nbsp;&nbsp; 以Draw举例：</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 2358px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_4" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_4" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=4&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span class="datatypes">BOOL</span><span>&nbsp;Draw(&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">HDC</span><span>&nbsp;hDestDC,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;xDest,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;yDest,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;nDestWidth,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;nDestHeight,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;xSrc,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;ySrc,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;nSrcWidth,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;nSrcHeight&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>)&nbsp;<span class="keyword">const</span><span>&nbsp;</span><span class="keyword">throw</span><span>(&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span><span class="datatypes">BOOL</span><span>&nbsp;Draw(&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">HDC</span><span>&nbsp;hDestDC,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="keyword">const</span><span>&nbsp;RECT&amp;&nbsp;rectDest,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="keyword">const</span><span>&nbsp;RECT&amp;&nbsp;rectSrc&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>)&nbsp;<span class="keyword">const</span><span>&nbsp;</span><span class="keyword">throw</span><span>(&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="datatypes">BOOL</span><span>&nbsp;Draw(&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">HDC</span><span>&nbsp;hDestDC,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;xDest,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;yDest&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>)&nbsp;<span class="keyword">const</span><span>&nbsp;</span><span class="keyword">throw</span><span>(&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span><span class="datatypes">BOOL</span><span>&nbsp;Draw(&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">HDC</span><span>&nbsp;hDestDC,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="keyword">const</span><span>&nbsp;POINT&amp;&nbsp;pointDest&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>)&nbsp;<span class="keyword">const</span><span>&nbsp;</span><span class="keyword">throw</span><span>(&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span><span class="datatypes">BOOL</span><span>&nbsp;Draw(&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">HDC</span><span>&nbsp;hDestDC,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;xDest,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;yDest,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;nDestWidth,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;nDestHeight&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>)&nbsp;<span class="keyword">const</span><span>&nbsp;</span><span class="keyword">throw</span><span>(&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="datatypes">BOOL</span><span>&nbsp;Draw(&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="datatypes">HDC</span><span>&nbsp;hDestDC,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="keyword">const</span><span>&nbsp;RECT&amp;&nbsp;rectDest&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>)&nbsp;<span class="keyword">const</span><span>&nbsp;</span><span class="keyword">throw</span><span>(&nbsp;);&nbsp;&nbsp;</span></span></li></ol></div><pre class="cpp" name="code" style="display: none;">BOOL Draw(
+   HDC hDestDC,
+   int xDest,
+   int yDest,
+   int nDestWidth,
+   int nDestHeight,
+   int xSrc,
+   int ySrc,
+   int nSrcWidth,
+   int nSrcHeight 
+) const throw( );
+BOOL Draw(
+   HDC hDestDC,
+   const RECT&amp; rectDest,
+   const RECT&amp; rectSrc 
+) const throw( );
+BOOL Draw(
+   HDC hDestDC,
+   int xDest,
+   int yDest 
+) const throw( );
+BOOL Draw(
+   HDC hDestDC,
+   const POINT&amp; pointDest 
+) const throw( );
+BOOL Draw(
+   HDC hDestDC,
+   int xDest,
+   int yDest,
+   int nDestWidth,
+   int nDestHeight 
+) const throw( );
+BOOL Draw(
+   HDC hDestDC,
+   const RECT&amp; rectDest 
+) const throw( );
+</pre>
+<p><br>
+&nbsp;</p>
+<p><strong>Draw</strong> performs the same operation as <a href="">StretchBlt</a>, unless the image contains a transparent color or alpha channel. In that case,<strong>Draw</strong> performs the same operation as either<a href="">TransparentBlt</a> or<a href="">AlphaBlend</a>
+ as required. </p>
+<p>For versions of <strong>Draw</strong> that do not specify a source rectangle, the entire source image is the default. For the version of<strong>Draw</strong> that does not specify a size for the destination rectangle, the size of the source image is the
+ default and no stretching or shrinking occurs.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>EXAMPLE 1：</p>
+<strong></strong><div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 3309px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_5" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_5" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=5&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span>CImage&nbsp;img;&nbsp;&nbsp;</span></span></li><li class=""><span>img.Load(<span class="string">"1.jpg"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">if</span><span>&nbsp;(!img.IsNull())&nbsp;&nbsp;</span></span></li><li class="alt"><span>{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;img.Draw(pDC-&gt;m_hDC,CRect(0,0,100,100));&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">	CImage img;
+	img.Load("1.jpg");
+
+	if (!img.IsNull())
+	{
+		img.Draw(pDC-&gt;m_hDC,CRect(0,0,100,100));
+	}</pre>
+<p><br>
+&nbsp;</p>
+<p>EXAMPLE 2： 画在另一个位图中</p>
+<p>&nbsp;</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 3608px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_6" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_6" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=6&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span>CImage&nbsp;img;&nbsp;&nbsp;</span></span></li><li class=""><span>img.Load(filePath);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="comment">//&nbsp;获得CImage对象的&nbsp;CDC</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="datatypes">HDC</span><span>&nbsp;hDC=img.GetDC();&nbsp;&nbsp;</span></span></li><li class=""><span>CDC&nbsp;*pDC=CDC::FromHandle(hDC);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>CBitmap&nbsp;bmp;<span class="comment">//&nbsp;只是创建了位图对象，但还没有将位图对象与位图资源联系起来</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>bmp.CreateCompatibleBitmap(pDC,nWidth,nHeight);&nbsp;<span class="comment">//&nbsp;创建新的位图资源</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>CDC&nbsp;memDC;&nbsp;&nbsp;</span></li><li class="alt"><span>memDC.CreateCompatibleDC(pDC);&nbsp;&nbsp;</span></li><li class=""><span>CBitmap&nbsp;*pOld=memDC.SelectObject(&amp;bmp);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="comment">//&nbsp;将img图像绘制到bmp中</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>::SetStretchBltMode(memDC.m_hDC,HALFTONE);&nbsp;&nbsp;</span></li><li class="alt"><span>::SetBrushOrgEx(memDC.m_hDC,0,0,NULL);&nbsp;&nbsp;</span></li><li class=""><span>img.StretchBlt(memDC.m_hDC,CRect(0,0,nWidth,nHeight)<span class="comment">/*DestRect*/</span><span>,CRect(0,0,nWidth,nHeight)</span><span class="comment">/*SourceRect*/</span><span>,SRCCOPY);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="datatypes">HBITMAP</span><span>&nbsp;hBitmap=(</span><span class="datatypes">HBITMAP</span><span>)memDC.SelectObject(pOld-&gt;m_hObject);&nbsp;</span><span class="comment">//&nbsp;获得新创建的位图资源句柄</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>img.ReleaseDC();&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">		CImage img;
+		img.Load(filePath);
+
+		// 获得CImage对象的 CDC
+		HDC hDC=img.GetDC();
+		CDC *pDC=CDC::FromHandle(hDC);
+
+		CBitmap bmp;// 只是创建了位图对象，但还没有将位图对象与位图资源联系起来
+		bmp.CreateCompatibleBitmap(pDC,nWidth,nHeight); // 创建新的位图资源
+
+
+		CDC memDC;
+		memDC.CreateCompatibleDC(pDC);
+		CBitmap *pOld=memDC.SelectObject(&amp;bmp);
+
+		// 将img图像绘制到bmp中
+
+		::SetStretchBltMode(memDC.m_hDC,HALFTONE);
+		::SetBrushOrgEx(memDC.m_hDC,0,0,NULL);
+		img.StretchBlt(memDC.m_hDC,CRect(0,0,nWidth,nHeight)/*DestRect*/,CRect(0,0,nWidth,nHeight)/*SourceRect*/,SRCCOPY);
+
+		HBITMAP hBitmap=(HBITMAP)memDC.SelectObject(pOld-&gt;m_hObject); // 获得新创建的位图资源句柄
+		
+		img.ReleaseDC();
+
+</pre>
+<p><br>
+&nbsp;</p>
+<p><strong>5 将位图资源与对象进行分离</strong></p>
+<p><strong></strong>&nbsp;</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 4213px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_7" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_7" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=7&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span class="keyword">inline</span><span>&nbsp;</span><span class="datatypes">HBITMAP</span><span>&nbsp;CImage::Detach()&nbsp;</span><span class="keyword">throw</span><span>()&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">HBITMAP</span><span>&nbsp;hBitmap;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;ATLASSUME(&nbsp;m_hBitmap&nbsp;!=&nbsp;NULL&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;ATLASSUME(&nbsp;m_hDC&nbsp;==&nbsp;NULL&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;hBitmap&nbsp;=&nbsp;m_hBitmap;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;m_hBitmap&nbsp;=&nbsp;NULL;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;m_pBits&nbsp;=&nbsp;NULL;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;m_nWidth&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;m_nHeight&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;m_nBPP&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;m_nPitch&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;m_iTransparentColor&nbsp;=&nbsp;-1;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;m_bHasAlphaChannel&nbsp;=&nbsp;<span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;m_bIsDIBSection&nbsp;=&nbsp;<span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>(&nbsp;hBitmap&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">inline HBITMAP CImage::Detach() throw()
+{
+	HBITMAP hBitmap;
+
+	ATLASSUME( m_hBitmap != NULL );
+	ATLASSUME( m_hDC == NULL );
+
+	hBitmap = m_hBitmap;
+	m_hBitmap = NULL;
+	m_pBits = NULL;
+	m_nWidth = 0;
+	m_nHeight = 0;
+	m_nBPP = 0;
+	m_nPitch = 0;
+	m_iTransparentColor = -1;
+	m_bHasAlphaChannel = false;
+	m_bIsDIBSection = false;
+
+	return( hBitmap );
+}
+</pre>
+<p><br>
+&nbsp;</p>
+<p><strong>6&nbsp;释放资源</strong></p>
+<p>&nbsp;</p>
+<p>CBitmap 使用DeleteObject（）来主动释放掉位图资源</p>
+<p>CImage&nbsp;&nbsp; 没有DeleteObject()函数 ，而是用Destroy（）函数来主动释放位图资源</p>
+<p>&nbsp;</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 4824px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_8" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_8" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=8&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span class="keyword">inline</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;CImage::Destroy()&nbsp;</span><span class="keyword">throw</span><span>()&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">HBITMAP</span><span>&nbsp;hBitmap;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;m_hBitmap&nbsp;!=&nbsp;NULL&nbsp;)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hBitmap&nbsp;=&nbsp;Detach();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::DeleteObject(&nbsp;hBitmap&nbsp;);&nbsp;&nbsp;<span class="comment">//释放位图资源</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">inline void CImage::Destroy() throw()
+{
+	HBITMAP hBitmap;
+
+	if( m_hBitmap != NULL )
+	{
+		hBitmap = Detach();
+		::DeleteObject( hBitmap );  //释放位图资源
+	}
+}</pre>
+<p>&nbsp;</p>
+<p>CBitmap 析构时，会自动释放掉所占用的位图资源</p>
+<p>CImage 析构时，也会自动释放掉所占用的位图资源</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 5151px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_9" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_9" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=9&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span class="keyword">inline</span><span>&nbsp;CImage::~CImage()&nbsp;</span><span class="keyword">throw</span><span>()&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;Destroy();&nbsp;<span class="comment">//释放掉所占用的位图资源</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;s_initGDIPlus.DecreaseCImageCount();&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">inline CImage::~CImage() throw()
+{
+	Destroy(); //释放掉所占用的位图资源
+	s_initGDIPlus.DecreaseCImageCount();
+}</pre>
+<p><br>
+&nbsp;</p>
+<p><strong>7 读写图像数据</strong></p>
+<p><strong></strong>&nbsp;</p>
+<p><strong>主要用到3个函数 ：</strong></p>
+<p><strong></strong>&nbsp;</p>
+<p><strong>1 ）GetBits() 获得数据区的指针</strong></p>
+<strong></strong>
+<p>Retrieves a pointer to the actual bit values of a given pixel in a bitmap.</p>
+<div id="syntaxSection" class="section">
+<div id="syntaxCodeBlocks" class="code"><span></span>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th align="left">&nbsp;</th>
+</tr>
+<tr>
+<td>
+<pre><strong>void* GetBits( ) throw( );</strong></pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="code">&nbsp;</div>
+<div class="code"><div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 5624px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_10" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_10" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=10&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span class="keyword">inline</span><span>&nbsp;</span><span class="keyword">void</span><span>*&nbsp;CImage::GetBits()&nbsp;</span><span class="keyword">throw</span><span>()&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;ATLASSUME(&nbsp;m_hBitmap&nbsp;!=&nbsp;NULL&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;ATLASSERT(&nbsp;IsDIBSection()&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>(&nbsp;m_pBits&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">inline void* CImage::GetBits() throw()
+{
+	ATLASSUME( m_hBitmap != NULL );
+	ATLASSERT( IsDIBSection() );
+
+	return( m_pBits );
+}</pre></div>
+</div>
+<p>A pointer to the bitmap buffer. If the bitmap is a bottom-up DIB, the pointer points near the end of the buffer. If the bitmap is a top-down DIB, the pointer points to the first byte of the buffer.</p>
+<p>Using this pointer, along with the value returned by <a href="">GetPitch</a>, you can locate and change individual pixels in an image.</p>
+<p>&nbsp;</p>
+<p>&nbsp;注意： 由GetBits()取得的指针不一定是图片数据的起始行，必须结合GetPitch()的值来确定起始行位置</p>
+<p>&nbsp;</p>
+<p>2）GetPitch()</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 6001px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_11" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_11" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=11&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span class="keyword">inline</span><span>&nbsp;</span><span class="datatypes">int</span><span>&nbsp;CImage::GetPitch()&nbsp;</span><span class="keyword">const</span><span>&nbsp;</span><span class="keyword">throw</span><span>()&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;ATLASSUME(&nbsp;m_hBitmap&nbsp;!=&nbsp;NULL&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;ATLASSERT(&nbsp;IsDIBSection()&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>(&nbsp;m_nPitch&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">inline int CImage::GetPitch() const throw()
+{
+	ATLASSUME( m_hBitmap != NULL );
+	ATLASSERT( IsDIBSection() );
+
+	return( m_nPitch );
+}</pre>
+<p><br>
+获得图像数据每一行的字节数</p>
+<p>The pitch of the image. If the return value is negative, the bitmap is a bottom-up DIB and its origin is the lower left corner. If the return value is positive, the bitmap is a top-down DIB and its origin is the upper left corner.</p>
+<p><br>
+GetBits 与 GetPitch 关系：</p>
+<p>当GetPitch()&lt;0时，GetBits()获得的指针指向最后一行</p>
+<p>当GetPitch()&gt;0时，GetBits()获得的指针指向第一行</p>
+<p>&nbsp;</p>
+<p>图像数据首行地址：</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 6456px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_12" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_12" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=12&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span class="datatypes">BYTE</span><span>&nbsp;*pData=NULL;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">if</span><span>(img.GetPitch()&lt;0)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;pData=(<span class="datatypes">BYTE</span><span>*)img.GetBits()+(img.GetPitch()*(img.GetHeight()-1));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">else</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;pData=(<span class="datatypes">BYTE</span><span>*)img.GetBits();&nbsp;&nbsp;</span></span></li></ol></div><pre class="cpp" name="code" style="display: none;">	BYTE *pData=NULL;
+
+	if(img.GetPitch()&lt;0)
+
+		pData=(BYTE*)img.GetBits()+(img.GetPitch()*(img.GetHeight()-1));
+
+	else
+		pData=(BYTE*)img.GetBits();
+	</pre>
+<p><br>
+或</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 6721px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_13" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_13" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=13&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span class="datatypes">BYTE</span><span>&nbsp;*pData=NULL;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">if</span><span>(img.GetPitch()&lt;0)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;pData=(<span class="datatypes">BYTE</span><span>&nbsp;*)img.GetPixelAddress(img.GetHeight()-1,0);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">else</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;pData=(<span class="datatypes">BYTE</span><span>&nbsp;*)img.GetPixelAddress(0,0);&nbsp;&nbsp;</span></span></li></ol></div><pre class="cpp" name="code" style="display: none;">	BYTE *pData=NULL;
+	if(img.GetPitch()&lt;0)
+
+		pData=(BYTE *)img.GetPixelAddress(img.GetHeight()-1,0);
+
+	else
+
+		pData=(BYTE *)img.GetPixelAddress(0,0);</pre>
+<p><br>
+3）GetBPP() 返回每个像素所占的bit数</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 6986px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_14" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_14" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=14&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span class="keyword">inline</span><span>&nbsp;</span><span class="datatypes">int</span><span>&nbsp;CImage::GetBPP()&nbsp;</span><span class="keyword">const</span><span>&nbsp;</span><span class="keyword">throw</span><span>()&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;ATLASSUME(&nbsp;m_hBitmap&nbsp;!=&nbsp;NULL&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>(&nbsp;m_nBPP&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">inline int CImage::GetBPP() const throw()
+{
+	ATLASSUME( m_hBitmap != NULL );
+
+	return( m_nBPP );
+}</pre>
+<p><br>
+&nbsp;</p>
+<p>The number of bits per pixel.</p>
+<p>This value determines the number of bits that define each pixel and the maximum number of colors in the bitmap</p>
+<p>&nbsp; </p>
+<p>一个综合例子：</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 7319px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_15" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_15" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=15&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span class="keyword">void</span><span>&nbsp;CMyImage::Negatives(</span><span class="keyword">void</span><span>)&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;i,&nbsp;j;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//图像每一行的字节数</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;nRowBytes&nbsp;=&nbsp;GetPitch();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;nWidth&nbsp;=&nbsp;GetWidth();&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;nHeight&nbsp;=&nbsp;GetHeight();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//每个像素所占的字节数</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;nClrCount&nbsp;=&nbsp;GetBPP()&nbsp;/&nbsp;8;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">LPBYTE</span><span>&nbsp;p;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span><span>(</span><span class="datatypes">int</span><span>&nbsp;index&nbsp;=&nbsp;0;&nbsp;index&nbsp;&lt;&nbsp;nClrCount;&nbsp;index++)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;=&nbsp;(<span class="datatypes">LPBYTE</span><span>)GetBits();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span><span>(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;nHeight;&nbsp;i++)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span><span>(j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;nWidth;&nbsp;j++)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p[j*nClrCount&nbsp;+&nbsp;index]&nbsp;=&nbsp;255&nbsp;-&nbsp;p[j*nClrCount&nbsp;+&nbsp;index];&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//如果nRowBytes&gt;0&nbsp;&nbsp;则从开始到结尾</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//如果nRowBytes&lt;0,&nbsp;则从结尾到开始</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;+=&nbsp;nRowBytes;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">void CMyImage::Negatives(void)
+{
+	int i, j;
+
+    //图像每一行的字节数
+	int nRowBytes = GetPitch();
+	int nWidth = GetWidth();
+	int nHeight = GetHeight();
+
+
+    //每个像素所占的字节数
+	int nClrCount = GetBPP() / 8;
+	LPBYTE p;
+	for(int index = 0; index &lt; nClrCount; index++)
+	{
+		p = (LPBYTE)GetBits();
+		for(i = 0; i &lt; nHeight; i++)
+		{
+			for(j = 0; j &lt; nWidth; j++)
+			{
+				p[j*nClrCount + index] = 255 - p[j*nClrCount + index];
+			}
+            
+			//如果nRowBytes&gt;0  则从开始到结尾
+			//如果nRowBytes&lt;0, 则从结尾到开始
+			p += nRowBytes; 
+		}
+	}
+}
+</pre>
+<p><br>
+&nbsp;</p>
+<p><strong>8 保存到图像文件中</strong></p>
+<p>Saves an image as the specified file name and type.</p>
+<p>&nbsp;</p>
+<div id="syntaxCodeBlocks" class="code"><span></span>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th align="left">&nbsp;</th>
+</tr>
+<tr>
+<td>
+<pre><strong>HRESULT Save(
+   IStream* </strong><span class="parameter">pStream</span><strong>,
+   REFGUID </strong><span class="parameter">guidFileType</span>
+<strong>) const throw();
+HRESULT Save(
+   LPCTSTR </strong><span class="parameter">pszFileName</span><strong>,
+   REFGUID </strong><span class="parameter">guidFileType</span>= <strong>GUID_NULL
+)</strong></pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 8328px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_16" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_16" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=16&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span class="keyword">inline</span><span>&nbsp;</span><span class="datatypes">HRESULT</span><span>&nbsp;CImage::Save(&nbsp;</span><span class="datatypes">LPCTSTR</span><span>&nbsp;pszFileName,&nbsp;REFGUID&nbsp;guidFileType&nbsp;)&nbsp;</span><span class="keyword">const</span><span>&nbsp;</span><span class="keyword">throw</span><span>()&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;!InitGDIPlus()&nbsp;)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>(&nbsp;E_FAIL&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">UINT</span><span>&nbsp;nEncoders;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">UINT</span><span>&nbsp;nBytes;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;Gdiplus::Status&nbsp;status;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;Gdiplus::GetImageEncodersSize(&nbsp;&amp;nEncoders,&nbsp;&amp;nBytes&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;status&nbsp;!=&nbsp;Gdiplus::Ok&nbsp;)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>(&nbsp;E_FAIL&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;USES_CONVERSION_EX;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;Gdiplus::ImageCodecInfo*&nbsp;pEncoders&nbsp;=&nbsp;<span class="keyword">static_cast</span><span>&lt;&nbsp;Gdiplus::ImageCodecInfo*&nbsp;&gt;(&nbsp;_ATL_SAFE_ALLOCA(nBytes,&nbsp;_ATL_SAFE_ALLOCA_DEF_THRESHOLD)&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;pEncoders&nbsp;==&nbsp;NULL&nbsp;)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;E_OUTOFMEMORY;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;Gdiplus::GetImageEncoders(&nbsp;nEncoders,&nbsp;nBytes,&nbsp;pEncoders&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;status&nbsp;!=&nbsp;Gdiplus::Ok&nbsp;)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>(&nbsp;E_FAIL&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;CLSID&nbsp;clsidEncoder&nbsp;=&nbsp;CLSID_NULL;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;guidFileType&nbsp;==&nbsp;GUID_NULL&nbsp;)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;Determine&nbsp;clsid&nbsp;from&nbsp;extension</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clsidEncoder&nbsp;=&nbsp;FindCodecForExtension(&nbsp;::PathFindExtension(&nbsp;pszFileName&nbsp;),&nbsp;pEncoders,&nbsp;nEncoders&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;Determine&nbsp;clsid&nbsp;from&nbsp;file&nbsp;type</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clsidEncoder&nbsp;=&nbsp;FindCodecForFileType(&nbsp;guidFileType,&nbsp;pEncoders,&nbsp;nEncoders&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;clsidEncoder&nbsp;==&nbsp;CLSID_NULL&nbsp;)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>(&nbsp;E_FAIL&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">LPCWSTR</span><span>&nbsp;pwszFileName&nbsp;=&nbsp;T2CW_EX(&nbsp;pszFileName,&nbsp;_ATL_SAFE_ALLOCA_DEF_THRESHOLD&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor">#ifndef&nbsp;_UNICODE</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;pwszFileName&nbsp;==&nbsp;NULL&nbsp;)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;E_OUTOFMEMORY;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#endif&nbsp;//&nbsp;_UNICODE</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;m_bHasAlphaChannel&nbsp;)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ATLASSUME(&nbsp;m_nBPP&nbsp;==&nbsp;32&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gdiplus::Bitmap&nbsp;bm(&nbsp;m_nWidth,&nbsp;m_nHeight,&nbsp;m_nPitch,&nbsp;PixelFormat32bppARGB,&nbsp;<span class="keyword">static_cast</span><span>&lt;&nbsp;</span><span class="datatypes">BYTE</span><span>*&nbsp;&gt;(&nbsp;m_pBits&nbsp;)&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;bm.Save(&nbsp;pwszFileName,&nbsp;&amp;clsidEncoder,&nbsp;NULL&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;status&nbsp;!=&nbsp;Gdiplus::Ok&nbsp;)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>(&nbsp;E_FAIL&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gdiplus::Bitmap&nbsp;bm(&nbsp;m_hBitmap,&nbsp;NULL&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;bm.Save(&nbsp;pwszFileName,&nbsp;&amp;clsidEncoder,&nbsp;NULL&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;status&nbsp;!=&nbsp;Gdiplus::Ok&nbsp;)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>(&nbsp;E_FAIL&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>(&nbsp;S_OK&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">inline HRESULT CImage::Save( LPCTSTR pszFileName, REFGUID guidFileType ) const throw()
+{
+	if( !InitGDIPlus() )
+	{
+		return( E_FAIL );
+	}
+
+	UINT nEncoders;
+	UINT nBytes;
+	Gdiplus::Status status;
+
+	status = Gdiplus::GetImageEncodersSize( &amp;nEncoders, &amp;nBytes );
+	if( status != Gdiplus::Ok )
+	{
+		return( E_FAIL );
+	}
+
+	USES_CONVERSION_EX;
+	Gdiplus::ImageCodecInfo* pEncoders = static_cast&lt; Gdiplus::ImageCodecInfo* &gt;( _ATL_SAFE_ALLOCA(nBytes, _ATL_SAFE_ALLOCA_DEF_THRESHOLD) );
+
+	if( pEncoders == NULL )
+		return E_OUTOFMEMORY;
+
+	status = Gdiplus::GetImageEncoders( nEncoders, nBytes, pEncoders );
+	if( status != Gdiplus::Ok )
+	{
+		return( E_FAIL );
+	}
+
+	CLSID clsidEncoder = CLSID_NULL;
+	if( guidFileType == GUID_NULL )
+	{
+		// Determine clsid from extension
+		clsidEncoder = FindCodecForExtension( ::PathFindExtension( pszFileName ), pEncoders, nEncoders );
+	}
+	else
+	{
+		// Determine clsid from file type
+		clsidEncoder = FindCodecForFileType( guidFileType, pEncoders, nEncoders );
+	}
+	if( clsidEncoder == CLSID_NULL )
+	{
+		return( E_FAIL );
+	}
+
+	LPCWSTR pwszFileName = T2CW_EX( pszFileName, _ATL_SAFE_ALLOCA_DEF_THRESHOLD );
+#ifndef _UNICODE
+	if( pwszFileName == NULL )
+		return E_OUTOFMEMORY;
+#endif // _UNICODE
+	if( m_bHasAlphaChannel )
+	{
+		ATLASSUME( m_nBPP == 32 );
+		Gdiplus::Bitmap bm( m_nWidth, m_nHeight, m_nPitch, PixelFormat32bppARGB, static_cast&lt; BYTE* &gt;( m_pBits ) );
+		status = bm.Save( pwszFileName, &amp;clsidEncoder, NULL );
+		if( status != Gdiplus::Ok )
+		{
+			return( E_FAIL );
+		}
+	}
+	else
+	{
+		Gdiplus::Bitmap bm( m_hBitmap, NULL );
+		status = bm.Save( pwszFileName, &amp;clsidEncoder, NULL );
+		if( status != Gdiplus::Ok )
+		{
+			return( E_FAIL );
+		}
+	}
+
+	return( S_OK );
+}</pre>
+<p><br>
+&nbsp;</p>
+<dl><dt><span class="parameter">pStream</span> </dt><dd>
+<p>A pointer to a stream containing the file name for the image.</p>
+</dd></dl>
+<dl><dt><em>pszFileName</em> </dt><dd>
+<p>A pointer to the file name for the image.</p>
+</dd></dl>
+<dl><dt><span class="parameter">guidFileType</span> </dt><dd>
+<p>The file type to save the image as. Can be one of the following:</p>
+<ul>
+<li>
+<p><strong>ImageFormatBMP</strong>&nbsp;&nbsp;&nbsp;An uncompressed bitmap image.</p>
+</li><li>
+<p><strong>ImageFormatPNG</strong>&nbsp;&nbsp;&nbsp;A Portable Network Graphic (PNG) compressed image.</p>
+</li><li>
+<p><strong>ImageFormatJPEG</strong>&nbsp;&nbsp;&nbsp;A JPEG compressed image.</p>
+</li><li>
+<p><strong>ImageFormatGIF</strong>&nbsp;&nbsp;&nbsp;A GIF compressed image.</p>
+</li></ul>
+</dd></dl>
+<p>Call this function to save the image using a specified name and type. If the <span class="parameter">
+guidFileType</span> parameter is not included, the file name's file extension will be used to determine the image format. If no extension is provided, the image will be saved in BMP format.</p>
+<p>&nbsp;</p>
+<p>MSDN例子：</p>
+<div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 10197px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_17" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_17" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=17&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span>&nbsp;&nbsp;Copy&nbsp;Code&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="comment">//&nbsp;Demonstrating&nbsp;saving&nbsp;various&nbsp;file&nbsp;formats</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="datatypes">int</span><span>&nbsp;_tmain(</span><span class="datatypes">int</span><span>&nbsp;argc,&nbsp;_TCHAR*&nbsp;argv[])&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;CImage&nbsp;myimage;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;load&nbsp;existing&nbsp;image</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;myimage.Load(<span class="string">"image.bmp"</span><span>);&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;save&nbsp;an&nbsp;image&nbsp;in&nbsp;BMP&nbsp;format</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;myimage.Save(<span class="string">"c:\image1.bmp"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;save&nbsp;an&nbsp;image&nbsp;in&nbsp;BMP&nbsp;format</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;myimage.Save(<span class="string">"c:\image2"</span><span>,ImageFormatBMP);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;save&nbsp;an&nbsp;image&nbsp;in&nbsp;JPEG&nbsp;format</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;myimage.Save(<span class="string">"c:\image3.jpg"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;save&nbsp;an&nbsp;image&nbsp;in&nbsp;BMP&nbsp;format,&nbsp;even&nbsp;though&nbsp;jpg&nbsp;file&nbsp;extension&nbsp;is&nbsp;used</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;myimage.Save(<span class="string">"c:\image4.jpg"</span><span>,ImageFormatBMP);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;0;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">  Copy Code 
+// Demonstrating saving various file formats
+int _tmain(int argc, _TCHAR* argv[])
+{
+   CImage myimage;
+   // load existing image
+   myimage.Load("image.bmp"); 
+      // save an image in BMP format
+   myimage.Save("c:\image1.bmp");
+   // save an image in BMP format
+   myimage.Save("c:\image2",ImageFormatBMP);
+   // save an image in JPEG format
+   myimage.Save("c:\image3.jpg");
+   // save an image in BMP format, even though jpg file extension is used
+   myimage.Save("c:\image4.jpg",ImageFormatBMP);
+   return 0;
+}
+ 
+</pre>
+<p><br>
+&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>&nbsp;9 应用实例： 将两个图像合并为一个新的图像</strong></p>
+<p>&nbsp;</p>
+<strong></strong><div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="About" title="?" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a><div style="position: absolute; left: 709px; top: 10720px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_18" src="http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="18" height="18" name="ZeroClipboardMovie_18" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=18&amp;width=18&amp;height=18" wmode="transparent"></div></div></div><ol start="1" class="dp-cpp"><li class="alt"><span><span class="comment">//图像路径</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>CString&nbsp;img1Path;&nbsp;&nbsp;</span></li><li class="alt"><span>CString&nbsp;img2Path;&nbsp;&nbsp;</span></li><li class=""><span>CString&nbsp;img3Path;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>img1Path=_T(<span class="string">"1.bmp"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>img2Path=_T(<span class="string">"2.bmp"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>img3Path=_T(<span class="string">"3.bmp"</span><span>);&nbsp;&nbsp;</span><span class="comment">//&nbsp;将&nbsp;图片1、2&nbsp;合并成图片3</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>CImage&nbsp;img1,img2,img3;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>img1.Load(img1Path);&nbsp;&nbsp;</span></li><li class=""><span>img2.Load(img2Path);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>CBitmap&nbsp;bmp;&nbsp;&nbsp;</span></li><li class=""><span>CDC&nbsp;memDC;&nbsp;&nbsp;</span></li><li class="alt"><span><span class="datatypes">HDC</span><span>&nbsp;hDC=NULL;&nbsp;&nbsp;</span></span></li><li class=""><span>CDC&nbsp;*pDC=NULL;&nbsp;&nbsp;</span></li><li class="alt"><span>CBitmap&nbsp;*pOld=NULL;&nbsp;&nbsp;</span></li><li class=""><span><span class="datatypes">HBITMAP</span><span>&nbsp;hBitmap=NULL;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="comment">//创建位图</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>hDC=img1.GetDC();&nbsp;&nbsp;</span></li><li class="alt"><span>pDC=CDC::FromHandle(hDC);&nbsp;&nbsp;</span></li><li class=""><span>bmp.DeleteObject();&nbsp;&nbsp;</span></li><li class="alt"><span>bmp.CreateCompatibleBitmap(pDC,img1.GetWidth()/2,img1.GetHeight());&nbsp;&nbsp;</span></li><li class=""><span>memDC.DeleteDC();&nbsp;&nbsp;</span></li><li class="alt"><span>memDC.CreateCompatibleDC(pDC);&nbsp;&nbsp;</span></li><li class=""><span>pOld=memDC.SelectObject(&amp;bmp);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>::SetStretchBltMode(memDC.m_hDC,HALFTONE);&nbsp;&nbsp;</span></li><li class=""><span>::SetBrushOrgEx(memDC.m_hDC,0,0,NULL);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="comment">//&nbsp;背景置白色</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>CRgn&nbsp;rectRgn;&nbsp;&nbsp;</span></li><li class=""><span>rectRgn.CreateRectRgn(0,0,img1.GetWidth()/2,img1.GetHeight());&nbsp;&nbsp;</span></li><li class="alt"><span>CBrush&nbsp;brush;&nbsp;&nbsp;</span></li><li class=""><span>brush.CreateSolidBrush(RGB(255,255,255));&nbsp;&nbsp;</span></li><li class="alt"><span>memDC.FillRgn(&amp;rectRgn,&amp;brush);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="comment">//画图</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>img1.StretchBlt(memDC.m_hDC,CRect(0,0,img1.GetWidth()/2,img1.GetHeight()/2),CRect(0,0,img1.GetWidth(),img1.GetHeight()),SRCCOPY);&nbsp;&nbsp;</span></li><li class=""><span>img2.StretchBlt(memDC.m_hDC,CRect(0,img1.GetHeight()/2,img1.GetWidth()/2,img1.GetHeight()),CRect(0,0,img2.GetWidth(),img2.GetHeight()),SRCCOPY);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>hBitmap=(<span class="datatypes">HBITMAP</span><span>)memDC.SelectObject(pOld-&gt;m_hObject);&nbsp;&nbsp;</span></span></li><li class="alt"><span>img3.Attach(hBitmap);<span class="comment">//&nbsp;载入位图资源</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>img3.Save(img3Path);&nbsp;<span class="comment">//&nbsp;保存新的位图</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>img1.ReleaseDC();&nbsp;&nbsp;</span></li><li class="alt"><span>img1.Destroy();&nbsp;&nbsp;</span></li><li class=""><span>img2.Destroy();&nbsp;&nbsp;</span></li><li class="alt"><span>img3.Destroy();&nbsp;&nbsp;</span></li></ol></div><pre class="cpp" name="code" style="display: none;">	//图像路径
+	CString img1Path;
+	CString img2Path;
+	CString img3Path;
+
+	img1Path=_T("1.bmp");
+	img2Path=_T("2.bmp");
+	img3Path=_T("3.bmp");  // 将 图片1、2 合并成图片3
+
+
+	CImage img1,img2,img3;
+
+	img1.Load(img1Path);
+	img2.Load(img2Path);
+
+
+	CBitmap bmp;
+	CDC memDC;
+	HDC hDC=NULL;
+	CDC *pDC=NULL;
+	CBitmap *pOld=NULL;
+	HBITMAP hBitmap=NULL;
+
+
+	//创建位图
+	hDC=img1.GetDC();
+	pDC=CDC::FromHandle(hDC);
+	bmp.DeleteObject();
+	bmp.CreateCompatibleBitmap(pDC,img1.GetWidth()/2,img1.GetHeight());
+	memDC.DeleteDC();
+	memDC.CreateCompatibleDC(pDC);
+	pOld=memDC.SelectObject(&amp;bmp);
+
+
+	::SetStretchBltMode(memDC.m_hDC,HALFTONE);
+	::SetBrushOrgEx(memDC.m_hDC,0,0,NULL);
+
+	// 背景置白色
+	CRgn rectRgn;
+	rectRgn.CreateRectRgn(0,0,img1.GetWidth()/2,img1.GetHeight());
+	CBrush brush;
+	brush.CreateSolidBrush(RGB(255,255,255));
+	memDC.FillRgn(&amp;rectRgn,&amp;brush);
+
+
+	//画图
+	img1.StretchBlt(memDC.m_hDC,CRect(0,0,img1.GetWidth()/2,img1.GetHeight()/2),CRect(0,0,img1.GetWidth(),img1.GetHeight()),SRCCOPY);
+	img2.StretchBlt(memDC.m_hDC,CRect(0,img1.GetHeight()/2,img1.GetWidth()/2,img1.GetHeight()),CRect(0,0,img2.GetWidth(),img2.GetHeight()),SRCCOPY);
+
+	hBitmap=(HBITMAP)memDC.SelectObject(pOld-&gt;m_hObject);
+	img3.Attach(hBitmap);// 载入位图资源
+	img3.Save(img3Path); // 保存新的位图
+
+	img1.ReleaseDC();
+	img1.Destroy();
+	img2.Destroy();
+	img3.Destroy();
+</pre>
+<p><br>
+&nbsp;</p>
+<p><strong></strong>&nbsp;</p>
+<p><strong></strong>&nbsp;</p>
+<p><strong></strong>&nbsp;</p>
+
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+<div class="bdsharebuttonbox bdshare-button-style0-16" style="float: right;" data-bd-bind="1413429676159">
+<a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" style="background-position:0 -52px !important"></a>
+<a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博" style="background-position:0 -104px !important"></a>
+<a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博" style="background-position:0 -260px !important"></a>
+<a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="bds_renren" data-cmd="renren" title="分享到人人网" style="background-position:0 -208px !important"></a>
+<a href="http://blog.csdn.net/shuilan0066/article/details/7080244#" class="bds_weixin" data-cmd="weixin" title="分享到微信" style="background-position:0 -1612px !important"></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+<!--192.168.100.35-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shangyipian&#39;]);location.href=&#39;/shuilan0066/article/details/7086897&#39;;">上一篇</span><a href="http://blog.csdn.net/shuilan0066/article/details/7086897" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shangyipian&#39;])">GDI 总结二： 位图的绘制</a></li>
+            <li class="next_article"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_xiayipian&#39;]);location.href=&#39;/shuilan0066/article/details/7084742&#39;;">下一篇</span><a href="http://blog.csdn.net/shuilan0066/article/details/7084742" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_xiayipian&#39;])">GDI+ 总结一：   保存图像文件</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/bds_s_v2.js"></script>
+
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+
+        <div id="digg" articleid="7080244">
+            <dl id="btnDigg" class="digg digg_disable">
+                <dt onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_ding&#39;])">顶</dt>
+                <dd>8</dd>
+            </dl>
+            <dl id="btnBury" class="digg digg_disable">
+                <dt onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_cai&#39;])">踩</dt>
+                <dd>0</dd>
+            </dl>
+        </div>
+</div>
+      <dl class="blog-associat-tag">
+        <dt>主题推荐</dt>
+        <dd>
+                <a href="http://www.csdn.net/tag/%E7%B1%BB" target="_blank" class="blog-tage-red">类</a> 
+                <a href="http://www.csdn.net/tag/gdi" target="_blank" class="blog-tage-red">gdi</a> 
+                <a href="http://www.csdn.net/tag/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86" target="_blank" class="blog-tage-red">图片处理</a> 
+                <a href="http://www.csdn.net/tag/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86" target="_blank" class="blog-tage-red">图像处理</a> 
+                <a href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE" target="_blank" class="blog-tage-red">数据</a> 
+        </dd>
+    </dl> 
+
+
+<dl class="blog-ass-articl tracking-ad" data-mod="popu_36" id="res-relatived"> 
+     <dt><span>猜你在找</span></dt>    
+<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/byxdaz/article/details/5972759" title="GDI+编程小结" strategy="CFRecommendAlgorithm" target="_blank">GDI+编程小结</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/jax_lee/article/details/6775030" title="MFC 定时器的使用之我见" strategy="CFRecommendAlgorithm" target="_blank">MFC 定时器的使用之我见</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/ke_yang/article/details/5417552" title="GetWindowRect与GetClientRect 的区别" strategy="CFRecommendAlgorithm" target="_blank">GetWindowRect与GetClientRect 的区别</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/flydream0/article/details/8543525" title="CString与char *互转总结" strategy="CFRecommendAlgorithm" target="_blank">CString与char *互转总结</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/shuilan0066/article/details/null" title="null" strategy="CFRecommendAlgorithm" target="_blank">null</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/funkri/article/details/8510692" title="ffmpeg Windows下采集摄像头一帧数据，并保存为bmp图片" strategy="CFRecommendAlgorithm" target="_blank">ffmpeg Windows下采集摄像头一帧数据，并保存为bmp图片</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/dj0379/article/details/7598921" title="wxWidgets和QT之间的选择" strategy="CFRecommendAlgorithm" target="_blank">wxWidgets和QT之间的选择</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/JoeBlackzqq/article/details/7042082" title="ULARGE_INTEGER运算" strategy="CFRecommendAlgorithm" target="_blank">ULARGE_INTEGER运算</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/zyboy2000/article/details/8281962" title="TI DSP的CMD文件" strategy="CFRecommendAlgorithm" target="_blank">TI DSP的CMD文件</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/wangran51/article/details/8205144" title="python for" strategy="CFRecommendAlgorithm" target="_blank">python for</a></dd></dl>
+
+<script type="text/javascript">
+    var searchtitletags = 'GDI 总结三： CImage类使用' + ',' + '类,gdi,图片处理,图像处理,数据';
+    searchService({
+        index: 'blog',
+        query: searchtitletags,
+        from: 10,
+        size: 10,
+        appendTo: '#res-relatived',
+        url: 'recommend',
+        his: 2,
+        client: "blog_cf_enhance",
+        tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+    });
+
+ </script>   
+
+
+    <div id="ad_cen">
+   
+          <script type="text/javascript">
+              new Ad(4, 'ad_cen');
+          </script>
+    <iframe id="ad_frm_0" frameborder="0" scrolling="no" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ad(1).htm" style="border-width: 0px; overflow: hidden; width: 984px; height: 90px;"></iframe></div>
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list"><dl class="comment_item comment_topic" id="comment_item_4378637"><dt class="comment_head" floor="4">4楼 <span class="user"><a class="username" href="http://blog.csdn.net/xiaoCCCluo" target="_blank">xiaoCCCluo</a> <span class="ptime">2014-10-09 09:35发表</span>  <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="4378637" username="xiaoCCCluo"> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/xiaoCCCluo" target="_blank"><img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/3_xiaocccluo.jpg" width="40" height="40"></a></dd><dd class="comment_body">写的很好，谢谢了！</dd></dl><dl class="comment_item comment_topic" id="comment_item_3945881"><dt class="comment_head" floor="3">3楼 <span class="user"><a class="username" href="http://blog.csdn.net/hrg1987" target="_blank">hrg1987</a> <span class="ptime">2014-06-11 09:50发表</span>  <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="3945881" username="hrg1987"> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/hrg1987" target="_blank"><img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/3_hrg1987.jpg" width="40" height="40"></a></dd><dd class="comment_body">good，非常有用，谢谢了</dd></dl><dl class="comment_item comment_topic" id="comment_item_2181712"><dt class="comment_head" floor="2">2楼 <span class="user"><a class="username" href="http://blog.csdn.net/dragoo1" target="_blank">dragoo1</a> <span class="ptime">2012-04-14 09:45发表</span>  <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="2181712" username="dragoo1"> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/dragoo1" target="_blank"><img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/3_dragoo1.jpg" width="40" height="40"></a></dd><dd class="comment_body">学习了</dd></dl><dl class="comment_item comment_topic" id="comment_item_2139427"><dt class="comment_head" floor="1">1楼 <span class="user"><a class="username" href="http://blog.csdn.net/zgyBrittany" target="_blank">zgyBrittany</a> <span class="ptime">2012-03-21 20:52发表</span>  <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="2139427" username="zgyBrittany"> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/zgyBrittany" target="_blank"><img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/3_zgybrittany.jpg" width="40" height="40"></a></dd><dd class="comment_body">您好，我现在遇到显示透明的png图片的bug，调试成功，但无法运行，想请教您，不知道可不可以。我邮箱：1017106993@qq.com</dd></dl><div class="clear"></div></div>
+    <div id="comment_bar" style="display: none;">
+    </div>
+    <div id="comment_form"><div class="guest_link">您还没有登录,请<a href="javascript:void(0);" onclick="javascript:csdn.showLogin(function (dat) {js_logined(dat.data.userName);});">[登录]</a>或<a href="http://passport.csdn.net/account/register?from=http%3A%2F%2Fblog.csdn.net%2Fshuilan0066%2Farticle%2Fdetails%2F7080244">[注册]</a></div></div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '7080244';
+    var commentscount = 4;
+    var islock = false
+</script>
+<script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/comment.js"></script>
+    <div id="ad_bot">
+    <iframe id="ad_frm_1" frameborder="0" scrolling="no" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ad(2).htm" style="border-width: 0px; overflow: hidden; width: 984px; height: 0px;"></iframe></div>
+    <script type="text/javascript">
+    new Ad(5, 'ad_bot');
+    </script>
+<div id="report_dialog">
+</div>
+
+<div id="d-top" style="bottom:60px;">
+      
+
+       <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop" style="" title="返回顶部" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_huidaodingbu&#39;])">         
+         <img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);
+        
+
+        if($("#comment_content").length>0)
+        {
+            $("#quick-reply").show();
+
+            $("#quick-reply").click(function(){
+                setEditorFocus();
+            });
+        }       
+     
+        var d_top = $('#d-top-a');
+        document.onscroll = function ()
+        {
+            var scrTop = (document.body.scrollTop || document.documentElement.scrollTop);
+            if (scrTop > 500)
+            {
+                d_top.show();
+            } else
+            {
+                d_top.hide();
+            }
+        }
+        $('#d-top-a').click(function ()
+        {
+            scrollTo(0, 0);
+            this.blur();
+            return false;
+        });
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+<div class="tag_list">
+    <h5>
+        <a href="http://www.csdn.net/tag/" target="_blank">核心技术类目</a></h5>
+    <div class="classify">
+<a title="全部主题" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,336);">全部主题</a>
+<a title="Hadoop" href="http://g.csdn.net/5272865" target="_blank" onclick="LogClickCount(this,336);">Hadoop</a>
+<a title="AWS" href="http://g.csdn.net/5272866" target="_blank" onclick="LogClickCount(this,336);">AWS</a>
+<a title="移动游戏" href="http://g.csdn.net/5272870" target="_blank" onclick="LogClickCount(this,336);">移动游戏</a>
+<a title="Java" href="http://g.csdn.net/5272871" target="_blank" onclick="LogClickCount(this,336);">Java</a>
+<a title="Android" href="http://g.csdn.net/5272872" target="_blank" onclick="LogClickCount(this,336);">Android</a>
+<a title="iOS" href="http://g.csdn.net/5272873" target="_blank" onclick="LogClickCount(this,336);">iOS</a>
+<a title="Swift" href="http://g.csdn.net/5272868" target="_blank" onclick="LogClickCount(this,336);">Swift</a>
+<a title="智能硬件" href="http://g.csdn.net/5272869" target="_blank" onclick="LogClickCount(this,336);">智能硬件</a>
+<a title="Docker" href="http://g.csdn.net/5272867" target="_blank" onclick="LogClickCount(this,336);">Docker</a>
+<a title="OpenStack" href="http://g.csdn.net/5272925" target="_blank" onclick="LogClickCount(this,336);">OpenStack</a>
+<a title="VPN" href="http://www.csdn.net/tag/vpn" target="_blank" onclick="LogClickCount(this,336);">VPN</a>
+<a title="Spark" href="http://g.csdn.net/5272924" target="_blank" onclick="LogClickCount(this,336);">Spark</a>
+<a title="ERP" href="http://www.csdn.net/tag/erp" target="_blank" onclick="LogClickCount(this,336);">ERP</a>
+<a title="IE10" href="http://www.csdn.net/tag/ie10" target="_blank" onclick="LogClickCount(this,336);">IE10</a>
+<a title="Eclipse" href="http://www.csdn.net/tag/eclipse" target="_blank" onclick="LogClickCount(this,336);">Eclipse</a>
+<a title="CRM" href="http://www.csdn.net/tag/crm" target="_blank" onclick="LogClickCount(this,336);">CRM</a>
+<a title="JavaScript" href="http://www.csdn.net/tag/javascript" target="_blank" onclick="LogClickCount(this,336);">JavaScript</a>
+<a title="数据库" href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" onclick="LogClickCount(this,336);">数据库</a>
+<a title="Ubuntu" href="http://www.csdn.net/tag/ubuntu" target="_blank" onclick="LogClickCount(this,336);">Ubuntu</a>
+<a title="NFC" href="http://www.csdn.net/tag/nfc" target="_blank" onclick="LogClickCount(this,336);">NFC</a>
+<a title="WAP" href="http://www.csdn.net/tag/wap" target="_blank" onclick="LogClickCount(this,336);">WAP</a>
+<a title="jQuery" href="http://www.csdn.net/tag/jquery" target="_blank" onclick="LogClickCount(this,336);">jQuery</a>
+<a title="BI" href="http://www.csdn.net/tag/bi" target="_blank" onclick="LogClickCount(this,336);">BI</a>
+<a title="HTML5" href="http://www.csdn.net/tag/html5" target="_blank" onclick="LogClickCount(this,336);">HTML5</a>
+<a title="Spring" href="http://www.csdn.net/tag/spring" target="_blank" onclick="LogClickCount(this,336);">Spring</a>
+<a title="Apache" href="http://www.csdn.net/tag/apache" target="_blank" onclick="LogClickCount(this,336);">Apache</a>
+<a title=".NET" href="http://www.csdn.net/tag/.net" target="_blank" onclick="LogClickCount(this,336);">.NET</a>
+<a title="API" href="http://www.csdn.net/tag/api" target="_blank" onclick="LogClickCount(this,336);">API</a>
+<a title="HTML" href="http://www.csdn.net/tag/html" target="_blank" onclick="LogClickCount(this,336);">HTML</a>
+<a title="SDK" href="http://www.csdn.net/tag/sdk" target="_blank" onclick="LogClickCount(this,336);">SDK</a>
+<a title="IIS" href="http://www.csdn.net/tag/iis" target="_blank" onclick="LogClickCount(this,336);">IIS</a>
+<a title="Fedora" href="http://www.csdn.net/tag/fedora" target="_blank" onclick="LogClickCount(this,336);">Fedora</a>
+<a title="XML" href="http://www.csdn.net/tag/xml" target="_blank" onclick="LogClickCount(this,336);">XML</a>
+<a title="LBS" href="http://www.csdn.net/tag/lbs" target="_blank" onclick="LogClickCount(this,336);">LBS</a>
+<a title="Unity" href="http://www.csdn.net/tag/unity" target="_blank" onclick="LogClickCount(this,336);">Unity</a>
+<a title="Splashtop" href="http://www.csdn.net/tag/splashtop" target="_blank" onclick="LogClickCount(this,336);">Splashtop</a>
+<a title="UML" href="http://www.csdn.net/tag/uml" target="_blank" onclick="LogClickCount(this,336);">UML</a>
+<a title="components" href="http://www.csdn.net/tag/components" target="_blank" onclick="LogClickCount(this,336);">components</a>
+<a title="Windows Mobile" href="http://www.csdn.net/tag/windowsmobile" target="_blank" onclick="LogClickCount(this,336);">Windows Mobile</a>
+<a title="Rails" href="http://www.csdn.net/tag/rails" target="_blank" onclick="LogClickCount(this,336);">Rails</a>
+<a title="QEMU" href="http://www.csdn.net/tag/qemu" target="_blank" onclick="LogClickCount(this,336);">QEMU</a>
+<a title="KDE" href="http://www.csdn.net/tag/kde" target="_blank" onclick="LogClickCount(this,336);">KDE</a>
+<a title="Cassandra" href="http://www.csdn.net/tag/cassandra" target="_blank" onclick="LogClickCount(this,336);">Cassandra</a>
+<a title="CloudStack" href="http://www.csdn.net/tag/cloudstack" target="_blank" onclick="LogClickCount(this,336);">CloudStack</a>
+<a title="FTC" href="http://www.csdn.net/tag/ftc" target="_blank" onclick="LogClickCount(this,336);">FTC</a>
+<a title="coremail" href="http://www.csdn.net/tag/coremail" target="_blank" onclick="LogClickCount(this,336);">coremail</a>
+<a title="OPhone " href="http://www.csdn.net/tag/ophone" target="_blank" onclick="LogClickCount(this,336);">OPhone </a>
+<a title="CouchBase" href="http://www.csdn.net/tag/couchbase" target="_blank" onclick="LogClickCount(this,336);">CouchBase</a>
+<a title="云计算" href="http://www.csdn.net/tag/%E4%BA%91%E8%AE%A1%E7%AE%97" target="_blank" onclick="LogClickCount(this,336);">云计算</a>
+<a title="iOS6" href="http://www.csdn.net/tag/iOS6" target="_blank" onclick="LogClickCount(this,336);">iOS6</a>
+<a title="Rackspace " href="http://www.csdn.net/tag/rackspace" target="_blank" onclick="LogClickCount(this,336);">Rackspace </a>
+<a title="Web App" href="http://www.csdn.net/tag/webapp" target="_blank" onclick="LogClickCount(this,336);">Web App</a>
+<a title="SpringSide" href="http://www.csdn.net/tag/springside" target="_blank" onclick="LogClickCount(this,336);">SpringSide</a>
+<a title="Maemo" href="http://www.csdn.net/tag/maemo" target="_blank" onclick="LogClickCount(this,336);">Maemo</a>
+<a title="Compuware" href="http://www.csdn.net/tag/compuware" target="_blank" onclick="LogClickCount(this,336);">Compuware</a>
+<a title="大数据" href="http://www.csdn.net/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE" target="_blank" onclick="LogClickCount(this,336);">大数据</a>
+<a title="aptech" href="http://www.csdn.net/tag/aptech" target="_blank" onclick="LogClickCount(this,336);">aptech</a>
+<a title="Perl" href="http://www.csdn.net/tag/perl" target="_blank" onclick="LogClickCount(this,336);">Perl</a>
+<a title="Tornado" href="http://www.csdn.net/tag/tornado" target="_blank" onclick="LogClickCount(this,336);">Tornado</a>
+<a title="Ruby" href="http://www.csdn.net/tag/ruby" target="_blank" onclick="LogClickCount(this,336);">Ruby</a>
+<a title="Hibernate" href="http://www.csdn.net/hibernate" target="_blank" onclick="LogClickCount(this,336);">Hibernate</a>
+<a title="ThinkPHP" href="http://www.csdn.net/tag/thinkphp" target="_blank" onclick="LogClickCount(this,336);">ThinkPHP</a>
+<a title="HBase" href="http://www.csdn.net/tag/hbase" target="_blank" onclick="LogClickCount(this,336);">HBase</a>
+<a title="Pure" href="http://www.csdn.net/tag/pure" target="_blank" onclick="LogClickCount(this,336);">Pure</a>
+<a title="Solr" href="http://www.csdn.net/tag/solr" target="_blank" onclick="LogClickCount(this,336);">Solr</a>
+<a title="Angular" href="http://www.csdn.net/tag/angular" target="_blank" onclick="LogClickCount(this,336);">Angular</a>
+<a title="Cloud Foundry" href="http://www.csdn.net/tag/cloudfoundry" target="_blank" onclick="LogClickCount(this,336);">Cloud Foundry</a>
+<a title="Redis" href="http://www.csdn.net/tag/redis" target="_blank" onclick="LogClickCount(this,336);">Redis</a>
+<a title="Scala" href="http://www.csdn.net/tag/scala" target="_blank" onclick="LogClickCount(this,336);">Scala</a>
+<a title="Django" href="http://www.csdn.net/tag/django" target="_blank" onclick="LogClickCount(this,336);">Django</a>
+<a title="Bootstrap" href="http://www.csdn.net/tag/bootstrap" target="_blank" onclick="LogClickCount(this,336);">Bootstrap</a>
+    </div>
+</div>
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+            <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/shuilan0066" target="_blank">
+    <img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/1_shuilan0066.jpg" title="访问我的空间" style="max-width:90%">
+    </a>
+    <br>
+    <span><a href="http://my.csdn.net/shuilan0066" class="user_name" target="_blank">shuilan0066</a></span>
+</div>
+<div class="interact">
+<a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_guanzhu&#39;])"></a>
+
+ <a href="javascript:void(0);" class="letter" title="[发私信]" onclick="window.open(&#39;http://msg.csdn.net/letters/model?receiver=shuilan0066&#39;,&#39;_blank&#39;,&#39;height=350,width=700&#39;);_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_sixin&#39;])"></a>  
+</div>
+<div id="blog_medal">
+<div id="bms_box"><a href="http://medal.blog.csdn.net/allmedal.aspx" target="_blank"><img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/holdon_s2.gif" onmouseover="m_over_m(this,0)" onmouseout="m_out_m()" alt=""></a></div></div>
+<ul id="blog_rank">
+    <li>访问：<span>715996次</span></li>
+    <li>积分：<span>10038分</span></li>
+    <li>排名：<span>第438名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>280篇</span></li>
+    <li>转载：<span>226篇</span></li>
+    <li>译文：<span>19篇</span></li>
+    <li>评论：<span>178条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字"></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog">
+        <input type="hidden" name="q" id="inputQ">
+        <input type="hidden" name="t" value="blog">
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/826963" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">课堂提问软件</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/484179" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">C++</a><span>(39)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/1369199" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">c++ 之基础知识</a><span>(7)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/598430" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">MFC</a><span>(74)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/1315549" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">程序的灵魂</a><span>(5)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/614362" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">图形图像处理</a><span>(43)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/1054621" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">数据结构--基础算法</a><span>(23)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/1176251" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">算法---经典算法</a><span>(5)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/845102" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">算法----非选择算法</a><span>(10)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/493268" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">调试错误信息</a><span>(64)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/917784" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">文字处理</a><span>(39)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/1240152" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">精品转载</a><span>(13)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/917788" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">各种封装类（功能扩展）</a><span>(6)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/594768" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">Delphi</a><span>(7)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/692602" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">JAVA</a><span>(6)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/696276" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">DreampWeaver+asp</a><span>(3)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/604506" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">Python</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/491829" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">OpenGl</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/484187" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">QT学习</a><span>(9)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/547339" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">SQL 2005</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/513622" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">Word 操作</a><span>(8)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/732377" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">信息安全</a><span>(41)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/751903" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">winsocket编程</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/751904" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">多线程</a><span>(7)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/903104" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">DLL</a><span>(3)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/1170126" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">FontCreator造字</a><span>(6)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/1226308" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">EXCEL</a><span>(6)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/905226" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">输入法</a><span>(4)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/484183" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">数据结构</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/708708" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">网络</a><span>(21)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/546929" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">windows </a><span>(4)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/707349" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">黑客技术</a><span>(29)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/918232" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">消息处理</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/918306" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">转载---MFC</a><span>(51)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/918307" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">转载---图像处理</a><span>(17)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/918308" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">转载---其它</a><span>(8)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/1158297" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">自己写的算法</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/1175210" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">每日一句---必应英语</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/1175211" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">古典诗词</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/1193324" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">医疗</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/1890117" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">CReading阅读神器</a><span>(3)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/2237051" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">书画小说</a><span>(6)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/shuilan0066/article/category/2338993" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">wordpress网站开发</a><span>(1)</span>
+            </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list"><li><a href="http://blog.csdn.net/shuilan0066/article/month/2014/10">2014年10月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2014/06">2014年06月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2014/05">2014年05月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2014/02">2014年02月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2014/01">2014年01月</a><span>(2)</span></li><span class="hidelist" style="display:none;"><li><a href="http://blog.csdn.net/shuilan0066/article/month/2013/07">2013年07月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2013/06">2013年06月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2013/05">2013年05月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2013/04">2013年04月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2013/03">2013年03月</a><span>(14)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2013/01">2013年01月</a><span>(14)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2012/11">2012年11月</a><span>(7)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2012/10">2012年10月</a><span>(11)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2012/09">2012年09月</a><span>(13)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2012/08">2012年08月</a><span>(16)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2012/07">2012年07月</a><span>(11)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2012/06">2012年06月</a><span>(25)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2012/05">2012年05月</a><span>(13)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2012/03">2012年03月</a><span>(12)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2012/02">2012年02月</a><span>(12)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2012/01">2012年01月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2011/12">2011年12月</a><span>(13)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2011/11">2011年11月</a><span>(9)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2011/10">2011年10月</a><span>(15)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2011/09">2011年09月</a><span>(25)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2011/08">2011年08月</a><span>(16)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2011/07">2011年07月</a><span>(24)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2011/06">2011年06月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2011/05">2011年05月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2011/02">2011年02月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2011/01">2011年01月</a><span>(7)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2010/12">2010年12月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2010/11">2010年11月</a><span>(8)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2010/10">2010年10月</a><span>(44)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2010/09">2010年09月</a><span>(18)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2010/08">2010年08月</a><span>(25)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2010/07">2010年07月</a><span>(21)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2010/06">2010年06月</a><span>(9)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2010/05">2010年05月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2010/04">2010年04月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2010/03">2010年03月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2009/11">2009年11月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2009/10">2009年10月</a><span>(35)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2009/09">2009年09月</a><span>(24)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2009/05">2009年05月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2009/04">2009年04月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2009/03">2009年03月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2009/02">2009年02月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2008/12">2008年12月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2008/11">2008年11月</a><span>(11)</span></li><li><a href="http://blog.csdn.net/shuilan0066/article/month/2008/10">2008年10月</a><span>(3)</span></li></span><div id="archive_list_button" class="list_closed">展开</div></div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/3894130" title="word无法读取此文档，文档可能已损坏 请尝试下列方法：*打开并修复文件*用文本恢复转换器打开文件">word无法读取此文档，文档可能已损坏 请尝试下列方法：*打开并修复文件*用文本恢复转换器打开文件</a><span>(53890)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/5775383" title="MFC 模态对话框dlg.DoModal()返回值">MFC 模态对话框dlg.DoModal()返回值</a><span>(12985)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/3588478" title="vector.resize 与 vector.reserve的区别">vector.resize 与 vector.reserve的区别</a><span>(10639)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/5809941" title="CFile::modeNoTruncate 参数详细说明">CFile::modeNoTruncate 参数详细说明</a><span>(9824)</span>
+</li>
+<li>
+<a href="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET.htm" title="GDI 总结三： CImage类使用">GDI 总结三： CImage类使用</a><span>(9422)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/4669451" title="ifstream 流 判断文件是否结尾的函数eof()">ifstream 流 判断文件是否结尾的函数eof()</a><span>(8916)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/3438108" title="安装openGL">安装openGL</a><span>(8836)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/7683315" title="同一进程中的线程究竟共享哪些资源">同一进程中的线程究竟共享哪些资源</a><span>(8032)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/4603722" title="error C2556: &#39;void __thiscall......overloaded function differs only by return type from &#39;int __thiscall">error C2556: 'void __thiscall......overloaded function differs only by return type from 'int __thiscall</a><span>(7740)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/5627179" title="JAVA 编译找不到符号">JAVA 编译找不到符号</a><span>(7365)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/3894130" title="word无法读取此文档，文档可能已损坏 请尝试下列方法：*打开并修复文件*用文本恢复转换器打开文件">word无法读取此文档，文档可能已损坏 请尝试下列方法：*打开并修复文件*用文本恢复转换器打开文件</a><span>(9)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/5775383" title="MFC 模态对话框dlg.DoModal()返回值">MFC 模态对话框dlg.DoModal()返回值</a><span>(7)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/3588478" title="vector.resize 与 vector.reserve的区别">vector.resize 与 vector.reserve的区别</a><span>(5)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/5711032" title="查找/替换对话框CFindReplaceDialog">查找/替换对话框CFindReplaceDialog</a><span>(5)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/7936336" title="使用MFC操作EXCEL文件">使用MFC操作EXCEL文件</a><span>(4)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/6638504" title="CTreeCtrl 控件使用总结">CTreeCtrl 控件使用总结</a><span>(4)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/6749561" title="什么是双缓冲">什么是双缓冲</a><span>(4)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/5756627" title="使用CBitmapButton类创建位图按钮">使用CBitmapButton类创建位图按钮</a><span>(4)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/3165062" title="基类，派生类，内存分配情况   ">基类，派生类，内存分配情况   </a><span>(4)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/shuilan0066/article/details/7936310" title="VS2005操作excel所需的类及文件">VS2005操作excel所需的类及文件</a><span>(4)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend"><iframe id="ad_frm_2" frameborder="0" scrolling="no" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ad.htm" style="border-width: 0px; overflow: hidden; width: 194px; height: 200px;"></iframe></ul>
+</div>
+<script type="text/javascript">
+ new Ad(12, 'ad_commend');
+</script><div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="http://blog.csdn.net/shuilan0066/article/details/7936336#comments">使用MFC操作EXCEL文件</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/lian_gong2009" class="user_name">潭清</a>:
+好帖，感谢楼主分享
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/shuilan0066/article/details/7080244#comments">GDI 总结三： CImage类使用</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/xiaoCCCluo" class="user_name">xiaoCCCluo</a>:
+写的很好，谢谢了！
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/shuilan0066/article/details/4603722#comments">error C2556: 'void __thiscall......overloaded function differs only by return type from 'int __thiscall</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/Sindy_Jen" class="user_name">Sindy_Jen</a>:
+嗯嗯，我也不小心丢了void，然后就报错
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/shuilan0066/article/details/8659163#comments">选择排序</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/libocdf" class="user_name">libocdf</a>:
+真的写得很好，大家为咩不顶啊
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/shuilan0066/article/details/6890320#comments">vs2005断点无效</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/tm1mc2" class="user_name">tm1mc2</a>:
+学习
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/shuilan0066/article/details/3289264#comments">学习一：头文件找不到问题（版本变化）</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/du1dao" class="user_name">du1dao</a>:
+感谢楼主！！
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/shuilan0066/article/details/7936310#comments">VS2005操作excel所需的类及文件</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/u013676178" class="user_name">旗木卡卡西_三口</a>:
+您好，我最近也在尝试用VC控制EXcel，你的文档很有用，但是我有个疑问，就是这边文档中的//添加新...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/shuilan0066/article/details/7368826#comments">树系列之二：树的存储结构</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/faithmy509" class="user_name">faithmy509</a>:
+不错
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/shuilan0066/article/details/7368826#comments">VS2005操作excel所需的类及文件</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/zhanglidn013" class="user_name">zhanglidn013</a>:
+@ljx1006:请看楼主下一篇文档
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/shuilan0066/article/details/8659235#comments">堆排序</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/liunewshine" class="user_name">liunewshine</a>:
+int iFirst=(n-1)/2; //第一个非叶子节点应该是n/2-1才对吧
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/cnick.js"></script>
+<script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/showblogmedal.ashx"></script>
+<script type="text/javascript">
+    document.write('<script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/publib_footer.js?' + Math.floor(new Date() / 120000).toString(36) + '="></' + 'script>');
+</script><script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/publib_footer.js"></script><link rel="stylesheet" type="text/css" href="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/pub_footer_2012.css"><div id="pub_footerall" class="pub_footerall"><dl><dt></dt> <dd><a href="http://www.csdn.net/company/about.html" target="_blank">公司简介</a>|<a href="http://www.csdn.net/company/recruit.html" target="_blank">招贤纳士</a>|<a href="http://www.csdn.net/company/marketing.html" target="_blank">广告服务</a>|<a href="http://www.csdn.net/company/account.html" target="_blank">银行汇款帐号</a>|<a href="http://www.csdn.net/company/contact.html" target="_blank">联系方式</a>|<a href="http://www.csdn.net/company/statement.html" target="_blank">版权声明</a>|<a href="http://www.csdn.net/company/layer.html" target="_blank">法律顾问</a>|<a href="mailto:webmaster@csdn.net">问题报告</a>|<a target="_blank" href="http://www.csdn.net/friendlink.html">合作伙伴</a>|<a href="http://bbs.csdn.net/forums/Service" target="_blank">论坛反馈</a></dd><dd><a href="http://wpa.qq.com/msgrd?v=3&uin=2355263776&site=qq&menu=yes" target="_blank" class="qq">网站客服</a> <a href="http://wpa.qq.com/msgrd?v=3&uin=2251809102&site=qq&menu=yes" target="_blank" class="qq">杂志客服</a> <a href="http://e.weibo.com/csdnsupport/profile" target="_blank" class="weibo">微博客服</a> <a href="mailto:webmaster@csdn.net" class="email" title="联系邮箱">webmaster@csdn.net</a> <span class="phone" title="服务热线">400-600-2320</span></dd><dd>京&nbsp;ICP&nbsp;证&nbsp;070598&nbsp;号</dd><dd>北京创新乐知信息技术有限公司 版权所有</dd><dd>江苏乐知网络技术有限公司 提供商务支持</dd><dd>Copyright © 1999-2014, CSDN.NET, All Rights Reserved&nbsp;<a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/gongshang_logos.gif" alt="GongshangLogo" title=""></a></dd></dl></div><div id="note1" class="csdn_note" style="display:none; position:absolute; z-index:9999; width:440px">  <span class="notice_top_arrow"><span class="inner"></span></span>  <div class="box"></div></div><div class="csdn_notice_tip" style="display: none; position: absolute; z-index: 9990; width: 170px;">  <iframe src="about:blank" frameborder="0" scrolling="no" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent"></iframe>  <div class="tip_text">您有<strong>0</strong>条新通知</div>  <a href="javascript:void 0" class="close2"></a></div><script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/notify.js"></script>
+    <script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script><img src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/pv.aspx" border="0" width="0" height="0">
+<script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/counter.js"></script><script type="text/javascript" charset="UTF-8" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/msg.popup.js"></script>
+<script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ad-blog.js"></script><script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ad-js1020.js"></script>
+<script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ad-ms1023_2.js"></script>
+<script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ad-ms1026_3.js"></script>
+<script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ad-ms1029_4.js"></script>
+
+<script type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/count.js"></script><iframe src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/logs.htm" frameborder="0" width="0" height="0"></iframe>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</script>
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" type="text/javascript" src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/toolbar.js"></script>
+     <!--new top-->
+
+
+<div id="tag-suggest-pop">
+  <div class="relative">
+    <div class="close"></div>
+    <div class="content"></div>
+  </div>
+</div><iframe src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/ibm-softlayer-free-server-zhiding-banner-960-90-30k.htm" style="width: 1px; height: 1px; position: absolute; visibility: hidden;"></iframe><iframe src="./GDI 总结三： CImage类使用 - 清流弯弯 - 博客频道 - CSDN.NET_files/hp-fy14-q4-cloud-daohangtiaoxia-banner-peisong-960-90-30k.htm" style="width: 1px; height: 1px; position: absolute; visibility: hidden;"></iframe></body></html>
